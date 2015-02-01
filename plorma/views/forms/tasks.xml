@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <configuration>
   <source>
-    <entity id="e1" name="dummy" label="Dummy" type="string"/>
+    <entity id="name" name="name" label="Name" type="string" required="true"/>
+    <entity id="description" name="description" label="Description" type="string">
+      <renderer type="textarea" rows="10"/>
+    </entity>
+    <entity id="priority" name="priority" label="Priority" type="integer">
+      <options>
+        <option value="5">very high</option>
+        <option value="4">high</option>
+        <option value="3">normal</option>
+        <option value="2">low</option>
+        <option value="1">very low</option>
+        <option value="">not specified</option>
+      </options>
+      <renderer type="dropdown"/>
+    </entity>
+    <entity id="severity" name="severity" label="Severity" type="integer">
+      <options>
+        <option value="6">blocker</option>
+        <option value="5">critical</option>
+        <option value="4">major</option>
+        <option value="3">normal</option>
+        <option value="2">minor</option>
+        <option value="1">trivial</option>
+        <option value="">not specified</option>
+      </options>
+      <renderer type="dropdown"/>
+    </entity>
   </source>
   <form id="create" autocomplete="off" method="POST" action="" enctype="multipart/form-data">
     <snippet ref="create_snippet"/>
@@ -13,15 +39,20 @@
     <snippet ref="create_snippet"/>
   </form>
 
-  <!-- Create-->
   <snippet id="create_snippet">
-    <snippet ref="s1"/>
+    <snippet ref="base"/>
   </snippet>
 
-  <!-- Role -->
-  <snippet id="s1">
+  <snippet id="base">
     <row>
-      <col><field ref="e1"/></col>
+      <col><field ref="name"/></col>
+    </row>
+    <row>
+      <col><field ref="priority"/></col>
+      <col><field ref="severity"/></col>
+    </row>
+    <row>
+      <col><field ref="description"/></col>
     </row>
   </snippet>
 </configuration>
