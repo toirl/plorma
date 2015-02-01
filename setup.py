@@ -20,7 +20,7 @@ requires = [
 
 setup(name='plorma',
       #version='0.0',
-      use_vcs_version=True,
+      use_vcs_version={"increment": version_increment},
       description=('Plorma is a task management application to plan '
                    'organise and manage your tasks.'),
       long_description=README + '\n\n' + CHANGES,
