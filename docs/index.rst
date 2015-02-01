@@ -6,10 +6,11 @@
 Welcome to Plorma's documentation!
 ==================================
 
-Contents:
-
 .. toctree::
    :maxdepth: 2
+
+   general
+   specification
 
 
 
