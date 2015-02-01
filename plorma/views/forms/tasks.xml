@@ -3,10 +3,11 @@
   <source>
     <entity id="name" name="name" label="Name" type="string" required="true"/>
     <entity id="description" name="description" label="Description" type="string">
-      <renderer type="textarea" rows="10"/>
+      <renderer type="textarea" rows="6"/>
     </entity>
     <entity id="priority" name="priority" label="Priority" type="integer">
       <options>
+        <option value="6">immidiate</option>
         <option value="5">very high</option>
         <option value="4">high</option>
         <option value="3">normal</option>
@@ -33,26 +34,42 @@
     <snippet ref="create_snippet"/>
   </form>
   <form id="update" autocomplete="off" method="POST" action="" enctype="multipart/form-data">
-    <snippet ref="create_snippet"/>
+    <snippet ref="read_snippet"/>
   </form>
   <form id="read" readonly="true">
-    <snippet ref="create_snippet"/>
+    <snippet ref="read_snippet"/>
   </form>
 
   <snippet id="create_snippet">
-    <snippet ref="base"/>
-  </snippet>
-
-  <snippet id="base">
     <row>
       <col><field ref="name"/></col>
     </row>
     <row>
-      <col><field ref="priority"/></col>
       <col><field ref="severity"/></col>
     </row>
     <row>
       <col><field ref="description"/></col>
+    </row>
+  </snippet>
+
+  <snippet id="read_snippet">
+    <row>
+      <col><field ref="name"/></col>
+    </row>
+    <row>
+      <col>
+        <if expr="False" type="readonly">
+          <field ref="priority"/>
+        </if>
+      </col>
+      <col><field ref="severity"/></col>
+    </row>
+    <row>
+      <col>
+        <if expr="False" type="readonly">
+          <field ref="description"/>
+        </if>
+      </col>
     </row>
   </snippet>
 </configuration>
