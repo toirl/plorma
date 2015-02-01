@@ -1,0 +1,11 @@
+# use glob syntax.
+syntax: glob
+
+*.pyc
+*.log
+*.sqlite
+*~
+
+# switch to regexp syntax.
+syntax: regexp
+plorma.egg-info
