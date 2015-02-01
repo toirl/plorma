@@ -1,7 +1,9 @@
 {
     "overview": {
         "columns": [
-            {"name": "id", "label": "ID"}
+            {"name": "id", "label": "ID", "width": "50"},
+            {"name": "name", "label": "Title"},
+            {"name": "priority", "label": "Priority", "width": "70"}
         ]
     }
 }
