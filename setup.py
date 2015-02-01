@@ -6,13 +6,20 @@ here = os.path.abspath(os.path.dirname(__file__))
 README = open(os.path.join(here, 'README.txt')).read()
 CHANGES = open(os.path.join(here, 'CHANGES.txt')).read()
 
+# Feature release
+version_increment = '0.1'
+# Bugfix release
+# version_increment = '0.0.1'
+
 requires = [
-    'ringo',
-    ]
+    'ringo'
+]
 
 setup(name='plorma',
-      version='0.0',
-      description='plorma',
+      #version='0.0',
+      use_vcs_version=True,
+      description=('Plorma is a task management application to plan '
+                   'organise and manage your tasks.'),
       long_description=README + '\n\n' + CHANGES,
       classifiers=[
         "Programming Language :: Python",
@@ -20,14 +27,15 @@ setup(name='plorma',
         "Topic :: Internet :: WWW/HTTP",
         "Topic :: Internet :: WWW/HTTP :: WSGI :: Application",
         ],
-      author='',
-      author_email='',
+      author='Torsten Irländer',
+      author_email='torsten@irlaender.de',
       url='',
       keywords='web wsgi bfg pylons pyramid',
       packages=find_packages(),
       include_package_data=True,
       zip_safe=False,
       test_suite='plorma',
+      setup_requires=["hgtools"],
       install_requires=requires,
       entry_points="""\
       [paste.app_factory]
