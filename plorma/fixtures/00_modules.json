@@ -1,6 +1,13 @@
 [
     {
+        "actions": [
+            2,
+            3,
+            1
+        ],
+        "blobforms": [],
         "clazzpath": "ringo.model.modul.ModulItem",
+        "default_group": null,
         "description": "",
         "display": "admin-menu",
         "gid": null,
@@ -12,7 +19,13 @@
         "uuid": "d1763c385bd64d7185ca7fba9b3de845"
     },
     {
+        "actions": [
+            64,
+            63
+        ],
+        "blobforms": [],
         "clazzpath": "ringo.model.modul.ActionItem",
+        "default_group": null,
         "description": "",
         "display": "hidden",
         "gid": null,
@@ -24,7 +37,18 @@
         "uuid": "fcb3f8f87cc340358e18c4017bf93f34"
     },
     {
+        "actions": [
+            65,
+            4,
+            8,
+            7,
+            66,
+            6,
+            5
+        ],
+        "blobforms": [],
         "clazzpath": "ringo.model.user.User",
+        "default_group": null,
         "description": "",
         "display": "admin-menu",
         "gid": null,
@@ -36,7 +60,18 @@
         "uuid": "70f24f2a8b63420e9afde6af43be45d2"
     },
     {
+        "actions": [
+            13,
+            68,
+            9,
+            12,
+            10,
+            11,
+            67
+        ],
+        "blobforms": [],
         "clazzpath": "ringo.model.user.Usergroup",
+        "default_group": null,
         "description": "",
         "display": "admin-menu",
         "gid": null,
@@ -48,7 +83,18 @@
         "uuid": "74af1cfbf3de4bceb5f2cb483381229e"
     },
     {
+        "actions": [
+            16,
+            70,
+            14,
+            15,
+            17,
+            69,
+            18
+        ],
+        "blobforms": [],
         "clazzpath": "ringo.model.user.Role",
+        "default_group": null,
         "description": "",
         "display": "admin-menu",
         "gid": null,
@@ -60,7 +106,16 @@
         "uuid": "c0138448b3964a5682411f57409e67f1"
     },
     {
+        "actions": [
+            20,
+            105,
+            21,
+            19,
+            104
+        ],
+        "blobforms": [],
         "clazzpath": "ringo.model.user.Profile",
+        "default_group": null,
         "description": "",
         "display": "admin-menu",
         "gid": null,
@@ -72,7 +127,18 @@
         "uuid": "7d99e6702cdc4a9c928c1eaa470e11b6"
     },
     {
+        "actions": [
+            95,
+            89,
+            92,
+            91,
+            90,
+            93,
+            94
+        ],
+        "blobforms": [],
         "clazzpath": "ringo.model.form.Form",
+        "default_group": null,
         "description": "",
         "display": "admin-menu",
         "gid": null,
@@ -84,7 +150,18 @@
         "uuid": "f5108e1ce27b4f229655d0ad35e843cb"
     },
     {
+        "actions": [
+            107,
+            111,
+            112,
+            106,
+            108,
+            109,
+            110
+        ],
+        "blobforms": [],
         "clazzpath": "plorma.model.task.Task",
+        "default_group": null,
         "description": "",
         "display": "header-menu",
         "gid": null,

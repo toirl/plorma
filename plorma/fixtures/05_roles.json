@@ -1,7 +1,7 @@
 [
     {
         "admin": true,
-        "description": null,
+        "description": "",
         "id": 1,
         "label": "Administration",
         "name": "admin",
@@ -13,7 +13,7 @@
     },
     {
         "admin": false,
-        "description": null,
+        "description": "",
         "id": 2,
         "label": "Users",
         "name": "user",
@@ -23,5 +23,33 @@
         ],
         "users": [],
         "uuid": "abbfbcabd04344c1983ba628baea6fde"
+    },
+    {
+        "admin": false,
+        "description": "",
+        "id": 3,
+        "label": "Developer",
+        "name": "developer",
+        "permissions": [
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112
+        ],
+        "users": [],
+        "uuid": "e9dd93b904eb48cf88a6f86a9dd663b9"
+    },
+    {
+        "admin": false,
+        "description": "",
+        "id": 4,
+        "label": "Product Owner",
+        "name": "productowner",
+        "permissions": [],
+        "users": [],
+        "uuid": "971aaa79dd6b4b3b93bb7d811f06d910"
     }
 ]
