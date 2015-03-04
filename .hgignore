@@ -10,3 +10,4 @@ syntax: glob
 syntax: regexp
 plorma.egg-info
 docs/_build
+data
