@@ -21,7 +21,10 @@
             20,
             21
         ],
-        "users": [],
+        "users": [
+            2,
+            3
+        ],
         "uuid": "abbfbcabd04344c1983ba628baea6fde"
     },
     {
@@ -39,7 +42,10 @@
             111,
             112
         ],
-        "users": [],
+        "users": [
+            2,
+            3
+        ],
         "uuid": "e9dd93b904eb48cf88a6f86a9dd663b9"
     },
     {
@@ -49,7 +55,9 @@
         "label": "Product Owner",
         "name": "productowner",
         "permissions": [],
-        "users": [],
+        "users": [
+            3
+        ],
         "uuid": "971aaa79dd6b4b3b93bb7d811f06d910"
     }
 ]
