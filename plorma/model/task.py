@@ -53,3 +53,13 @@ class Task(BaseItem, Owned, Base):
      * Trivial: Cosmetic problem like misspelled words or misaligned
        text which does not really cause problems.
     """
+
+    @property
+    def weight(self):
+        """Calculated value of the task based on the priority and
+        severity of the task. This value is used to order the tasks in
+        the overview. The priority of the task is weighted with a factor
+        1.5.
+        :returns: Integer value
+        """
+        return int(round((self.priority) * self.severity * 2.77))
