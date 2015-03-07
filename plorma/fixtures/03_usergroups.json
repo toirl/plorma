@@ -30,7 +30,8 @@
         "description": "",
         "id": 4,
         "members": [
-            2
+            2,
+            3
         ],
         "name": "dave",
         "roles": [],
