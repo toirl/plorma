@@ -3,7 +3,13 @@
         "columns": [
             {"name": "id", "label": "ID", "width": "50"},
             {"name": "name", "label": "Title"},
-            {"name": "priority", "label": "Priority", "width": "70"}
-        ]
+            {"name": "severity", "label": "Severity", "width": "70", "expand": true},
+            {"name": "priority", "label": "Priority", "width": "70", "expand": true},
+            {"name": "weight", "label": "Weigth", "width": "70"}
+        ],
+        "settings": {
+            "default-sort-field": "taskorder",
+            "default-sort-order": "desc"
+        }
     }
 }
