@@ -1,11 +1,10 @@
 {
     "overview": {
         "columns": [
-            {"name": "id", "label": "ID", "width": "50"},
             {"name": "name", "label": "Title"},
-            {"name": "severity", "label": "Severity", "width": "70", "expand": true},
-            {"name": "priority", "label": "Priority", "width": "70", "expand": true},
-            {"name": "weight", "label": "Weigth", "width": "70"}
+            {"name": "weight", "label": "Priority", "width": "70", "expand": true},
+            {"name": "assignee", "label": "Assignee", "width": "70", "expand": true},
+            {"name": "task_state", "label": "State", "width": "70", "expand": true}
         ],
         "settings": {
             "default-sort-field": "taskorder",

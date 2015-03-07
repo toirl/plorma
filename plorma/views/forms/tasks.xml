@@ -32,6 +32,26 @@
       </options>
       <renderer type="dropdown"/>
     </entity>
+    <entity id="resolution" name="resolution" label="Resolution" type="integer" required="true">
+      <options>
+        <option value="6">fixed</option>
+        <option value="5">works for me</option>
+        <option value="4">need more info</option>
+        <option value="3">won't fix</option>
+        <option value="2">duplicate</option>
+        <option value="1">invalid</option>
+        <option value="">not specified</option>
+      </options>
+      <renderer type="dropdown"/>
+    </entity>
+    <entity id="state" name="task_state_id" label="State" type="integer">
+      <renderer type="state" layout="simple"/>
+    </entity>
+    <entity id="assignee" name="assignee" label="Assignee" required="true">
+      <renderer type="dropdown"/>
+    </entity>
+    <entity id="nosy" name="nosy" label="Nosy">
+    </entity>
   </source>
   <form id="create" autocomplete="off" method="POST" action="" enctype="multipart/form-data">
     <field ref="roles"/>
@@ -63,17 +83,24 @@
       <col><field ref="name"/></col>
     </row>
     <row>
-      <col>
+      <col width="2">
         <if expr="'productowner' in $_roles" type="readonly">
           <field ref="priority"/>
         </if>
       </col>
-      <col><field ref="severity"/></col>
-    </row>
-    <row>
-      <col>
-        <field ref="description"/>
+      <col width="2"><field ref="severity"/></col>
+      <col width="2">
+        <text> </text>
       </col>
+      <col width="2"><field ref="state"/></col>
+      <if expr="$task_state_id == 3" type="readonly">
+      <col width="2"><field ref="assignee"/></col>
+      </if>
+      <if expr="$task_state_id == 4" type="readonly">
+      <col width="2">
+        <field ref="resolution"/>
+      </col>
+      </if>
     </row>
   </snippet>
 </configuration>

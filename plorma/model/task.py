@@ -1,12 +1,67 @@
 import sqlalchemy as sa
 from ringo.model import Base
 from ringo.model.base import BaseItem
+from ringo.model.statemachine import (
+        Statemachine, State,
+        null_handler as handler,
+        null_condition as condition
+)
 from ringo.model.mixins import (
-    Owned
+    Owned, StateMixin
+)
+
+# NM-Table to assign users for the nosy list of the task
+nm_task_users = sa.Table(
+    'nm_task_users', Base.metadata,
+    sa.Column('task_id', sa.Integer, sa.ForeignKey('tasks.id')),
+    sa.Column('user_id', sa.Integer, sa.ForeignKey('users.id'))
 )
 
 
-class Task(BaseItem, Owned, Base):
+class TaskStatemachine(Statemachine):
+    def setup(self):
+        s1 = State(self, 1, "New")
+        s2 = State(self, 2, "Open")
+        s3 = State(self, 3, "Assigned")
+        s4 = State(self, 4, "Resolved")
+        s5 = State(self, 5, "Verified")
+        s6 = State(self, 6, "Closed")
+        s7 = State(self, 2, "Reopen")
+        s1.add_transition(s2, "Verify task", handler, condition)
+        s1.add_transition(s4, "Resolve task", handler, condition)
+        s2.add_transition(s3, "Assign task", handler, condition)
+        s2.add_transition(s4, "Resolve task", handler, condition)
+        s7.add_transition(s4, "Resolve task", handler, condition)
+        s3.add_transition(s4, "Resolve task", handler, condition)
+        s4.add_transition(s5, "Verify solution", handler, condition)
+        s4.add_transition(s7, "Reopen task", handler, condition)
+        s5.add_transition(s7, "Reopen task", handler, condition)
+        s5.add_transition(s6, "Close task", handler, condition)
+        s6.add_transition(s7, "Reopen task", handler, condition)
+        return s1
+
+
+class TaskStateMixin(StateMixin):
+     # Mixin inherited from the StateMixin to add the Foobar
+     # state machine
+
+     # Attach the statemachines to an internal dictionary
+     _statemachines = {'task_state_id': TaskStatemachine}
+
+     # Configue a field in the model which saves the current
+     # state per state machine
+     task_state_id = sa.Column(sa.Integer, default=1)
+
+     # Optional. Create a property to access the statemachine
+     # like an attribute. This gets usefull if you want to access
+     # the state in overview lists.
+     @property
+     def task_state(self):
+         state = self.get_statemachine('task_state_id')
+         return state.get_state()
+
+
+class Task(BaseItem, TaskStateMixin, Owned, Base):
     """A task is a general container for all kind of tasks, defects,
     feature requests or any other issue in your product.
     """
@@ -53,6 +108,29 @@ class Task(BaseItem, Owned, Base):
      * Trivial: Cosmetic problem like misspelled words or misaligned
        text which does not really cause problems.
     """
+    resolution = sa.Column('resolution', sa.Integer)
+    """
+    Resultion describes the solution someone has choosen to resolve a task:
+
+     * Done: Task is done and is ready for QA.
+     * Works for me: Can not reproduce the defect or issue. Everything
+       works as expected.
+     * Need more info: It is unclear what exactly to do here. More
+       information is needed before the work can continue here.
+     * Won't do: Task will not be resolved for any reason.
+     * Duplicate: Task is duplicate of another task.
+     * Invalid: Task is invalid and will not be done for any other
+       reason the the formed named resolutions.
+    """
+    assignee_id = sa.Column('assignee_id',
+                            sa.Integer, sa.ForeignKey("users.id"))
+    """Id of the user this task is assigned to"""
+    assignee = sa.orm.relationship("User",
+                                   primaryjoin="User.id==Task.assignee_id")
+    """Id of the user this task is assigned to """
+    nosy = sa.orm.relationship("User", secondary="nm_task_users")
+    """List of users who are involved in some way into this task. All
+    users in the nosylist will be notified on updated in the task."""
 
     @property
     def weight(self):

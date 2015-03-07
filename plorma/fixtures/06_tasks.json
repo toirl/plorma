@@ -8,6 +8,7 @@
         "owner": 3,
         "priority": 6,
         "severity": 6,
+        "task_state_id": 1,
         "uid": 3,
         "uuid": "6da4553a4b4f40cd87716b5ee95564d5"
     },
@@ -20,6 +21,7 @@
         "owner": 3,
         "priority": 3,
         "severity": 4,
+        "task_state_id": 2,
         "uid": 3,
         "uuid": "6dedee48cd334dd3ba54bde8ae74b737"
     },
@@ -32,6 +34,7 @@
         "owner": 3,
         "priority": 5,
         "severity": 2,
+        "task_state_id": 4,
         "uid": 3,
         "uuid": "e8cff2046cee43daaba65bcfc0b5ea25"
     }
