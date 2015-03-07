@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <configuration>
   <source>
+    <entity id="roles" name="_roles">
+      <renderer type="hidden"/>
+    </entity>
     <entity id="name" name="name" label="Name" type="string" required="true"/>
     <entity id="description" name="description" label="Description" type="string">
       <renderer type="textarea" rows="6"/>
@@ -31,12 +34,15 @@
     </entity>
   </source>
   <form id="create" autocomplete="off" method="POST" action="" enctype="multipart/form-data">
+    <field ref="roles"/>
     <snippet ref="create_snippet"/>
   </form>
   <form id="update" autocomplete="off" method="POST" action="" enctype="multipart/form-data">
+    <field ref="roles"/>
     <snippet ref="read_snippet"/>
   </form>
   <form id="read" readonly="true">
+    <field ref="roles"/>
     <snippet ref="read_snippet"/>
   </form>
 
@@ -58,7 +64,7 @@
     </row>
     <row>
       <col>
-        <if expr="False" type="readonly">
+        <if expr="'productowner' in $_roles" type="readonly">
           <field ref="priority"/>
         </if>
       </col>
@@ -66,9 +72,7 @@
     </row>
     <row>
       <col>
-        <if expr="False" type="readonly">
-          <field ref="description"/>
-        </if>
+        <field ref="description"/>
       </col>
     </row>
   </snippet>
