@@ -1,0 +1,38 @@
+[
+    {
+        "description": "Fix Foo description",
+        "gid": 2,
+        "group": 2,
+        "id": 1,
+        "name": "Fix Foo",
+        "owner": 3,
+        "priority": 6,
+        "severity": 6,
+        "uid": 3,
+        "uuid": "6da4553a4b4f40cd87716b5ee95564d5"
+    },
+    {
+        "description": "Build bar description",
+        "gid": 2,
+        "group": 2,
+        "id": 2,
+        "name": "Build Bar",
+        "owner": 3,
+        "priority": 3,
+        "severity": 4,
+        "uid": 3,
+        "uuid": "6dedee48cd334dd3ba54bde8ae74b737"
+    },
+    {
+        "description": "Enhance Baz description",
+        "gid": 2,
+        "group": 2,
+        "id": 3,
+        "name": "Enhance Baz",
+        "owner": 3,
+        "priority": 5,
+        "severity": 2,
+        "uid": 3,
+        "uuid": "e8cff2046cee43daaba65bcfc0b5ea25"
+    }
+]
