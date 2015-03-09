@@ -19,8 +19,8 @@ Installation
 ============
 You can install plorma currently only from source::
 
-        hg clone https://bitbucket/ti/plorma2
-        cd plorma2
+        hg clone https://bitbucket/ti/plorma
+        cd plorma
         python setup.py develop
         plorma-admin db init
         plorma-admin fixtures load
