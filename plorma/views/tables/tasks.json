@@ -8,7 +8,8 @@
         ],
         "settings": {
             "default-sort-field": "taskorder",
-            "default-sort-order": "desc"
+            "default-sort-order": "desc",
+            "pagination": true
         }
     }
 }
