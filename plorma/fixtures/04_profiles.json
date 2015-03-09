@@ -1,0 +1,53 @@
+[
+    {
+        "address": null,
+        "birthday": null,
+        "email": "mail@example.com",
+        "first_name": "Firstname",
+        "gender": null,
+        "gid": null,
+        "group": null,
+        "id": 1,
+        "last_name": "Lastname",
+        "owner": 1,
+        "phone": null,
+        "uid": 1,
+        "user": 1,
+        "uuid": "f355e8336b97436e9e9773e934eb6f6d",
+        "web": null
+    },
+    {
+        "address": "",
+        "birthday": null,
+        "email": "dave@example.com",
+        "first_name": "Dave",
+        "gender": null,
+        "gid": 3,
+        "group": 3,
+        "id": 2,
+        "last_name": "Developer",
+        "owner": 2,
+        "phone": "",
+        "uid": 2,
+        "user": 2,
+        "uuid": "550025641ecb48fa89ecb9ca6f7ff49b",
+        "web": ""
+    },
+    {
+        "address": "",
+        "birthday": null,
+        "email": "peter@example.com",
+        "first_name": "Peter",
+        "gender": null,
+        "gid": 3,
+        "group": 3,
+        "id": 3,
+        "last_name": "Product Owner",
+        "owner": 3,
+        "phone": "",
+        "uid": 3,
+        "user": 3,
+        "uuid": "8cd317a69ea444ee957a5fb48c4baaf8",
+        "web": ""
+    }
+]

@@ -1,0 +1,49 @@
+[
+    {
+        "description": "",
+        "id": 1,
+        "members": [],
+        "name": "admins",
+        "roles": [],
+        "uuid": "a81fc589dbb14afaaf731e25f78a560e"
+    },
+    {
+        "description": "",
+        "id": 2,
+        "members": [
+            2,
+            3
+        ],
+        "name": "users",
+        "roles": [],
+        "uuid": "25311fc258524725b34da917094a0292"
+    },
+    {
+        "description": "",
+        "id": 3,
+        "members": [],
+        "name": "admin",
+        "roles": [],
+        "uuid": "44db25fd30484560a1ec2c3544c01af4"
+    },
+    {
+        "description": "",
+        "id": 4,
+        "members": [
+            2
+        ],
+        "name": "dave",
+        "roles": [],
+        "uuid": "09764a16d4fd4f9fb62391c3cefb48ca"
+    },
+    {
+        "description": "",
+        "id": 5,
+        "members": [
+            3
+        ],
+        "name": "peter",
+        "roles": [],
+        "uuid": "afdc67b17a2342c1aa55c94e37c54373"
+    }
+]

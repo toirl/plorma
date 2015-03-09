@@ -1,0 +1,68 @@
+[
+    {
+        "admin": true,
+        "description": "",
+        "id": 1,
+        "label": "Administration",
+        "name": "admin",
+        "permissions": [],
+        "users": [
+            1
+        ],
+        "uuid": "38db659bde2843c6b3a052010d40c633"
+    },
+    {
+        "admin": false,
+        "description": "",
+        "id": 2,
+        "label": "Users",
+        "name": "user",
+        "permissions": [
+            20,
+            21
+        ],
+        "users": [
+            2,
+            3
+        ],
+        "uuid": "abbfbcabd04344c1983ba628baea6fde"
+    },
+    {
+        "admin": false,
+        "description": "",
+        "id": 3,
+        "label": "Developer",
+        "name": "developer",
+        "permissions": [
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117
+        ],
+        "users": [
+            2,
+            3
+        ],
+        "uuid": "e9dd93b904eb48cf88a6f86a9dd663b9"
+    },
+    {
+        "admin": false,
+        "description": "",
+        "id": 4,
+        "label": "Product Owner",
+        "name": "productowner",
+        "permissions": [],
+        "users": [
+            3
+        ],
+        "uuid": "971aaa79dd6b4b3b93bb7d811f06d910"
+    }
+]

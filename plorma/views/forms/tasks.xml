@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration>
+  <source>
+    <entity id="roles" name="_roles">
+      <renderer type="hidden"/>
+    </entity>
+    <entity id="name" name="name" label="Name" type="string" required="true"/>
+    <entity id="description" name="description" label="Description" type="string">
+      <renderer type="textarea" rows="6"/>
+    </entity>
+    <entity id="priority" name="priority" label="Priority" type="integer">
+      <options>
+        <option value="6">immidiate</option>
+        <option value="5">very high</option>
+        <option value="4">high</option>
+        <option value="3">normal</option>
+        <option value="2">low</option>
+        <option value="1">very low</option>
+        <option value="">not specified</option>
+      </options>
+      <renderer type="dropdown"/>
+    </entity>
+    <entity id="severity" name="severity" label="Severity" type="integer">
+      <options>
+        <option value="6">blocker</option>
+        <option value="5">critical</option>
+        <option value="4">major</option>
+        <option value="3">normal</option>
+        <option value="2">minor</option>
+        <option value="1">trivial</option>
+        <option value="">not specified</option>
+      </options>
+      <renderer type="dropdown"/>
+    </entity>
+    <entity id="resolution" name="resolution" label="Resolution" type="integer" required="true">
+      <options>
+        <option value="6">fixed</option>
+        <option value="5">works for me</option>
+        <option value="4">need more info</option>
+        <option value="3">won't fix</option>
+        <option value="2">duplicate</option>
+        <option value="1">invalid</option>
+        <option value="">not specified</option>
+      </options>
+      <renderer type="dropdown"/>
+    </entity>
+    <entity id="state" name="task_state_id" label="State" type="integer">
+      <renderer type="state" layout="simple"/>
+    </entity>
+    <entity id="assignee" name="assignee" label="Assignee" required="true">
+      <renderer type="dropdown"/>
+    </entity>
+    <entity id="nosy" name="nosy" label="Nosy">
+    </entity>
+    <entity id="comments" name="comments" label="Comments">
+      <renderer type="comment"/>
+    </entity>
+  </source>
+  <form id="create" autocomplete="off" method="POST" action="" enctype="multipart/form-data">
+    <field ref="roles"/>
+    <snippet ref="create_snippet"/>
+  </form>
+  <form id="update" autocomplete="off" method="POST" action="" enctype="multipart/form-data">
+    <field ref="roles"/>
+    <snippet ref="read_snippet"/>
+  </form>
+  <form id="read" readonly="true">
+    <field ref="roles"/>
+    <snippet ref="read_snippet"/>
+  </form>
+
+  <snippet id="create_snippet">
+    <row>
+      <col><field ref="name"/></col>
+    </row>
+    <row>
+      <col><field ref="severity"/></col>
+    </row>
+    <row>
+      <col><field ref="comments"/></col>
+    </row>
+  </snippet>
+
+  <snippet id="read_snippet">
+    <row>
+      <col><field ref="name"/></col>
+    </row>
+    <row>
+      <col width="2">
+        <if expr="'productowner' in $_roles" type="readonly">
+          <field ref="priority"/>
+        </if>
+      </col>
+      <col width="2"><field ref="severity"/></col>
+      <col width="2">
+        <text> </text>
+      </col>
+      <col width="2"><field ref="state"/></col>
+      <if expr="$task_state_id == 3" type="readonly">
+      <col width="2"><field ref="assignee"/></col>
+      </if>
+      <if expr="$task_state_id == 4" type="readonly">
+      <col width="2">
+        <field ref="resolution"/>
+      </col>
+      </if>
+    </row>
+    <row>
+      <col><field ref="comments"/></col>
+    </row>
+  </snippet>
+</configuration>

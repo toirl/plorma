@@ -1,0 +1,15 @@
+{
+    "overview": {
+        "columns": [
+            {"name": "name", "label": "Title"},
+            {"name": "weight", "label": "Priority", "width": "70", "expand": true},
+            {"name": "assignee", "label": "Assignee", "width": "70", "expand": true},
+            {"name": "task_state", "label": "State", "width": "70", "expand": true}
+        ],
+        "settings": {
+            "default-sort-field": "taskorder",
+            "default-sort-order": "desc",
+            "pagination": true
+        }
+    }
+}
