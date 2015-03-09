@@ -1,5 +1,6 @@
 plorma README
-==================
+=============
+Plorma is a webapplication to **pl**an, **or**ganise and **ma**nage tasks. While it tries to be as generic as possible it can be esspecially used as a simple issue or bug tracker in software development.
 
 Getting Started
 ---------------
@@ -10,5 +11,14 @@ Getting Started
 
 - $venv/bin/plorma-admin db init
 
+- $venv/bin/plorma-admin fixtures load
+
 - $venv/bin/pserve development.ini
+
+Testuser
+--------
+
+- Admin: Login: admin Passwort: secret
+- Product owner: Login: peter Passwort: peter
+- Developer: Login: dave Passwort: dave
 
