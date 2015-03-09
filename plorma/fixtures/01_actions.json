@@ -657,7 +657,9 @@
         "modul": 1001,
         "name": "Read",
         "permission": "",
-        "roles": [],
+        "roles": [
+            3
+        ],
         "url": "read/{id}",
         "uuid": "0f217a9244c34fea82766811608e5214"
     },
@@ -671,7 +673,9 @@
         "modul": 1001,
         "name": "Create",
         "permission": "",
-        "roles": [],
+        "roles": [
+            3
+        ],
         "url": "create",
         "uuid": "cf42a76a6d954ad5ba371a512b9b0ce8"
     },
@@ -685,7 +689,9 @@
         "modul": 1001,
         "name": "List",
         "permission": "",
-        "roles": [],
+        "roles": [
+            3
+        ],
         "url": "list",
         "uuid": "f470394f18c541369b115ac4ee38d058"
     },
@@ -699,7 +705,9 @@
         "modul": 1001,
         "name": "Update",
         "permission": "",
-        "roles": [],
+        "roles": [
+            3
+        ],
         "url": "update/{id}",
         "uuid": "0bc7caae5ddb457aac35cebe3c50cc06"
     },
@@ -713,7 +721,9 @@
         "modul": 1001,
         "name": "Delete",
         "permission": "",
-        "roles": [],
+        "roles": [
+            3
+        ],
         "url": "delete/{id}",
         "uuid": "97244efda0fb413aa2cfded88dcad0c2"
     }
