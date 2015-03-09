@@ -1,5 +1,11 @@
 plorma README
 ==================
+Plorma is a webapplication to **pl**an, **or**ganise and **ma**nage tasks.
+While it tries to be as generic as possible it can be esspecially used as a
+simple issue or bug tracker in software development.
+
+**Warning**: Plorma is in a very early development stage. Do not use it in
+productional environments!
 
 Getting Started
 ---------------
