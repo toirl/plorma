@@ -171,5 +171,26 @@
         "name": "tasks",
         "str_repr": "%s|name",
         "uuid": "9e6050dec2ab11e4906f0019e084be15"
+    },
+    {
+        "actions": [
+            116,
+            113,
+            117,
+            114,
+            115
+        ],
+        "blobforms": [],
+        "clazzpath": "ringo_comment.model.Comment",
+        "default_group": null,
+        "description": "",
+        "display": "hidden",
+        "gid": null,
+        "id": 1001,
+        "label": "comments",
+        "label_plural": "comments",
+        "name": "comments",
+        "str_repr": "%s|id",
+        "uuid": "7ef78644682b4cc285df1661d2fa7437"
     }
 ]
