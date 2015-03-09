@@ -9,5 +9,5 @@ syntax: glob
 # switch to regexp syntax.
 syntax: regexp
 plorma.egg-info
-docs/_build
+docs/build
 data
