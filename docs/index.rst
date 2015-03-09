@@ -10,6 +10,7 @@ Welcome to Plorma's documentation!
    :maxdepth: 2
 
    general
+   userguide/task
 
 
 
