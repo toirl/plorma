@@ -15,7 +15,8 @@ version_increment = '0.1'
 # version_increment = '0.0.1'
 
 requires = [
-    'ringo'
+    'ringo',
+    'ringo_comment'
 ]
 
 setup(name='plorma',

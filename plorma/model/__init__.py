@@ -4,7 +4,7 @@ from ringo.lib import helpers
 
 # Define enabled ringo extenstion here. Extensions will be initialised
 # on application startup.
-#extensions.append()
+extensions.append("ringo_comment")
 
 # Dynamically import all model files here to have the model available in
 # the sqlalchemy metadata. This is needed for the schema migration with

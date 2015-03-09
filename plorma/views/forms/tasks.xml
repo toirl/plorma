@@ -52,6 +52,9 @@
     </entity>
     <entity id="nosy" name="nosy" label="Nosy">
     </entity>
+    <entity id="comments" name="comments" label="Comments">
+      <renderer type="comment"/>
+    </entity>
   </source>
   <form id="create" autocomplete="off" method="POST" action="" enctype="multipart/form-data">
     <field ref="roles"/>
@@ -74,7 +77,7 @@
       <col><field ref="severity"/></col>
     </row>
     <row>
-      <col><field ref="description"/></col>
+      <col><field ref="comments"/></col>
     </row>
   </snippet>
 
@@ -101,6 +104,9 @@
         <field ref="resolution"/>
       </col>
       </if>
+    </row>
+    <row>
+      <col><field ref="comments"/></col>
     </row>
   </snippet>
 </configuration>
