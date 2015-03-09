@@ -4,7 +4,7 @@ General
 
 What is Plorma
 ==============
-Plorma is a webapplication to **pl**an, **or**ganise and **ma**nage tasks.
+Plorma is a webapplication to plan, organise and manage tasks.
 While it tries to be as generic as possible it can be esspecially used as a
 simple issue or bug tracker in software development.
 
