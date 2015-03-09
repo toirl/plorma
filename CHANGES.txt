@@ -1,7 +1,0 @@
-0.1
----
-- Added basic task modul
-
-0.0
----
--  Initial version
