@@ -1,13 +1,9 @@
-# German translations for plorma.
-# Copyright (C) 2015 ORGANIZATION
-# This file is distributed under the same license as the plorma project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
-#
+
 msgid ""
 msgstr ""
 "Project-Id-Version: plorma 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-04-29 21:35+0200\n"
+"POT-Creation-Date: 2015-04-29 23:08+0200\n"
 "PO-Revision-Date: 2015-04-29 21:36+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: de <LL@li.org>\n"
@@ -26,7 +22,7 @@ msgid "Documentation"
 msgstr ""
 
 #: plorma/templates/footer.mako:29
-msgid ""
+msgid "Show version information"
 msgstr ""
 
 #: plorma/templates/index.mako:6
@@ -73,105 +69,161 @@ msgstr "Lösung"
 
 #. Label for task_state_id field in form config
 #. Label for task_state column in overview table config
-#: plorma/views/forms/tasks.xml:7 plorma/views/tables/tasks.json:5
+#: plorma/views/forms/tasks.xml:7 plorma/views/tables/tasks.json:6
 msgid "State"
 msgstr "Status"
 
 #. Label for assignee field in form config
 #. Label for assignee column in overview table config
-#: plorma/views/forms/tasks.xml:8 plorma/views/tables/tasks.json:4
+#: plorma/views/forms/tasks.xml:8 plorma/views/tables/tasks.json:5
 msgid "Assignee"
 msgstr "Beauftragter"
 
+#. Label for estimate field in form config
+#. Label for estimate column in overview table config
+#: plorma/views/forms/tasks.xml:9 plorma/views/tables/tasks.json:4
+msgid "Estimate"
+msgstr "Schätzung"
+
 #. Label for nosy field in form config
-#: plorma/views/forms/tasks.xml:9
+#: plorma/views/forms/tasks.xml:10
 msgid "Nosy"
 msgstr "Neugiering"
 
 #. Label for comments field in form config
-#: plorma/views/forms/tasks.xml:10
+#: plorma/views/forms/tasks.xml:11
 msgid "Comments"
 msgstr "Kommentare"
 
-#: plorma/views/forms/tasks.xml:11
+#: plorma/views/forms/tasks.xml:12
+msgid ""
+"The estimate indicates how much work remains to be done until the task is"
+" completely resolved."
+msgstr ""
+
+#: plorma/views/forms/tasks.xml:13
 msgid " "
 msgstr ""
 
-#: plorma/views/forms/tasks.xml:12
+#: plorma/views/forms/tasks.xml:14
 msgid "immidiate"
 msgstr "unverzüglich"
 
-#: plorma/views/forms/tasks.xml:13
+#: plorma/views/forms/tasks.xml:15
 msgid "very high"
 msgstr "sehr hoch"
 
-#: plorma/views/forms/tasks.xml:14
+#: plorma/views/forms/tasks.xml:16
 msgid "high"
 msgstr "hoch"
 
-#: plorma/views/forms/tasks.xml:15 plorma/views/forms/tasks.xml:22
+#: plorma/views/forms/tasks.xml:17 plorma/views/forms/tasks.xml:24
 msgid "normal"
 msgstr "normal"
 
-#: plorma/views/forms/tasks.xml:16
+#: plorma/views/forms/tasks.xml:18
 msgid "low"
 msgstr "niedrig"
 
-#: plorma/views/forms/tasks.xml:17
+#: plorma/views/forms/tasks.xml:19
 msgid "very low"
 msgstr "sehr niedrig"
 
-#: plorma/views/forms/tasks.xml:18 plorma/views/forms/tasks.xml:25
-#: plorma/views/forms/tasks.xml:32
+#: plorma/views/forms/tasks.xml:20 plorma/views/forms/tasks.xml:27
+#: plorma/views/forms/tasks.xml:34
 msgid "not specified"
 msgstr "nicht angegeben"
 
-#: plorma/views/forms/tasks.xml:19
+#: plorma/views/forms/tasks.xml:21
 msgid "blocker"
 msgstr "blockiert"
 
-#: plorma/views/forms/tasks.xml:20
+#: plorma/views/forms/tasks.xml:22
 msgid "critical"
 msgstr "kritisch"
 
-#: plorma/views/forms/tasks.xml:21
+#: plorma/views/forms/tasks.xml:23
 msgid "major"
 msgstr "wesentlich"
 
-#: plorma/views/forms/tasks.xml:23
+#: plorma/views/forms/tasks.xml:25
 msgid "minor"
 msgstr "geringfügig"
 
-#: plorma/views/forms/tasks.xml:24
+#: plorma/views/forms/tasks.xml:26
 msgid "trivial"
 msgstr "unbedeutend"
 
-#: plorma/views/forms/tasks.xml:26
+#: plorma/views/forms/tasks.xml:28
 msgid "fixed"
 msgstr "erledigt"
 
-#: plorma/views/forms/tasks.xml:27
+#: plorma/views/forms/tasks.xml:29
 msgid "works for me"
 msgstr "funktioniert für mich"
 
-#: plorma/views/forms/tasks.xml:28
+#: plorma/views/forms/tasks.xml:30
 msgid "need more info"
 msgstr "brauche informationen"
 
-#: plorma/views/forms/tasks.xml:29
+#: plorma/views/forms/tasks.xml:31
 msgid "won't fix"
 msgstr "wird nicht erledigt"
 
-#: plorma/views/forms/tasks.xml:30
+#: plorma/views/forms/tasks.xml:32
 msgid "duplicate"
 msgstr "doppelt"
 
-#: plorma/views/forms/tasks.xml:31
+#: plorma/views/forms/tasks.xml:33
 msgid "invalid"
 msgstr "ungültig"
+
+#: plorma/views/forms/tasks.xml:35
+msgid "0"
+msgstr ""
+
+#: plorma/views/forms/tasks.xml:36
+msgid "1"
+msgstr ""
+
+#: plorma/views/forms/tasks.xml:37
+msgid "2"
+msgstr ""
+
+#: plorma/views/forms/tasks.xml:38
+msgid "3"
+msgstr ""
+
+#: plorma/views/forms/tasks.xml:39
+msgid "5"
+msgstr ""
+
+#: plorma/views/forms/tasks.xml:40
+msgid "8"
+msgstr ""
+
+#: plorma/views/forms/tasks.xml:41
+msgid "13"
+msgstr ""
+
+#: plorma/views/forms/tasks.xml:42
+msgid "20"
+msgstr ""
+
+#: plorma/views/forms/tasks.xml:43
+msgid "40"
+msgstr ""
+
+#: plorma/views/forms/tasks.xml:44
+msgid "100"
+msgstr ""
+
+#: plorma/views/forms/tasks.xml:45
+#| msgid "Estimate"
+msgid "inestimable"
+msgstr "unklar/nicht schätzbar"
 
 #. Label for name column in overview table config
 #: plorma/views/tables/tasks.json:2
 msgid "Title"
 msgstr "Titel"
-
