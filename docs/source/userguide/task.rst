@@ -14,8 +14,8 @@ out. This is because the priority can only be set by the product owner.
 The :ref:`task_states`, :ref:`task_resolution` and the *Assigne* can be set in
 (3). Some of the fields will become a required field based on the current
 state and selections. So the *Assignee* field will become a required field
-when switching into the assinged state.  The *Resolution* field and will
-become a required field if the task will be reolved.
+when switching into the assigned state.  The *Resolution* field and will
+become a required field if the task will be resolved.
 
 Finally users can add comments (4) to give further information, or document
 their proceed. Comments are readable by all users.
@@ -37,7 +37,7 @@ States
         into the task nor it has been checked to be a valid.
 
 **Open**
-        The tasks has been checked to be valid. Hower the task has not been
+        The tasks has been checked to be valid. However the task has not been
         assigned to someone yet. But based on its :ref:`task_priority` it is
         queued to be worked on.
 
@@ -54,11 +54,11 @@ States
 
 **Closed**
         The final state of a task. The task has be resolved the QA has
-        approved the resolution. The resolution has been comunicated to all
+        approved the resolution. The resolution has been communicated to all
         relevand parties.
 
 **Reopen**
-        Indicates that an issue has been reopend for some reason. This my be a
+        Indicates that an issue has been reopened for some reason. This my be a
         failed QA or later upcoming issues with the solution.
 
 .. _task_resolution:
@@ -77,15 +77,25 @@ Resolutions
 **Duplicate**
         Task is duplicate of another task.
 **Invalid**
-        Task is invalid and will not be done for any other reason the the
+        Task is invalid and will not be done for any other reason the
         formed named resolutions.
 
 .. _task_priority:
 
 Prioritization of the tasks
 ===========================
-The prioritization of the task is based on its Priority (think of importance) and
-its severity.
+The prioritization of the task is calculated based on its Priority (think of
+importance) and its severity. The following formula shows how the value is
+basically calculated.
+
+.. math::
+
+        priority * (severity * 2.77)
+
+In Plorma the calculated value is called the *Taskweight*. The severity is
+weighted and has more influence in the Taskweight than the priority. The
+Taskweight is used in the Taskoverview are prioritization criteria.
+
 
 .. note:: 
         The defintions of the priority and the severity is shameless taken

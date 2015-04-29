@@ -1,0 +1,177 @@
+# Translations template for plorma.
+# Copyright (C) 2015 ORGANIZATION
+# This file is distributed under the same license as the plorma project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: plorma 0.1\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2015-04-29 21:35+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 1.3\n"
+
+#: plorma/templates/footer.mako:7
+msgid "Administration"
+msgstr ""
+
+#: plorma/templates/footer.mako:20
+msgid "Documentation"
+msgstr ""
+
+#: plorma/templates/footer.mako:29
+msgid "Show version information"
+msgstr ""
+
+#: plorma/templates/index.mako:6
+msgid "Welcome to ${app_title}!"
+msgstr ""
+
+#: plorma/templates/index.mako:10
+msgid "Login in the application"
+msgstr ""
+
+#: plorma/templates/index.mako:10
+msgid "Login"
+msgstr ""
+
+#: plorma/templates/index.mako:12
+msgid "Home"
+msgstr ""
+
+#. Label for name field in form config
+#: plorma/views/forms/tasks.xml:2
+msgid "Name"
+msgstr ""
+
+#. Label for description field in form config
+#: plorma/views/forms/tasks.xml:3
+msgid "Description"
+msgstr ""
+
+#. Label for priority field in form config
+#. Label for weight column in overview table config
+#: plorma/views/forms/tasks.xml:4 plorma/views/tables/tasks.json:3
+msgid "Priority"
+msgstr ""
+
+#. Label for severity field in form config
+#: plorma/views/forms/tasks.xml:5
+msgid "Severity"
+msgstr ""
+
+#. Label for resolution field in form config
+#: plorma/views/forms/tasks.xml:6
+msgid "Resolution"
+msgstr ""
+
+#. Label for task_state_id field in form config
+#. Label for task_state column in overview table config
+#: plorma/views/forms/tasks.xml:7 plorma/views/tables/tasks.json:5
+msgid "State"
+msgstr ""
+
+#. Label for assignee field in form config
+#. Label for assignee column in overview table config
+#: plorma/views/forms/tasks.xml:8 plorma/views/tables/tasks.json:4
+msgid "Assignee"
+msgstr ""
+
+#. Label for nosy field in form config
+#: plorma/views/forms/tasks.xml:9
+msgid "Nosy"
+msgstr ""
+
+#. Label for comments field in form config
+#: plorma/views/forms/tasks.xml:10
+msgid "Comments"
+msgstr ""
+
+#: plorma/views/forms/tasks.xml:11
+msgid " "
+msgstr ""
+
+#: plorma/views/forms/tasks.xml:12
+msgid "immidiate"
+msgstr ""
+
+#: plorma/views/forms/tasks.xml:13
+msgid "very high"
+msgstr ""
+
+#: plorma/views/forms/tasks.xml:14
+msgid "high"
+msgstr ""
+
+#: plorma/views/forms/tasks.xml:15 plorma/views/forms/tasks.xml:22
+msgid "normal"
+msgstr ""
+
+#: plorma/views/forms/tasks.xml:16
+msgid "low"
+msgstr ""
+
+#: plorma/views/forms/tasks.xml:17
+msgid "very low"
+msgstr ""
+
+#: plorma/views/forms/tasks.xml:18 plorma/views/forms/tasks.xml:25
+#: plorma/views/forms/tasks.xml:32
+msgid "not specified"
+msgstr ""
+
+#: plorma/views/forms/tasks.xml:19
+msgid "blocker"
+msgstr ""
+
+#: plorma/views/forms/tasks.xml:20
+msgid "critical"
+msgstr ""
+
+#: plorma/views/forms/tasks.xml:21
+msgid "major"
+msgstr ""
+
+#: plorma/views/forms/tasks.xml:23
+msgid "minor"
+msgstr ""
+
+#: plorma/views/forms/tasks.xml:24
+msgid "trivial"
+msgstr ""
+
+#: plorma/views/forms/tasks.xml:26
+msgid "fixed"
+msgstr ""
+
+#: plorma/views/forms/tasks.xml:27
+msgid "works for me"
+msgstr ""
+
+#: plorma/views/forms/tasks.xml:28
+msgid "need more info"
+msgstr ""
+
+#: plorma/views/forms/tasks.xml:29
+msgid "won't fix"
+msgstr ""
+
+#: plorma/views/forms/tasks.xml:30
+msgid "duplicate"
+msgstr ""
+
+#: plorma/views/forms/tasks.xml:31
+msgid "invalid"
+msgstr ""
+
+#. Label for name column in overview table config
+#: plorma/views/tables/tasks.json:2
+msgid "Title"
+msgstr ""
+

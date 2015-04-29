@@ -135,10 +135,10 @@ class Task(BaseItem, Commented, TaskStateMixin, Owned, Base):
 
     @property
     def weight(self):
-        """Calculated value of the task based on the priority and
-        severity of the task. This value is used to order the tasks in
-        the overview. The priority of the task is weighted with a factor
-        1.5.
+        """Calculated weight of the task based on the priority and
+        severity of the task. This value is used to priorize the tasks
+        in the overview. The priority of the task is weighted with a
+        factor 2.77.
         :returns: Integer value
         """
         return int(round((self.priority) * self.severity * 2.77))
