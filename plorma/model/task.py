@@ -18,6 +18,17 @@ nm_task_users = sa.Table(
     sa.Column('user_id', sa.Integer, sa.ForeignKey('users.id'))
 )
 
+def close_handler(task, transition):
+    # When the task is finally closed than set remaining estimate to 0
+    task.estimate = 0
+    return task
+
+def reopen_handler(task, transition):
+    # The QA fails. There will be some work to be done. Enforce the
+    # developer to set a new estimate by setting the current estimation
+    # to unknown.
+    task.estimate = None
+    return task
 
 class TaskStatemachine(Statemachine):
     def setup(self):
@@ -35,10 +46,10 @@ class TaskStatemachine(Statemachine):
         s7.add_transition(s4, "Resolve task", handler, condition)
         s3.add_transition(s4, "Resolve task", handler, condition)
         s4.add_transition(s5, "Verify solution", handler, condition)
-        s4.add_transition(s7, "Reopen task", handler, condition)
-        s5.add_transition(s7, "Reopen task", handler, condition)
-        s5.add_transition(s6, "Close task", handler, condition)
-        s6.add_transition(s7, "Reopen task", handler, condition)
+        s4.add_transition(s7, "Reopen task", reopen_handler, condition)
+        s5.add_transition(s7, "Reopen task", reopen_handler, condition)
+        s5.add_transition(s6, "Close task", close_handler, condition)
+        s6.add_transition(s7, "Reopen task", reopen_handler, condition)
         return s1
 
 
