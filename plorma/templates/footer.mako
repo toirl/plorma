@@ -16,14 +16,14 @@
     </div>
     <div class="col-sd-6">
       <ul class="list-inline pull-right">
+        <li>
+        <a href="https://plorma2.readthedocs.org/en/latest" target="_blank">${_('Documentation')}</a>
+        </li>
         ##<li>
         ##  <a href="${request.route_path('about')}">${_('About')}</a>
         ##</li>
         ##<li>
         ##  <a href="${request.route_path('contact')}">${_('Contact')}</a>
-        ##</li>
-        ##<li>
-        ##  <a href="${request.static_path('%s:static/doc/html/index.html' % h.get_app_name())}" target="_blank">${_('Documentation')}</a>
         ##</li>
         <li>
           <a href="${request.route_path('version')}" title="${_('Show version information')}">${h.get_app_title()} ver. ${h.get_app_version()}</a>
