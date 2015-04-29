@@ -83,16 +83,16 @@
 
   <snippet id="read_snippet">
     <row>
-      <col><field ref="name"/></col>
-    </row>
-    <row>
+      <col width="8"><field ref="name"/></col>
       <col width="2">
         <if expr="'productowner' in $_roles" type="readonly">
           <field ref="priority"/>
         </if>
       </col>
       <col width="2"><field ref="severity"/></col>
-      <col width="2">
+    </row>
+    <row>
+      <col width="6">
         <text> </text>
       </col>
       <col width="2"><field ref="state"/></col>
