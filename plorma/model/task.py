@@ -32,24 +32,27 @@ def reopen_handler(task, transition):
 
 class TaskStatemachine(Statemachine):
     def setup(self):
-        s1 = State(self, 1, "New")
-        s2 = State(self, 2, "Open")
-        s3 = State(self, 3, "Assigned")
-        s4 = State(self, 4, "Resolved")
-        s5 = State(self, 5, "Verified")
-        s6 = State(self, 6, "Closed")
-        s7 = State(self, 2, "Reopen")
-        s1.add_transition(s2, "Verify task", handler, condition)
-        s1.add_transition(s4, "Resolve task", handler, condition)
-        s2.add_transition(s3, "Assign task", handler, condition)
-        s2.add_transition(s4, "Resolve task", handler, condition)
-        s7.add_transition(s4, "Resolve task", handler, condition)
-        s3.add_transition(s4, "Resolve task", handler, condition)
-        s4.add_transition(s5, "Verify solution", handler, condition)
-        s4.add_transition(s7, "Reopen task", reopen_handler, condition)
-        s5.add_transition(s7, "Reopen task", reopen_handler, condition)
-        s5.add_transition(s6, "Close task", close_handler, condition)
-        s6.add_transition(s7, "Reopen task", reopen_handler, condition)
+        # Dummy translation method. Used to mark strings as
+        # translateable for gettext.
+        _ = lambda x : x
+        s1 = State(self, 1, _("New"))
+        s2 = State(self, 2, _("Open"))
+        s3 = State(self, 3, _("Assigned"))
+        s4 = State(self, 4, _("Resolved"))
+        s5 = State(self, 5, _("Verified"))
+        s6 = State(self, 6, _("Closed"))
+        s7 = State(self, 2, _("Reopen"))
+        s1.add_transition(s2, _("Verify task"), handler, condition)
+        s1.add_transition(s4, _("Resolve task"), handler, condition)
+        s2.add_transition(s3, _("Assign task"), handler, condition)
+        s2.add_transition(s4, _("Resolve task"), handler, condition)
+        s7.add_transition(s4, _("Resolve task"), handler, condition)
+        s3.add_transition(s4, _("Resolve task"), handler, condition)
+        s4.add_transition(s5, _("Verify solution"), handler, condition)
+        s4.add_transition(s7, _("Reopen task"), reopen_handler, condition)
+        s5.add_transition(s7, _("Reopen task"), reopen_handler, condition)
+        s5.add_transition(s6, _("Close task"), close_handler, condition)
+        s6.add_transition(s7, _("Reopen task"), reopen_handler, condition)
         return s1
 
 
