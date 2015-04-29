@@ -20,6 +20,18 @@ become a required field if the task will be resolved.
 Finally users can add comments (4) to give further information, or document
 their proceed. Comments are readable by all users.
 
+.. rubric:: Estimate
+
+The estimate indicates how much work remains to be done until the
+task is completely resolved. The estimate can be selected from a
+simplyfied fibunacci sequence to regard larger inaccurany in complex
+tasks.
+
+The estimate does not have any time unit like hours. It is a abstract
+estimate and needs to be interpreted individual. The estimate can be
+used as Story Points in a Scrum development process.
+
+
 Lifecycle
 =========
 
@@ -57,9 +69,14 @@ States
         approved the resolution. The resolution has been communicated to all
         relevand parties.
 
+        Closing a task will set the remaining estimate to 0.
+
 **Reopen**
         Indicates that an issue has been reopened for some reason. This my be a
         failed QA or later upcoming issues with the solution.
+
+        Reopening the task will set the estimate to a unknown value to enforce
+        the user to set a new value for the estimate.
 
 .. _task_resolution:
 

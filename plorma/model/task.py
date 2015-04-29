@@ -18,27 +18,41 @@ nm_task_users = sa.Table(
     sa.Column('user_id', sa.Integer, sa.ForeignKey('users.id'))
 )
 
+def close_handler(task, transition):
+    # When the task is finally closed than set remaining estimate to 0
+    task.estimate = 0
+    return task
+
+def reopen_handler(task, transition):
+    # The QA fails. There will be some work to be done. Enforce the
+    # developer to set a new estimate by setting the current estimation
+    # to unknown.
+    task.estimate = None
+    return task
 
 class TaskStatemachine(Statemachine):
     def setup(self):
-        s1 = State(self, 1, "New")
-        s2 = State(self, 2, "Open")
-        s3 = State(self, 3, "Assigned")
-        s4 = State(self, 4, "Resolved")
-        s5 = State(self, 5, "Verified")
-        s6 = State(self, 6, "Closed")
-        s7 = State(self, 2, "Reopen")
-        s1.add_transition(s2, "Verify task", handler, condition)
-        s1.add_transition(s4, "Resolve task", handler, condition)
-        s2.add_transition(s3, "Assign task", handler, condition)
-        s2.add_transition(s4, "Resolve task", handler, condition)
-        s7.add_transition(s4, "Resolve task", handler, condition)
-        s3.add_transition(s4, "Resolve task", handler, condition)
-        s4.add_transition(s5, "Verify solution", handler, condition)
-        s4.add_transition(s7, "Reopen task", handler, condition)
-        s5.add_transition(s7, "Reopen task", handler, condition)
-        s5.add_transition(s6, "Close task", handler, condition)
-        s6.add_transition(s7, "Reopen task", handler, condition)
+        # Dummy translation method. Used to mark strings as
+        # translateable for gettext.
+        _ = lambda x : x
+        s1 = State(self, 1, _("New"))
+        s2 = State(self, 2, _("Open"))
+        s3 = State(self, 3, _("Assigned"))
+        s4 = State(self, 4, _("Resolved"))
+        s5 = State(self, 5, _("Verified"))
+        s6 = State(self, 6, _("Closed"))
+        s7 = State(self, 2, _("Reopen"))
+        s1.add_transition(s2, _("Verify task"), handler, condition)
+        s1.add_transition(s4, _("Resolve task"), handler, condition)
+        s2.add_transition(s3, _("Assign task"), handler, condition)
+        s2.add_transition(s4, _("Resolve task"), handler, condition)
+        s7.add_transition(s4, _("Resolve task"), handler, condition)
+        s3.add_transition(s4, _("Resolve task"), handler, condition)
+        s4.add_transition(s5, _("Verify solution"), handler, condition)
+        s4.add_transition(s7, _("Reopen task"), reopen_handler, condition)
+        s5.add_transition(s7, _("Reopen task"), reopen_handler, condition)
+        s5.add_transition(s6, _("Close task"), close_handler, condition)
+        s6.add_transition(s7, _("Reopen task"), reopen_handler, condition)
         return s1
 
 
@@ -123,6 +137,11 @@ class Task(BaseItem, Commented, TaskStateMixin, Owned, Base):
      * Invalid: Task is invalid and will not be done for any other
        reason the the formed named resolutions.
     """
+    estimate = sa.Column('estimate', sa.Integer)
+    """The estimate indicates how much work remains to be done until the
+    task is completely resolved. The estimate is usally given as value
+    with in a fibunacci sequence to regard larger inaccurany in complex
+    tasks."""
     assignee_id = sa.Column('assignee_id',
                             sa.Integer, sa.ForeignKey("users.id"))
     """Id of the user this task is assigned to"""
