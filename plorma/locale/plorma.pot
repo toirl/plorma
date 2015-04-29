@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plorma 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-04-29 23:08+0200\n"
+"POT-Creation-Date: 2015-04-29 23:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,59 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 1.3\n"
+
+#: plorma/model/task.py:39
+msgid "New"
+msgstr ""
+
+#: plorma/model/task.py:40
+msgid "Open"
+msgstr ""
+
+#: plorma/model/task.py:41
+msgid "Assigned"
+msgstr ""
+
+#: plorma/model/task.py:42
+msgid "Resolved"
+msgstr ""
+
+#: plorma/model/task.py:43
+msgid "Verified"
+msgstr ""
+
+#: plorma/model/task.py:44
+msgid "Closed"
+msgstr ""
+
+#: plorma/model/task.py:45
+msgid "Reopen"
+msgstr ""
+
+#: plorma/model/task.py:46
+msgid "Verify task"
+msgstr ""
+
+#: plorma/model/task.py:47 plorma/model/task.py:49 plorma/model/task.py:50
+#: plorma/model/task.py:51
+msgid "Resolve task"
+msgstr ""
+
+#: plorma/model/task.py:48
+msgid "Assign task"
+msgstr ""
+
+#: plorma/model/task.py:52
+msgid "Verify solution"
+msgstr ""
+
+#: plorma/model/task.py:53 plorma/model/task.py:54 plorma/model/task.py:56
+msgid "Reopen task"
+msgstr ""
+
+#: plorma/model/task.py:55
+msgid "Close task"
+msgstr ""
 
 #: plorma/templates/footer.mako:7
 msgid "Administration"
@@ -134,7 +187,7 @@ msgid "very low"
 msgstr ""
 
 #: plorma/views/forms/tasks.xml:20 plorma/views/forms/tasks.xml:27
-#: plorma/views/forms/tasks.xml:34
+#: plorma/views/forms/tasks.xml:34 plorma/views/forms/tasks.xml:46
 msgid "not specified"
 msgstr ""
 
