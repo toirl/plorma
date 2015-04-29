@@ -123,6 +123,11 @@ class Task(BaseItem, Commented, TaskStateMixin, Owned, Base):
      * Invalid: Task is invalid and will not be done for any other
        reason the the formed named resolutions.
     """
+    estimate = sa.Column('estimate', sa.Integer)
+    """The estimate indicates how much work remains to be done until the
+    task is completely resolved. The estimate is usally given as value
+    with in a fibunacci sequence to regard larger inaccurany in complex
+    tasks."""
     assignee_id = sa.Column('assignee_id',
                             sa.Integer, sa.ForeignKey("users.id"))
     """Id of the user this task is assigned to"""

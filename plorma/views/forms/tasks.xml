@@ -50,6 +50,24 @@
     <entity id="assignee" name="assignee" label="Assignee" required="true">
       <renderer type="dropdown"/>
     </entity>
+    <entity id="estimate" name="estimate" label="Estimate" type="integer" required="true">
+      <options>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="5">5</option>
+        <option value="8">8</option>
+        <option value="13">13</option>
+        <option value="20">20</option>
+        <option value="40">40</option>
+        <option value="100">100</option>
+        <option value="999">inestimable</option>
+        <option value="">not specified</option>
+      </options>
+      <renderer type="dropdown"/>
+      <help>The estimate indicates how much work remains to be done until the task is completely resolved.</help>
+    </entity>
     <entity id="nosy" name="nosy" label="Nosy">
     </entity>
     <entity id="comments" name="comments" label="Comments">
@@ -75,6 +93,7 @@
     </row>
     <row>
       <col><field ref="severity"/></col>
+      <col><field ref="estimate"/></col>
     </row>
     <row>
       <col><field ref="comments"/></col>
@@ -92,9 +111,10 @@
       <col width="2"><field ref="severity"/></col>
     </row>
     <row>
-      <col width="6">
+      <col width="4">
         <text> </text>
       </col>
+      <col width="2"><field ref="estimate"/></col>
       <col width="2"><field ref="state"/></col>
       <if expr="$task_state_id == 3" type="readonly">
       <col width="2"><field ref="assignee"/></col>

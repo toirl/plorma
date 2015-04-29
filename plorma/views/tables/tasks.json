@@ -2,7 +2,8 @@
     "overview": {
         "columns": [
             {"name": "name", "label": "Title"},
-            {"name": "weight", "label": "Priority", "width": "70", "expand": true},
+            {"name": "weight", "label": "Priority", "width": "70"},
+            {"name": "estimate", "label": "Estimate", "width": "70"},
             {"name": "assignee", "label": "Assignee", "width": "70", "expand": true},
             {"name": "task_state", "label": "State", "width": "70", "expand": true}
         ],
