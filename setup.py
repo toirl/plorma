@@ -6,13 +6,8 @@ import os
 from setuptools import setup, find_packages
 
 here = os.path.abspath(os.path.dirname(__file__))
-README = open(os.path.join(here, 'README.txt')).read()
+README = open(os.path.join(here, 'README.rst')).read()
 CHANGES = open(os.path.join(here, 'CHANGES.txt')).read()
-
-# Feature release
-version_increment = '0.1'
-# Bugfix release
-# version_increment = '0.0.1'
 
 requires = [
     'ringo',
@@ -20,8 +15,7 @@ requires = [
 ]
 
 setup(name='plorma',
-      #version='0.0',
-      use_vcs_version={"increment": version_increment},
+      version='0.1',
       description=('Plorma is a task management application to plan '
                    'organise and manage your tasks.'),
       long_description=README + '\n\n' + CHANGES,
