@@ -84,8 +84,18 @@ Resolutions
 
 Prioritization of the tasks
 ===========================
-The prioritization of the task is based on its Priority (think of importance) and
-its severity.
+The prioritization of the task is calculated based on its Priority (think of
+importance) and its severity. The following formula shows how the value is
+basically calculated.
+
+.. math::
+
+        priority * (severity * 2.77)
+
+In Plorma the calculated value is called the *Taskweight*. The severity is
+weighted and has more influence in the Taskweight than the priority. The
+Taskweight is used in the Taskoverview are prioritization criteria.
+
 
 .. note:: 
         The defintions of the priority and the severity is shameless taken
