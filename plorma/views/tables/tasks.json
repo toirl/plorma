@@ -9,7 +9,7 @@
             {"name": "task_state", "label": "State", "width": "70", "expand": true}
         ],
         "settings": {
-            "default-sort-field": "estimate",
+            "default-sort-field": "weight",
             "default-sort-order": "desc",
             "pagination": true
         }
