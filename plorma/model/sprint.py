@@ -24,7 +24,7 @@ class Sprint(BaseItem, Owned, Base):
     start = sa.Column('start', sa.Date)
     end = sa.Column('end', sa.Date)
     strength = sa.Column('strength', sa.Integer)
-    estimatelog = sa.orm.relationship("Estimatelog")
+    estimatelog = sa.orm.relationship("Estimatelog", cascade="all")
 
     @property
     def estimate(self):
