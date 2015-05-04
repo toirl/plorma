@@ -25,7 +25,7 @@
         "settings": {
             "default-sort-field": "weight",
             "default-sort-order": "desc",
-            "default-search": [["!= Resolved", "task_state", false]]
+            "default-search": [["!= Closed", "task_state", false]]
         }
     }
 }
