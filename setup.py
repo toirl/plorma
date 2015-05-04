@@ -12,6 +12,7 @@ CHANGES = open(os.path.join(here, 'CHANGES')).read()
 requires = [
     'ringo',
     'ringo_comment'
+    'ringo_tag'
 ]
 
 setup(name='plorma',
