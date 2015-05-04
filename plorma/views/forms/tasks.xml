@@ -73,6 +73,7 @@
     <entity id="comments" name="comments" label="Comments">
       <renderer type="comment"/>
     </entity>
+    <entity id="tags" name="tags" label="Tags"/>
   </source>
   <form id="create" autocomplete="off" method="POST" action="" enctype="multipart/form-data">
     <field ref="roles"/>
@@ -111,9 +112,10 @@
       <col width="2"><field ref="severity"/></col>
     </row>
     <row>
-      <col width="4">
+      <col width="2">
         <text> </text>
       </col>
+      <col width="2"><field ref="tags"/></col>
       <col width="2"><field ref="estimate"/></col>
       <col width="2"><field ref="state"/></col>
       <if expr="$task_state_id == 3" type="readonly">

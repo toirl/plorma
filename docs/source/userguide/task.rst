@@ -159,3 +159,10 @@ The severity must be set initially set by the developer.
         Minor loss of function, or other problem that does not affect many people or where an easy workaround is present.  
 **Trivial**
         Cosmetic problem like misspelled words or misaligned text which does not really cause problems.
+
+Tags
+====
+The tasks can be tagged with different tags to help organising the tasks. The
+tags will be displayed in the Taskoverview.
+
+Tasks can only be created by Productowners.
