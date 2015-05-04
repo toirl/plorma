@@ -74,7 +74,12 @@
       <renderer type="comment"/>
     </entity>
     <entity id="tags" name="tags" label="Tags"/>
-    <entity id="sprints" name="sprints" label="Sprints"/>
+    <entity id="sprints" name="sprints" label="Sprints">
+      <renderer type="listing" hideadd="true"/>
+    </entity>
+    <entity id="children" name="children" label="Subtasks">
+      <renderer type="listing" onlylinked="true"/>
+    </entity>
   </source>
   <form id="create" autocomplete="off" method="POST" action="" enctype="multipart/form-data">
     <field ref="roles"/>
@@ -103,31 +108,42 @@
   </snippet>
 
   <snippet id="read_snippet">
-    <row>
-      <col width="8"><field ref="name"/></col>
-      <col width="2">
-        <if expr="'productowner' in $_roles" type="readonly">
-          <field ref="priority"/>
+    <page id="p1" label="Task">
+      <row>
+        <col width="8"><field ref="name"/></col>
+        <col width="2">
+          <if expr="'productowner' in $_roles" type="readonly">
+            <field ref="priority"/>
+          </if>
+        </col>
+        <col width="2"><field ref="severity"/></col>
+      </row>
+      <row>
+        <col width="4"><field ref="tags"/></col>
+        <col width="2">
+          <field ref="estimate"/>
+        </col>
+        <col width="2"><field ref="state"/></col>
+        <if expr="$task_state_id == 3" type="readonly">
+        <col width="2"><field ref="assignee"/></col>
         </if>
-      </col>
-      <col width="2"><field ref="severity"/></col>
-    </row>
-    <row>
-      <col width="2"><field ref="sprints"/></col>
-      <col width="2"><field ref="tags"/></col>
-      <col width="2"><field ref="estimate"/></col>
-      <col width="2"><field ref="state"/></col>
-      <if expr="$task_state_id == 3" type="readonly">
-      <col width="2"><field ref="assignee"/></col>
-      </if>
-      <if expr="$task_state_id == 4" type="readonly">
-      <col width="2">
-        <field ref="resolution"/>
-      </col>
-      </if>
-    </row>
-    <row>
-      <col><field ref="comments"/></col>
-    </row>
+        <if expr="$task_state_id == 4" type="readonly">
+        <col width="2">
+          <field ref="resolution"/>
+        </col>
+        </if>
+      </row>
+      <row>
+        <col><field ref="comments"/></col>
+      </row>
+    </page>
+    <page id="p2" label="Organisation">
+      <row>
+        <col><field ref="sprints"/></col>
+      </row>
+      <row>
+        <col><field ref="children"/></col>
+      </row>
+    </page>
   </snippet>
 </configuration>
