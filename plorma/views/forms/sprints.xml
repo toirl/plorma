@@ -7,6 +7,9 @@
       <help>The strength of the sprint team. How many time will the team spent
       on this sprint?</help>
     </entity>
+    <entity id="tasks" name="tasks" label="Sprint Backlog">
+      <renderer type="listing" showsearch="true" table="sprintlog"/>
+    </entity>
   </source>
   <form id="create" autocomplete="off" method="POST" action="" enctype="multipart/form-data">
     <snippet ref="create_snippet"/>
@@ -29,6 +32,9 @@
       <col><field ref="start"/></col>
       <col><field ref="end"/></col>
       <col><field ref="strength"/></col>
+    </row>
+    <row>
+      <col><field ref="tasks"/></col>
     </row>
   </snippet>
 </configuration>

@@ -19,6 +19,13 @@ nm_task_users = sa.Table(
     sa.Column('user_id', sa.Integer, sa.ForeignKey('users.id'))
 )
 
+# NM-Table to assign tasks to the sprints
+nm_task_sprints = sa.Table(
+    'nm_task_sprints', Base.metadata,
+    sa.Column('task_id', sa.Integer, sa.ForeignKey('tasks.id')),
+    sa.Column('sprint_id', sa.Integer, sa.ForeignKey('sprints.id'))
+)
+
 def close_handler(task, transition):
     # When the task is finally closed than set remaining estimate to 0
     task.estimate = 0
@@ -152,6 +159,9 @@ class Task(BaseItem, Tagged, Commented, TaskStateMixin, Owned, Base):
     nosy = sa.orm.relationship("User", secondary="nm_task_users")
     """List of users who are involved in some way into this task. All
     users in the nosylist will be notified on updated in the task."""
+    sprints = sa.orm.relationship("Sprint", secondary="nm_task_sprints",
+                                  backref="tasks")
+    """List of sprints where the task is planned to be worked on"""
 
     @property
     def weight(self):

@@ -74,6 +74,7 @@
       <renderer type="comment"/>
     </entity>
     <entity id="tags" name="tags" label="Tags"/>
+    <entity id="sprints" name="sprints" label="Sprints"/>
   </source>
   <form id="create" autocomplete="off" method="POST" action="" enctype="multipart/form-data">
     <field ref="roles"/>
@@ -112,9 +113,7 @@
       <col width="2"><field ref="severity"/></col>
     </row>
     <row>
-      <col width="2">
-        <text> </text>
-      </col>
+      <col width="2"><field ref="sprints"/></col>
       <col width="2"><field ref="tags"/></col>
       <col width="2"><field ref="estimate"/></col>
       <col width="2"><field ref="state"/></col>
