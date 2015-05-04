@@ -10,6 +10,7 @@ from ringo.model.mixins import (
     Owned, StateMixin
 )
 from ringo_comment.model import Commented
+from ringo_tag.model import Tagged
 
 # NM-Table to assign users for the nosy list of the task
 nm_task_users = sa.Table(
@@ -76,7 +77,7 @@ class TaskStateMixin(StateMixin):
          return state.get_state()
 
 
-class Task(BaseItem, Commented, TaskStateMixin, Owned, Base):
+class Task(BaseItem, Tagged, Commented, TaskStateMixin, Owned, Base):
     """A task is a general container for all kind of tasks, defects,
     feature requests or any other issue in your product.
     """

@@ -45,7 +45,9 @@
             114,
             115,
             116,
-            117
+            117,
+            118,
+            120
         ],
         "users": [
             2,
@@ -59,7 +61,11 @@
         "id": 4,
         "label": "Product Owner",
         "name": "productowner",
-        "permissions": [],
+        "permissions": [
+            119,
+            121,
+            122
+        ],
         "users": [
             3
         ],
