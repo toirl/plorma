@@ -12,8 +12,12 @@ mapping={'app_title': h.get_app_title()}
   <h1>${_('Home')}</h1>
   <div class="page-header"></div>
   <div class="container-fluid">
+  <h2>${_('Sprints')}</h2>
+    % if len(sprints) == 0:
+      ${_('No sprints available.')}
+    % endif
   % for sprint in sprints:
-  <h2>${_('Sprint')}: ${sprint}</h2>
+  <h3>${sprint}</h2>
   <div class="row">
     <div class="col-md-8">
       <embed src="${request.route_path('renderburndown', id=sprint.id)}"  type="image/svg+xml"/><br>
@@ -21,31 +25,40 @@ mapping={'app_title': h.get_app_title()}
     <div class="col-md-4">
       <table class="table">
         <tr>
-          <td>${_('Strengh')}</td>
+          <td>${_('Strength')}</td>
           <td>${sprint.strength}</td>
         </tr>
         <tr>
           <td>${_('Estimate')}</td>
-          <td>${sprint.estimate}</td>
+          <%
+            total = sprint.estimatelog[0].estimate
+            current = sprint.estimatelog[-1].estimate
+            done = total - current
+            if not total:
+              total = 1
+            ready = round(float(done)/float(total)*100)
+          %>
+          <td>${current}/${total}/${done} (${ready}%)</td>
         </tr>
         <tr>
+          <%
+            velocity = round((float(done)/sprint.strength))
+          %>
           <td>${_('Velocity')}</td>
-          <td>0.42</td>
+          <td>${velocity}</td>
         </tr>
         <tr>
-          <td>${_('Tasks')} <span class="badge">0</span></td>
+          <td>${_('Tasks')} <span class="badge">${len(sprint.get_tasks())}</span></td>
           <td>
             <ul class="list-unstyled">
-              <li>Unassigned <span class="badge">0</span></li>
-              <li>Progress <span class="badge">0</span></li>
-              <li>Testable <span class="badge">0</span></li>
-              <li>Finished <span class="badge">0</span></li>
+              <li>${_('Open')} <span class="badge">${len(sprint.get_tasks('open'))}</span></li>
+              <li>${_('Progress')} <span class="badge">${len(sprint.get_tasks('progress'))}</span></li>
+              <li>${_('Testable')} <span class="badge">${len(sprint.get_tasks('testable'))}</span></li>
+              <li>${_('Finished')} <span class="badge">${len(sprint.get_tasks('finished'))}</span></li>
             </ul>
         </tr>
       </table>
       <a class="btn btn-default" href="${request.route_path(h.get_action_routename(sprint, 'update'), id=sprint.id)}">${_("Update")}</a>
-      <a class="btn btn-default" href="${request.route_path(h.get_action_routename(sprint, 'update'), id=sprint.id)}">${_("Recalculate")}</a>
-
     </div>
   </div>
   % endfor

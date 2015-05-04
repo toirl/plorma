@@ -15,24 +15,28 @@
     <snippet ref="create_snippet"/>
   </form>
   <form id="update" autocomplete="off" method="POST" action="" enctype="multipart/form-data">
-    <snippet ref="create_snippet"/>
+    <snippet ref="update_snippet"/>
   </form>
   <form id="read" readonly="true">
-    <snippet ref="create_snippet"/>
+    <snippet ref="update_snippet"/>
   </form>
 
-  <!-- Create-->
   <snippet id="create_snippet">
-    <snippet ref="s1"/>
+    <snippet ref="base"/>
+  </snippet>
+  <snippet id="update_snippet">
+    <snippet ref="base"/>
+    <snippet ref="tasks"/>
   </snippet>
 
-  <!-- Role -->
-  <snippet id="s1">
+  <snippet id="base">
     <row>
       <col><field ref="start"/></col>
       <col><field ref="end"/></col>
       <col><field ref="strength"/></col>
     </row>
+  </snippet>
+  <snippet id="tasks">
     <row>
       <col><field ref="tasks"/></col>
     </row>
