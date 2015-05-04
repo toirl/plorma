@@ -49,7 +49,7 @@ class TaskStatemachine(Statemachine):
         s4 = State(self, 4, _("Resolved"))
         s5 = State(self, 5, _("Verified"))
         s6 = State(self, 6, _("Closed"))
-        s7 = State(self, 2, _("Reopen"))
+        s7 = State(self, 7, _("Reopen"))
         s1.add_transition(s2, _("Verify task"), handler, condition)
         s1.add_transition(s4, _("Resolve task"), handler, condition)
         s2.add_transition(s3, _("Assign task"), handler, condition)
@@ -172,3 +172,4 @@ class Task(BaseItem, Tagged, Commented, TaskStateMixin, Owned, Base):
         :returns: Integer value
         """
         return int(round((self.priority) * self.severity * 2.77))
+
