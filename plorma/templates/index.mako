@@ -75,23 +75,63 @@ mapping={'app_title': h.get_app_title()}
   <h4>${_('Sprintboard')}</h4>
   <div class="row">
     <div class="col-md-12">
-      <table class="table">
+      <table class="table table-striped table-bordered">
         <tr>
-          <th width="150">Story (${sprint.estimate})</th>
+          <th width="200">Story (${sprint.estimate})</th>
            <th>${_('Open')}</th>
            <th>${_('Assigned')}</th>
            <th>${_('Testable')}</th>
            <th>${_('Finished')}</th>
         </tr>
         % for task in sprint.tasks:
+        <%
+          subtasks = task.get_children()
+          open_tasks = []
+          assigned_tasks = []
+          testable_tasks = []
+          finished_tasks = []
+          for stask in subtasks:
+            if stask.task_state_id in [1,2,7]:
+              open_tasks.append(stask)
+            elif stask.task_state_id in [3]:
+              assigned_tasks.append(stask)
+            elif stask.task_state_id in [4]:
+              testable_tasks.append(stask)
+            elif stask.task_state_id in [5,6]:
+              finished_tasks.append(stask)
+        %>
         <tr>
-           <th>
-            <a href="${request.route_path(h.get_action_routename(task, 'read'), id=task.id)}">${task}</a> (${task.total_estimate})
-           </th>
-           <th></th>
-           <th></th>
-           <th></th>
-           <th></th>
+           <td>
+             <strong><a href="${request.route_path(h.get_action_routename(task, 'update'), id=task.id)}">${task}</a> (${task.total_estimate})</strong>
+           </td>
+           <td>
+             % for stask in open_tasks:
+               <a href="${request.route_path(h.get_action_routename(task, 'update'), id=stask.id)}">
+               ${stask} (${stask.estimate})
+               </a>
+             % endfor
+           </td>
+           <td>
+             % for stask in assigned_tasks:
+               <a href="${request.route_path(h.get_action_routename(task, 'update'), id=stask.id)}">
+                 ${stask} (${stask.estimate}, ${stask.assignee})
+               </a>
+             % endfor
+           </td>
+           <td>
+             % for stask in testable_tasks:
+               <a href="${request.route_path(h.get_action_routename(task, 'update'), id=stask.id)}">
+               ${stask} (${stask.estimate})
+               </a>
+             % endfor
+           </td>
+           <td>
+             % for stask in finished_tasks:
+               <a href="${request.route_path(h.get_action_routename(task, 'update'), id=stask.id)}">
+               ${stask} (${stask.estimate})
+               </a>
+             % endfor
+           </td>
         </tr>
         % endfor
       </table>

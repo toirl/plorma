@@ -41,11 +41,19 @@ class Sprint(BaseItem, Owned, Base):
         return td.days
 
     def get_tasks(self, type=None):
+        ttasks = []
+        for task in self.tasks:
+            children = task.get_children()
+            if children:
+                ttasks.extend(children)
+            else:
+                ttasks.append(task)
+
         if type is None:
-            return self.tasks
+            return ttasks
         else:
             tasks = []
-            for task in self.tasks:
+            for task in ttasks:
                 if type == "open" and task.task_state_id in [1,2,7]:
                     tasks.append(task)
                 elif type == "progress" and task.task_state_id in [3]:
