@@ -39,3 +39,19 @@ class Sprint(BaseItem, Owned, Base):
         """Returns the number of days of the sprint"""
         td = self.end - self.start
         return td.days
+
+    def get_tasks(self, type=None):
+        if type is None:
+            return self.tasks
+        else:
+            tasks = []
+            for task in self.tasks:
+                if type == "open" and task.task_state_id in [1,2,7]:
+                    tasks.append(task)
+                elif type == "progress" and task.task_state_id in [3]:
+                    tasks.append(task)
+                elif type == "testable" and task.task_state_id in [4]:
+                    tasks.append(task)
+                elif type == "finished" and task.task_state_id in [5,6]:
+                    tasks.append(task)
+            return tasks
