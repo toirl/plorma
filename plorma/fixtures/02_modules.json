@@ -120,7 +120,7 @@
         "name": "tags"
     }, 
     {
-        "str_repr": "%s|id", 
+        "str_repr": "%s - %s|start,end", 
         "name": "sprints", 
         "label": "Sprint", 
         "id": 1003, 
