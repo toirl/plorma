@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <configuration>
   <source>
-    <entity id="e1" name="dummy" label="Dummy" type="string"/>
+    <entity id="start" name="start" label="Startdate" type="date" value="% date('today')" required="true"/>
+    <entity id="end" name="end" label="Enddate" type="date" value="% date('today')" required="true"/>
+    <entity id="strength" name="strength" label="Strength" type="integer" required="true">
+      <help>The strength of the sprint team. How many time will the team spent
+      on this sprint?</help>
+    </entity>
   </source>
   <form id="create" autocomplete="off" method="POST" action="" enctype="multipart/form-data">
     <snippet ref="create_snippet"/>
@@ -21,7 +26,9 @@
   <!-- Role -->
   <snippet id="s1">
     <row>
-      <col><field ref="e1"/></col>
+      <col><field ref="start"/></col>
+      <col><field ref="end"/></col>
+      <col><field ref="strength"/></col>
     </row>
   </snippet>
 </configuration>

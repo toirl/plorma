@@ -1,7 +1,8 @@
 {
     "overview": {
         "columns": [
-            {"name": "id", "label": "ID"}
+            {"name": "start", "label": "Startdate"},
+            {"name": "end", "label": "Enddate"}
         ]
     }
 }
