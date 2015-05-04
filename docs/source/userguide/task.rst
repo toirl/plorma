@@ -166,7 +166,3 @@ The tasks can be tagged with different tags to help organising the tasks. The
 tags will be displayed in the Taskoverview.
 
 Tasks can only be created by Productowners.
-
-
-
-
