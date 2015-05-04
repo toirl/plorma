@@ -12,3 +12,12 @@ class Sprint(BaseItem, Owned, Base):
     start = sa.Column('start', sa.Date)
     end = sa.Column('end', sa.Date)
     strength = sa.Column('strength', sa.Integer)
+
+    @property
+    def estimate(self):
+        """Returns the sum of estimate of all tasks in the sprint"""
+        sum = 0
+        for task in self.tasks:
+            if task.estimate is not None:
+                sum += task.estimate
+        return sum
