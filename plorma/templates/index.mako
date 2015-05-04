@@ -17,7 +17,19 @@ mapping={'app_title': h.get_app_title()}
       ${_('No sprints available.')}
     % endif
   % for sprint in sprints:
-  <h3>${sprint}</h2>
+  <h3>${sprint}
+      % if s.has_permission("update", sprint, request):
+        <a class="btn btn-default" href="${request.route_path(h.get_action_routename(sprint, 'update'), id=sprint.id)}">${_("Update")}</a>
+      % else:
+        <a class="btn btn-default" href="${request.route_path(h.get_action_routename(sprint, 'read'), id=sprint.id)}">${_("Read")}</a>
+      % endif
+  </h3>
+  <div class="row">
+    <div class="col-md-6">
+    </div>
+    <div class="col-md-6">
+    </div>
+  </div>
   <div class="row">
     <div class="col-md-8">
       <embed src="${request.route_path('renderburndown', id=sprint.id)}"  type="image/svg+xml"/><br>
@@ -52,17 +64,37 @@ mapping={'app_title': h.get_app_title()}
           <td>
             <ul class="list-unstyled">
               <li>${_('Open')} <span class="badge">${len(sprint.get_tasks('open'))}</span></li>
-              <li>${_('Progress')} <span class="badge">${len(sprint.get_tasks('progress'))}</span></li>
+              <li>${_('Assigned')} <span class="badge">${len(sprint.get_tasks('progress'))}</span></li>
               <li>${_('Testable')} <span class="badge">${len(sprint.get_tasks('testable'))}</span></li>
               <li>${_('Finished')} <span class="badge">${len(sprint.get_tasks('finished'))}</span></li>
             </ul>
         </tr>
       </table>
-      % if s.has_permission("update", sprint, request):
-        <a class="btn btn-default" href="${request.route_path(h.get_action_routename(sprint, 'update'), id=sprint.id)}">${_("Update")}</a>
-      % else:
-        <a class="btn btn-default" href="${request.route_path(h.get_action_routename(sprint, 'read'), id=sprint.id)}">${_("Read")}</a>
-      % endif
+    </div>
+  </div>
+  <h4>${_('Sprintboard')}</h4>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table">
+        <tr>
+          <th width="150">Story (${sprint.estimate})</th>
+           <th>${_('Open')}</th>
+           <th>${_('Assigned')}</th>
+           <th>${_('Testable')}</th>
+           <th>${_('Finished')}</th>
+        </tr>
+        % for task in sprint.tasks:
+        <tr>
+           <th>
+            <a href="${request.route_path(h.get_action_routename(task, 'read'), id=task.id)}">${task}</a> (${task.estimate})
+           </th>
+           <th></th>
+           <th></th>
+           <th></th>
+           <th></th>
+        </tr>
+        % endfor
+      </table>
     </div>
   </div>
   % endfor
