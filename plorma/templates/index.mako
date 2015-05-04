@@ -58,7 +58,11 @@ mapping={'app_title': h.get_app_title()}
             </ul>
         </tr>
       </table>
-      <a class="btn btn-default" href="${request.route_path(h.get_action_routename(sprint, 'update'), id=sprint.id)}">${_("Update")}</a>
+      % if s.has_permission("update", sprint, request):
+        <a class="btn btn-default" href="${request.route_path(h.get_action_routename(sprint, 'update'), id=sprint.id)}">${_("Update")}</a>
+      % else:
+        <a class="btn btn-default" href="${request.route_path(h.get_action_routename(sprint, 'read'), id=sprint.id)}">${_("Read")}</a>
+      % endif
     </div>
   </div>
   % endfor
