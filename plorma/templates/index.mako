@@ -86,7 +86,7 @@ mapping={'app_title': h.get_app_title()}
         % for task in sprint.tasks:
         <tr>
            <th>
-            <a href="${request.route_path(h.get_action_routename(task, 'read'), id=task.id)}">${task}</a> (${task.estimate})
+            <a href="${request.route_path(h.get_action_routename(task, 'read'), id=task.id)}">${task}</a> (${task.total_estimate})
            </th>
            <th></th>
            <th></th>

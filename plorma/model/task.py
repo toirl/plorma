@@ -179,3 +179,11 @@ class Task(BaseItem, Nested, Tagged, Commented, TaskStateMixin, Owned, Base):
         """
         return int(round((self.priority) * self.severity * 2.77))
 
+    @property
+    def total_estimate(self):
+        if len(self.children) == 0:
+            return self.estimate
+        estimate = 0
+        for child in self.children:
+            estimate += child.total_estimate
+        return estimate

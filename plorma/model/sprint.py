@@ -31,8 +31,8 @@ class Sprint(BaseItem, Owned, Base):
         """Returns the sum of estimate of all tasks in the sprint"""
         sum = 0
         for task in self.tasks:
-            if task.estimate is not None:
-                sum += task.estimate
+            if task.total_estimate is not None:
+                sum += task.total_estimate
         return sum
 
     def get_length(self):
