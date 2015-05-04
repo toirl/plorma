@@ -21,3 +21,8 @@ class Sprint(BaseItem, Owned, Base):
             if task.estimate is not None:
                 sum += task.estimate
         return sum
+
+    def get_length(self):
+        """Returns the number of days of the sprint"""
+        td = self.end - self.start
+        return td.days
