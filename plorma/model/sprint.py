@@ -5,6 +5,18 @@ from ringo.model.mixins import (
 Owned
 )
 
+estimatelog_table = sa.Table(
+    'estimatelog', Base.metadata,
+    sa.Column('id', sa.Integer, primary_key=True),
+    sa.Column('sprint_id', sa.Integer, sa.ForeignKey('sprints.id')),
+    sa.Column('date', sa.Date),
+    sa.Column('estimate', sa.Integer)
+)
+
+class Estimatelog(Base):
+    __tablename__ = 'estimatelog'
+
+
 class Sprint(BaseItem, Owned, Base):
     __tablename__ = 'sprints'
     _modul_id = 1003
@@ -12,6 +24,7 @@ class Sprint(BaseItem, Owned, Base):
     start = sa.Column('start', sa.Date)
     end = sa.Column('end', sa.Date)
     strength = sa.Column('strength', sa.Integer)
+    estimatelog = sa.orm.relationship("Estimatelog")
 
     @property
     def estimate(self):
