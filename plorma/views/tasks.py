@@ -13,17 +13,19 @@ def create_callback(request, task):
 def delete_callback(request, task):
     return update_callback(request, task)
 
+def _add_estimatelog(task):
+    for sprint in task.sprints:
+        nlog = Estimatelog()
+        nlog.estimate = sprint.estimate
+        nlog.date = datetime.date.today()
+        sprint.estimatelog.append(nlog)
+    return task
+
 def update_callback(request, task):
     for ptask in task.get_parents():
-        for sprint in ptask.sprints:
-            for log in sprint.estimatelog:
-                if log.date == datetime.date.today():
-                    log.estimate = sprint.estimate
-                    break
-            nlog = Estimatelog()
-            nlog.estimate = sprint.estimate
-            nlog.date = datetime.date.today()
-            sprint.estimatelog.append(nlog)
+        _add_estimatelog(ptask)
+    else:
+        _add_estimatelog(task)
     return task
 
 
