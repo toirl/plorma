@@ -2,6 +2,23 @@
 <%
 mapping={'app_title': h.get_app_title()}
 %>
+<%def name="render_task(task)">
+<a href="${request.route_path(h.get_action_routename(task, 'update'), id=task.id)}">
+  <span class="label label-default">
+     % if len(task.children) > 0:
+       <i>${task}
+         (<s>${task.total_estimate}</s>)</i>
+     % else:
+       ${task}
+       % if task.assignee:
+       (${task.total_estimate} , ${task.assignee})
+       % else:
+       (${task.total_estimate})
+       % endif
+     % endif
+  </span>
+</a>&nbsp;
+</%def>
 % if not request.user:
   <h1>${_('Welcome to ${app_title}!', mapping=mapping)}</h1>
   <div class="page-header"></div>
@@ -54,10 +71,10 @@ mapping={'app_title': h.get_app_title()}
         </tr>
         <tr>
           <%
-            velocity = round((float(done)/sprint.strength))
+            velocity = (float(done)/float(sprint.strength))*100
           %>
           <td>${_('Velocity')}</td>
-          <td>${velocity}</td>
+          <td>${done}/${sprint.strength} (${velocity}%)</td>
         </tr>
         <tr>
           <td>${_('Tasks')} <span class="badge">${len(sprint.get_tasks())}</span></td>
@@ -106,30 +123,22 @@ mapping={'app_title': h.get_app_title()}
            </td>
            <td>
              % for stask in open_tasks:
-               <a href="${request.route_path(h.get_action_routename(task, 'update'), id=stask.id)}">
-               ${stask} (${stask.estimate})
-               </a>
+               ${render_task(stask)}
              % endfor
            </td>
            <td>
              % for stask in assigned_tasks:
-               <a href="${request.route_path(h.get_action_routename(task, 'update'), id=stask.id)}">
-                 ${stask} (${stask.estimate}, ${stask.assignee})
-               </a>
+               ${render_task(stask)}
              % endfor
            </td>
            <td>
              % for stask in testable_tasks:
-               <a href="${request.route_path(h.get_action_routename(task, 'update'), id=stask.id)}">
-               ${stask} (${stask.estimate})
-               </a>
+               ${render_task(stask)}
              % endfor
            </td>
            <td>
              % for stask in finished_tasks:
-               <a href="${request.route_path(h.get_action_routename(task, 'update'), id=stask.id)}">
-               ${stask} (${stask.estimate})
-               </a>
+               ${render_task(stask)}
              % endfor
            </td>
         </tr>
