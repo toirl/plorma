@@ -111,5 +111,15 @@
         "name": "tags",
         "str_repr": "%s|name",
         "uuid": "7e5bbba9cd7f428aa2e063d1fcfb0eea"
+    },
+    {
+        "str_repr": "%s - %s|start,end", 
+        "name": "sprints", 
+        "label": "Sprint", 
+        "id": 1003, 
+        "label_plural": "Sprints", 
+        "display": "header-menu", 
+        "clazzpath": "plorma.model.sprint.Sprint", 
+        "uuid": "be7a2ab2e77e4f659ba646c8f757fe16"
     }
 ]
