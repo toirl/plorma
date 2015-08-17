@@ -118,21 +118,24 @@
         </col>
         <col width="2"><field ref="severity"/></col>
       </row>
-      <row>
-        <col width="4"><field ref="tags"/></col>
-        <col width="2">
-          <field ref="estimate"/>
-        </col>
-        <col width="2"><field ref="state"/></col>
+    <row>
+      <col width="2">
+        <text> </text>
+      </col>
+      <col width="2"><field ref="tags"/></col>
+      <col width="2"><field ref="estimate"/></col>
+      <col width="2"><field ref="state"/></col>
+      <col width="2">
         <if expr="$task_state_id == 3" type="readonly">
-        <col width="2"><field ref="assignee"/></col>
+          <field ref="assignee"/>
         </if>
+      </col>
+      <col width="2">
         <if expr="$task_state_id == 4" type="readonly">
-        <col width="2">
           <field ref="resolution"/>
-        </col>
         </if>
-      </row>
+      </col>
+    </row>
       <row>
         <col><field ref="comments"/></col>
       </row>
