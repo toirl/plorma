@@ -118,14 +118,16 @@
       <col width="2"><field ref="tags"/></col>
       <col width="2"><field ref="estimate"/></col>
       <col width="2"><field ref="state"/></col>
-      <if expr="$task_state_id == 3" type="readonly">
-      <col width="2"><field ref="assignee"/></col>
-      </if>
-      <if expr="$task_state_id == 4" type="readonly">
       <col width="2">
-        <field ref="resolution"/>
+        <if expr="$task_state_id == 3" type="readonly">
+          <field ref="assignee"/>
+        </if>
       </col>
-      </if>
+      <col width="2">
+        <if expr="$task_state_id == 4" type="readonly">
+          <field ref="resolution"/>
+        </if>
+      </col>
     </row>
     <row>
       <col><field ref="comments"/></col>
