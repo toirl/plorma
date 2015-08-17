@@ -2,73 +2,43 @@
     {
         "activated": true,
         "activation_token": "0e3cc848-22f6-4ff7-a562-12baf3037439",
-        "gid": 1,
-        "groups": [],
         "id": 1,
         "last_login": "2015-03-09 21:05:23",
         "login": "admin",
         "password": "$pbkdf2-sha256$8392$ca5Vau09B2AMQWit1ZoTgg$yD/W9MpiDc17pA1vMNHH4jkk3DgGEd4W60zqlzR0.Ho",
-        "profile": [
-            1
-        ],
         "reset_tokens": [],
         "roles": [
             1
         ],
-        "settings": 1,
-        "sid": 1,
-        "usergroup": 1,
         "uuid": "a52c01f271be43dc91c6f70955f0ce02"
     },
     {
         "activated": true,
         "activation_token": "",
-        "gid": 2,
-        "groups": [
-            2,
-            4
-        ],
         "id": 2,
         "last_login": "2015-03-09 21:07:46",
         "login": "dave",
         "password": "$pbkdf2-sha256$8112$OIfwXovRuncOIaS09n7vfQ$YDBU1e8oubd2kLscfbmF.UNBNFUkDPBaBx9eQFQnwvU",
-        "profile": [
-            2
-        ],
         "reset_tokens": [],
         "roles": [
             2,
             3
         ],
-        "settings": 2,
-        "sid": 2,
-        "usergroup": 2,
         "uuid": "97de371a18394ed8918594415132b5cc"
     },
     {
         "activated": true,
         "activation_token": "",
-        "gid": 3,
-        "groups": [
-            2,
-            5
-        ],
         "id": 3,
         "last_login": "2015-03-09 21:04:29",
         "login": "peter",
         "password": "$pbkdf2-sha256$8295$QOi9l3IO4dxbK6WUEqK0Vg$2HIdwbgjRr4zthSU7FZRQXWEKQtEe/dzSwErifo.c7w",
-        "profile": [
-            3
-        ],
         "reset_tokens": [],
         "roles": [
             2,
             3,
             4
         ],
-        "settings": 3,
-        "sid": 3,
-        "usergroup": 3,
         "uuid": "7f0db744740f401b9e85c456aa06f29b"
     }
 ]
