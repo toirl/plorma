@@ -2,6 +2,12 @@ plorma README
 =============
 Plorma is a webapplication to plan, organise and manage tasks. While it tries to be as generic as possible it can be especially used as a simple issue or bug tracker in software development.
 
+Prerequisites
+-------------
+Plorma requires a PostgreSQL database. The default database (configured in the
+ini file) is named plorma. Please make sure this database is created and
+accessible before invoking the following commands.
+
 Getting Started
 ---------------
 
@@ -12,6 +18,12 @@ Getting Started
 - $venv/bin/plorma-admin db init
 
 - $venv/bin/plorma-admin fixtures load
+
+- $venv/bin/plorma-admin db fixsequence
+
+- $venv/bin/plorma-admin fixtures load --path plorma/fixtures/demo
+
+- $venv/bin/plorma-admin db fixsequence
 
 - $venv/bin/pserve development.ini
 
