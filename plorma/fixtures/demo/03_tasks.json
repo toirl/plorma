@@ -1,0 +1,59 @@
+[
+    {
+        "assignee": 2,
+        "assignee_id": 2,
+        "comments": [
+            1,
+            2
+        ],
+        "description": "Fix Foo description",
+        "gid": 2,
+        "group": 2,
+        "id": 1,
+        "name": "Fix Foo",
+        "nosy": [],
+        "owner": 3,
+        "priority": 4,
+        "resolution": null,
+        "severity": 6,
+        "task_state_id": 3,
+        "uid": 3,
+        "uuid": "6da4553a4b4f40cd87716b5ee95564d5"
+    },
+    {
+        "assignee": 3,
+        "assignee_id": 3,
+        "comments": [],
+        "description": "Build bar description",
+        "gid": 2,
+        "group": 2,
+        "id": 2,
+        "name": "Build Bar",
+        "nosy": [],
+        "owner": 3,
+        "priority": 3,
+        "resolution": null,
+        "severity": 4,
+        "task_state_id": 3,
+        "uid": 3,
+        "uuid": "6dedee48cd334dd3ba54bde8ae74b737"
+    },
+    {
+        "assignee": 2,
+        "assignee_id": 2,
+        "comments": [],
+        "description": "Enhance Baz description",
+        "gid": 2,
+        "group": 2,
+        "id": 3,
+        "name": "Enhance Baz",
+        "nosy": [],
+        "owner": 3,
+        "priority": 5,
+        "resolution": null,
+        "severity": 2,
+        "task_state_id": 3,
+        "uid": 3,
+        "uuid": "e8cff2046cee43daaba65bcfc0b5ea25"
+    }
+]
