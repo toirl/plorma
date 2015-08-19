@@ -45,7 +45,7 @@ def burndown_view(request):
 
     ideal = map(lambda x: None, range(0, len(history)))
     ideal[-1] = 0
-    ideal[0]  = history[0]
+    ideal[0]  = sprint.size or history[0]
     chart.add(_('Ideal'), ideal)
     response = Response(chart.render(), content_type="image/svg+xml")
     return response
