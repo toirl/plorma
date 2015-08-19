@@ -2,6 +2,7 @@ import pygal                                                       # First impor
 import datetime
 from pygal.style import BlueStyle
 from pyramid.view import view_config
+from pyramid.response import Response
 from ringo.views.request import handle_history, get_item_from_request
 from ringo.views.base import create, update
 from ringo.lib.helpers import get_action_routename
@@ -15,11 +16,12 @@ def get_estimate_history(sprint):
     logs = []
     for day in range(0, sprint.get_length()+1):
         date = sprint.start + datetime.timedelta(days=day)
+        estimate = None
         for log in sprint.estimatelog:
-            if log.date == date:
-                logs.append(log.estimate)
-                continue
-            logs.append(None)
+            if log.date == date and log.estimate:
+                estimate = log.estimate
+        else:
+            logs.append(estimate)
     return logs
 
 def get_x_labels(sprint):
@@ -34,14 +36,10 @@ def burndown_view(request):
     """Returns a SVG grafic representing the burndown chart of the sprint"""
     _ = request.translate
     sprint = get_item_from_request(request)
-    response = request.response
-    request.response.content_type ='image/svg+xml'
-    #response.content_disposition = 'attachment; filename="%s"' % item.name
-    chart = pygal.Line(height=200, style=BlueStyle, 
+    chart = pygal.Line(height=200,
                        x_label_rotation=20,
                        show_legend=False)
     chart.x_labels = map(str, get_x_labels(sprint))
-    get_x_labels(sprint)
     history = get_estimate_history(sprint)
     chart.add(_('Progress'), history)
 
@@ -49,7 +47,7 @@ def burndown_view(request):
     ideal[-1] = 0
     ideal[0]  = history[0]
     chart.add(_('Ideal'), ideal)
-    response.body = chart.render()
+    response = Response(chart.render(), content_type="image/svg+xml")
     return response
 
 
