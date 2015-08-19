@@ -1,14 +1,14 @@
 """Added sprint modul
 
 Revision ID: 26629884e7e5
-Revises: 3aa28716712b
+Revises: 3c74bf2a6f19
 Create Date: 2015-05-04 10:54:32.561782
 
 """
 
 # revision identifiers, used by Alembic.
 revision = '26629884e7e5'
-down_revision = '3aa28716712b'
+down_revision = '3c74bf2a6f19'
 
 from alembic import op
 import sqlalchemy as sa

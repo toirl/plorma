@@ -1,14 +1,14 @@
 """Added nm table to link tasks to sprints.
 
 Revision ID: 2ad4629b8cc5
-Revises: 4697f61e4e1e
+Revises: 26629884e7e5
 Create Date: 2015-05-04 11:25:54.088959
 
 """
 
 # revision identifiers, used by Alembic.
 revision = '2ad4629b8cc5'
-down_revision = '4697f61e4e1e'
+down_revision = '26629884e7e5'
 
 from alembic import op
 import sqlalchemy as sa
