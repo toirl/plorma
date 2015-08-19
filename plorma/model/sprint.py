@@ -25,6 +25,8 @@ class Sprint(BaseItem, Owned, Base):
     end = sa.Column('end', sa.Date)
     strength = sa.Column('strength', sa.Integer)
     """Sum of availablity points of all developers of the sprint team"""
+    size = sa.Column('size', sa.Integer)
+    """Initial sum of the story points of all tasks in the sprint"""
     estimatelog = sa.orm.relationship("Estimatelog", cascade="all")
 
     @property
