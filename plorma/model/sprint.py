@@ -31,8 +31,8 @@ class Sprint(BaseItem, Owned, Base):
         """Returns the sum of estimate of all tasks in the sprint"""
         sum = 0
         for task in self.tasks:
-            if task.total_estimate is not None:
-                sum += task.total_estimate
+            if task.estimate is not None:
+                sum += task.estimate
         return sum
 
     def get_length(self):
@@ -41,25 +41,18 @@ class Sprint(BaseItem, Owned, Base):
         return td.days
 
     def get_tasks(self, type=None):
-        ttasks = []
-        for task in self.tasks:
-            children = task.get_children()
-            if children:
-                ttasks.extend(children)
-            else:
-                ttasks.append(task)
-
+        tasks = self.tasks
         if type is None:
-            return ttasks
-        else:
-            tasks = []
-            for task in ttasks:
-                if type == "open" and task.task_state_id in [1,2,7]:
-                    tasks.append(task)
-                elif type == "progress" and task.task_state_id in [3]:
-                    tasks.append(task)
-                elif type == "testable" and task.task_state_id in [4]:
-                    tasks.append(task)
-                elif type == "finished" and task.task_state_id in [5,6]:
-                    tasks.append(task)
             return tasks
+        else:
+            ttasks = []
+            for task in tasks:
+                if type == "open" and task.task_state_id in [1,2,7]:
+                    ttasks.append(task)
+                elif type == "progress" and task.task_state_id in [3]:
+                    ttasks.append(task)
+                elif type == "testable" and task.task_state_id in [4]:
+                    ttasks.append(task)
+                elif type == "finished" and task.task_state_id in [5,6]:
+                    ttasks.append(task)
+            return ttasks

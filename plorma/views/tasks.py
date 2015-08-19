@@ -22,10 +22,11 @@ def _add_estimatelog(task):
     return task
 
 def update_callback(request, task):
-    for ptask in task.get_parents():
-        _add_estimatelog(ptask)
-    else:
-        _add_estimatelog(task)
+    #for ptask in task.get_parents():
+    #    _add_estimatelog(ptask)
+    #else:
+    #    _add_estimatelog(task)
+    _add_estimatelog(task)
     return task
 
 

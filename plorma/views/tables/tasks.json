@@ -3,10 +3,8 @@
         "columns": [
             {"name": "name", "label": "Title"},
             {"name": "tags", "label": "Tags", "width": "100"},
-            {"name": "is_root", "label": "Root", "width": "20"},
-            {"name": "len_children", "label": "Childs", "width": "20"},
             {"name": "weight", "label": "Priority", "width": "70"},
-            {"name": "total_estimate", "label": "Estimate", "width": "70"},
+            {"name": "estimate", "label": "Estimate", "width": "70"},
             {"name": "assignee", "label": "Assignee", "width": "70", "expand": true},
             {"name": "task_state", "label": "State", "width": "70", "expand": true}
         ],
@@ -20,10 +18,8 @@
         "columns": [
             {"name": "name", "label": "Title"},
             {"name": "tags", "label": "Tags", "width": "100"},
-            {"name": "is_root", "label": "Root", "width": "20"},
-            {"name": "len_children", "label": "Childs", "width": "20"},
             {"name": "weight", "label": "Priority", "width": "70"},
-            {"name": "total_estimate", "label": "Estimate", "width": "70"},
+            {"name": "estimate", "label": "Estimate", "width": "70"},
             {"name": "task_state", "label": "State", "width": "70", "expand": true}
         ],
         "settings": {

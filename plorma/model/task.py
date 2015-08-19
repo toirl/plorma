@@ -90,7 +90,7 @@ class TaskStateMixin(StateMixin):
          return state.get_state()
 
 
-class Task(BaseItem, Nested, Tagged, Commented, TaskStateMixin, Owned, Base):
+class Task(BaseItem, Tagged, Commented, TaskStateMixin, Owned, Base):
     """A task is a general container for all kind of tasks, defects,
     feature requests or any other issue in your product.
     """
@@ -178,20 +178,3 @@ class Task(BaseItem, Nested, Tagged, Commented, TaskStateMixin, Owned, Base):
         :returns: Integer value
         """
         return int(round((self.priority) * self.severity * 2.77))
-
-    @property
-    def is_root(self):
-        return self.parent == None
-
-    @property
-    def len_children(self):
-        return len(self.children)
-
-    @property
-    def total_estimate(self):
-        if len(self.children) == 0:
-            return self.estimate
-        estimate = 0
-        for child in self.children:
-            estimate += child.total_estimate
-        return estimate
