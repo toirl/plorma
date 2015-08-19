@@ -7,13 +7,18 @@
       <help>The strength of the sprint team. How many time will the team spent
       on this sprint?</help>
     </entity>
-    <entity id="size" name="size" label="Size" type="integer" required="true">
-      <help>The size is the initial sum of all story points of all tasks in the
-        sprint.</help>
+    <entity id="size" name="size" label="Initial Story Points" type="integer" required="true">
     </entity>
     <entity id="tasks" name="tasks" label="Sprint Backlog">
       <renderer type="listing" showsearch="true" table="sprintlog"/>
     </entity>
+    <entity id="velocity" name="_velocity" value="$velocity" label="Velocity">
+      <renderer type="info"/>
+    </entity>
+    <entity id="estimate" name="_estimate" value="$estimate" label="Remaining Story Points">
+      <renderer type="info"/>
+    </entity>
+
   </source>
   <form id="create" autocomplete="off" method="POST" action="" enctype="multipart/form-data">
     <snippet ref="create_snippet"/>
@@ -41,6 +46,8 @@
     <row>
       <col><field ref="strength"/></col>
       <col><field ref="size"/></col>
+      <col><field ref="estimate"/></col>
+      <col><field ref="velocity"/></col>
     </row>
   </snippet>
   <snippet id="tasks">

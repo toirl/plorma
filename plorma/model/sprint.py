@@ -38,6 +38,10 @@ class Sprint(BaseItem, Owned, Base):
                 sum += task.estimate
         return sum
 
+    @property
+    def velocity(self):
+        return float(self.size - self.estimate) / self.strength
+
     def get_length(self):
         """Returns the number of days of the sprint"""
         td = self.end - self.start
