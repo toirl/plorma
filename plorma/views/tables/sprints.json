@@ -1,0 +1,9 @@
+{
+    "overview": {
+        "columns": [
+            {"name": "start", "label": "Startdate"},
+            {"name": "end", "label": "Enddate"},
+            {"name": "velocity", "label": "Velocity"}
+        ]
+    }
+}

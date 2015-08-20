@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plorma 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-04-29 23:55+0200\n"
+"POT-Creation-Date: 2015-08-19 23:57+0200\n"
 "PO-Revision-Date: 2015-04-29 21:36+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: de <LL@li.org>\n"
@@ -11,58 +11,58 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 1.3\n"
+"Generated-By: Babel 2.0\n"
 
-#: plorma/model/task.py:39
+#: plorma/model/task.py:51
 msgid "New"
 msgstr "Neu"
 
-#: plorma/model/task.py:40
+#: plorma/model/task.py:52 plorma/templates/index.mako:56
 msgid "Open"
 msgstr "Offen"
 
-#: plorma/model/task.py:41
+#: plorma/model/task.py:53 plorma/templates/index.mako:57
 msgid "Assigned"
 msgstr "Zugewiesen"
 
-#: plorma/model/task.py:42
+#: plorma/model/task.py:54
 msgid "Resolved"
 msgstr "Erledigt"
 
-#: plorma/model/task.py:43
+#: plorma/model/task.py:55
 msgid "Verified"
 msgstr "Überprüft"
 
-#: plorma/model/task.py:44
+#: plorma/model/task.py:56
 msgid "Closed"
 msgstr "Geschlossen"
 
-#: plorma/model/task.py:45
+#: plorma/model/task.py:57
 msgid "Reopen"
 msgstr "Neueröffnet"
 
-#: plorma/model/task.py:46
+#: plorma/model/task.py:58
 msgid "Verify task"
 msgstr "Bestätige Aufgabe"
 
-#: plorma/model/task.py:47 plorma/model/task.py:49 plorma/model/task.py:50
-#: plorma/model/task.py:51
+#: plorma/model/task.py:59 plorma/model/task.py:61 plorma/model/task.py:62
+#: plorma/model/task.py:63
 msgid "Resolve task"
 msgstr "Erledige Aufgabe"
 
-#: plorma/model/task.py:48
+#: plorma/model/task.py:60
 msgid "Assign task"
 msgstr "Weise Aufgabe zu"
 
-#: plorma/model/task.py:52
+#: plorma/model/task.py:64
 msgid "Verify solution"
 msgstr "Überprüfe Lösung"
 
-#: plorma/model/task.py:53 plorma/model/task.py:54 plorma/model/task.py:56
+#: plorma/model/task.py:66 plorma/model/task.py:67 plorma/model/task.py:69
 msgid "Reopen task"
 msgstr "Neueröffnung der Aufgabe"
 
-#: plorma/model/task.py:55
+#: plorma/model/task.py:68
 msgid "Close task"
 msgstr "Schließe Aufgabe"
 
@@ -78,21 +78,99 @@ msgstr ""
 msgid "Show version information"
 msgstr ""
 
-#: plorma/templates/index.mako:6
+#: plorma/templates/index.mako:19
 msgid "Welcome to ${app_title}!"
 msgstr ""
 
-#: plorma/templates/index.mako:10
+#: plorma/templates/index.mako:23
 msgid "Login in the application"
 msgstr ""
 
-#: plorma/templates/index.mako:10
+#: plorma/templates/index.mako:23
 msgid "Login"
 msgstr ""
 
-#: plorma/templates/index.mako:12
+#: plorma/templates/index.mako:25
 msgid "Home"
 msgstr ""
+
+#. Label for sprints field in form config
+#: plorma/templates/index.mako:28 plorma/views/forms/tasks.xml:13
+msgid "Sprints"
+msgstr ""
+
+#: plorma/templates/index.mako:30
+msgid "No sprints available."
+msgstr "Keine Sprints verfügbar"
+
+#: plorma/templates/index.mako:35
+msgid "Update"
+msgstr "Bearbeiten"
+
+#: plorma/templates/index.mako:37
+msgid "Read"
+msgstr "Anzeigen"
+
+#. Label for _velocity field in form config
+#. Label for velocity column in overview table config
+#: plorma/templates/index.mako:47 plorma/views/forms/sprints.xml:6
+#: plorma/views/tables/sprints.json:4
+msgid "Velocity"
+msgstr "Geschwindigkeit"
+
+#: plorma/templates/index.mako:58
+msgid "Testable"
+msgstr "Testbar"
+
+#: plorma/templates/index.mako:59
+msgid "Finished"
+msgstr "Beendet"
+
+#: plorma/views/sprints.py:44
+msgid "Progress"
+msgstr "Fortschritt"
+
+#: plorma/views/sprints.py:49
+msgid "Ideal"
+msgstr "Ideal"
+
+#. Label for start field in form config
+#. Label for start column in overview table config
+#: plorma/views/forms/sprints.xml:1 plorma/views/tables/sprints.json:2
+msgid "Startdate"
+msgstr "Startdatum"
+
+#. Label for end field in form config
+#. Label for end column in overview table config
+#: plorma/views/forms/sprints.xml:2 plorma/views/tables/sprints.json:3
+msgid "Enddate"
+msgstr "Enddatum"
+
+#. Label for strength field in form config
+#: plorma/views/forms/sprints.xml:3
+msgid "Strength"
+msgstr "Stärke"
+
+#. Label for size field in form config
+#: plorma/views/forms/sprints.xml:4
+msgid "Initial Story Points"
+msgstr "Initiale Story Points"
+
+#. Label for tasks field in form config
+#: plorma/views/forms/sprints.xml:5
+msgid "Sprint Backlog"
+msgstr ""
+
+#. Label for _estimate field in form config
+#: plorma/views/forms/sprints.xml:7
+msgid "Remaining Story Points"
+msgstr "Verbleibende Story Points"
+
+#: plorma/views/forms/sprints.xml:8
+msgid ""
+"The strength of the sprint team. How many time will the team spent\n"
+"      on this sprint?"
+msgstr "Die Stärke des Sprintteams. Wieviel Zeit wird das Zeit auf diesem Sprint verbringen?"
 
 #. Label for name field in form config
 #: plorma/views/forms/tasks.xml:2
@@ -106,7 +184,9 @@ msgstr "Beschreibung"
 
 #. Label for priority field in form config
 #. Label for weight column in overview table config
-#: plorma/views/forms/tasks.xml:4 plorma/views/tables/tasks.json:3
+#. Label for weight column in sprintlog table config
+#: plorma/views/forms/tasks.xml:4 plorma/views/tables/tasks.json:4
+#: plorma/views/tables/tasks.json:11
 msgid "Priority"
 msgstr "Priorität"
 
@@ -122,19 +202,23 @@ msgstr "Lösung"
 
 #. Label for task_state_id field in form config
 #. Label for task_state column in overview table config
-#: plorma/views/forms/tasks.xml:7 plorma/views/tables/tasks.json:6
+#. Label for task_state column in sprintlog table config
+#: plorma/views/forms/tasks.xml:7 plorma/views/tables/tasks.json:7
+#: plorma/views/tables/tasks.json:13
 msgid "State"
 msgstr "Status"
 
 #. Label for assignee field in form config
 #. Label for assignee column in overview table config
-#: plorma/views/forms/tasks.xml:8 plorma/views/tables/tasks.json:5
+#: plorma/views/forms/tasks.xml:8 plorma/views/tables/tasks.json:6
 msgid "Assignee"
 msgstr "Beauftragter"
 
 #. Label for estimate field in form config
 #. Label for estimate column in overview table config
-#: plorma/views/forms/tasks.xml:9 plorma/views/tables/tasks.json:4
+#. Label for estimate column in sprintlog table config
+#: plorma/views/forms/tasks.xml:9 plorma/views/tables/tasks.json:5
+#: plorma/views/tables/tasks.json:12
 msgid "Estimate"
 msgstr "Schätzung"
 
@@ -148,7 +232,15 @@ msgstr "Neugiering"
 msgid "Comments"
 msgstr "Kommentare"
 
-#: plorma/views/forms/tasks.xml:12
+#. Label for tags field in form config
+#. Label for tags column in overview table config
+#. Label for tags column in sprintlog table config
+#: plorma/views/forms/tasks.xml:12 plorma/views/tables/tasks.json:3
+#: plorma/views/tables/tasks.json:10
+msgid "Tags"
+msgstr ""
+
+#: plorma/views/forms/tasks.xml:14
 msgid ""
 "The estimate indicates how much work remains to be done until the task is"
 " completely resolved."
@@ -156,129 +248,146 @@ msgstr ""
 "Die Schätzung gibt an, wieviel Arbeit noch in der Aufgabe steckt, bis "
 "diese vollständig erledigt ist."
 
-#: plorma/views/forms/tasks.xml:13
+#: plorma/views/forms/tasks.xml:15
+#, fuzzy
+#| msgid "Tasks"
+msgid "Task"
+msgstr "Aufgaben"
+
+#: plorma/views/forms/tasks.xml:16
+msgid "Organisation"
+msgstr ""
+
+#: plorma/views/forms/tasks.xml:17
 msgid " "
 msgstr ""
 
-#: plorma/views/forms/tasks.xml:14
+#: plorma/views/forms/tasks.xml:18
 msgid "immidiate"
 msgstr "unverzüglich"
 
-#: plorma/views/forms/tasks.xml:15
+#: plorma/views/forms/tasks.xml:19
 msgid "very high"
 msgstr "sehr hoch"
 
-#: plorma/views/forms/tasks.xml:16
+#: plorma/views/forms/tasks.xml:20
 msgid "high"
 msgstr "hoch"
 
-#: plorma/views/forms/tasks.xml:17 plorma/views/forms/tasks.xml:24
+#: plorma/views/forms/tasks.xml:21 plorma/views/forms/tasks.xml:28
 msgid "normal"
 msgstr "normal"
 
-#: plorma/views/forms/tasks.xml:18
+#: plorma/views/forms/tasks.xml:22
 msgid "low"
 msgstr "niedrig"
 
-#: plorma/views/forms/tasks.xml:19
+#: plorma/views/forms/tasks.xml:23
 msgid "very low"
 msgstr "sehr niedrig"
 
-#: plorma/views/forms/tasks.xml:20 plorma/views/forms/tasks.xml:27
-#: plorma/views/forms/tasks.xml:34 plorma/views/forms/tasks.xml:46
+#: plorma/views/forms/tasks.xml:24 plorma/views/forms/tasks.xml:31
+#: plorma/views/forms/tasks.xml:38 plorma/views/forms/tasks.xml:50
 msgid "not specified"
 msgstr "nicht angegeben"
 
-#: plorma/views/forms/tasks.xml:21
+#: plorma/views/forms/tasks.xml:25
 msgid "blocker"
 msgstr "blockiert"
 
-#: plorma/views/forms/tasks.xml:22
+#: plorma/views/forms/tasks.xml:26
 msgid "critical"
 msgstr "kritisch"
 
-#: plorma/views/forms/tasks.xml:23
+#: plorma/views/forms/tasks.xml:27
 msgid "major"
 msgstr "wesentlich"
 
-#: plorma/views/forms/tasks.xml:25
+#: plorma/views/forms/tasks.xml:29
 msgid "minor"
 msgstr "geringfügig"
 
-#: plorma/views/forms/tasks.xml:26
+#: plorma/views/forms/tasks.xml:30
 msgid "trivial"
 msgstr "unbedeutend"
 
-#: plorma/views/forms/tasks.xml:28
+#: plorma/views/forms/tasks.xml:32
 msgid "fixed"
 msgstr "erledigt"
 
-#: plorma/views/forms/tasks.xml:29
+#: plorma/views/forms/tasks.xml:33
 msgid "works for me"
 msgstr "funktioniert für mich"
 
-#: plorma/views/forms/tasks.xml:30
+#: plorma/views/forms/tasks.xml:34
 msgid "need more info"
 msgstr "brauche informationen"
 
-#: plorma/views/forms/tasks.xml:31
+#: plorma/views/forms/tasks.xml:35
 msgid "won't fix"
 msgstr "wird nicht erledigt"
 
-#: plorma/views/forms/tasks.xml:32
+#: plorma/views/forms/tasks.xml:36
 msgid "duplicate"
 msgstr "doppelt"
 
-#: plorma/views/forms/tasks.xml:33
+#: plorma/views/forms/tasks.xml:37
 msgid "invalid"
 msgstr "ungültig"
 
-#: plorma/views/forms/tasks.xml:35
+#: plorma/views/forms/tasks.xml:39
 msgid "0"
 msgstr ""
 
-#: plorma/views/forms/tasks.xml:36
+#: plorma/views/forms/tasks.xml:40
 msgid "1"
 msgstr ""
 
-#: plorma/views/forms/tasks.xml:37
+#: plorma/views/forms/tasks.xml:41
 msgid "2"
 msgstr ""
 
-#: plorma/views/forms/tasks.xml:38
+#: plorma/views/forms/tasks.xml:42
 msgid "3"
 msgstr ""
 
-#: plorma/views/forms/tasks.xml:39
+#: plorma/views/forms/tasks.xml:43
 msgid "5"
 msgstr ""
 
-#: plorma/views/forms/tasks.xml:40
+#: plorma/views/forms/tasks.xml:44
 msgid "8"
 msgstr ""
 
-#: plorma/views/forms/tasks.xml:41
+#: plorma/views/forms/tasks.xml:45
 msgid "13"
 msgstr ""
 
-#: plorma/views/forms/tasks.xml:42
+#: plorma/views/forms/tasks.xml:46
 msgid "20"
 msgstr ""
 
-#: plorma/views/forms/tasks.xml:43
+#: plorma/views/forms/tasks.xml:47
 msgid "40"
 msgstr ""
 
-#: plorma/views/forms/tasks.xml:44
+#: plorma/views/forms/tasks.xml:48
 msgid "100"
 msgstr ""
 
-#: plorma/views/forms/tasks.xml:45
+#: plorma/views/forms/tasks.xml:49
 msgid "inestimable"
 msgstr "unklar/nicht schätzbar"
 
 #. Label for name column in overview table config
-#: plorma/views/tables/tasks.json:2
+#. Label for name column in sprintlog table config
+#: plorma/views/tables/tasks.json:2 plorma/views/tables/tasks.json:9
 msgid "Title"
 msgstr "Titel"
+
+#~ msgid " "
+#~ msgstr ""
+
+#~ msgid ""
+#~ msgstr ""
 

@@ -7,7 +7,7 @@ from ringo.model.statemachine import (
         null_condition as condition
 )
 from ringo.model.mixins import (
-    Owned, StateMixin
+    Owned, StateMixin, Nested
 )
 from ringo_comment.model import Commented
 from ringo_tag.model import Tagged
@@ -19,7 +19,19 @@ nm_task_users = sa.Table(
     sa.Column('user_id', sa.Integer, sa.ForeignKey('users.id'))
 )
 
+# NM-Table to assign tasks to the sprints
+nm_task_sprints = sa.Table(
+    'nm_task_sprints', Base.metadata,
+    sa.Column('task_id', sa.Integer, sa.ForeignKey('tasks.id')),
+    sa.Column('sprint_id', sa.Integer, sa.ForeignKey('sprints.id'))
+)
+
 def close_handler(task, transition):
+    # When the task is finally closed than set remaining estimate to 0
+    task.estimate = 0
+    return task
+
+def verify_solution_handler(task, transition):
     # When the task is finally closed than set remaining estimate to 0
     task.estimate = 0
     return task
@@ -42,14 +54,15 @@ class TaskStatemachine(Statemachine):
         s4 = State(self, 4, _("Resolved"))
         s5 = State(self, 5, _("Verified"))
         s6 = State(self, 6, _("Closed"))
-        s7 = State(self, 2, _("Reopen"))
+        s7 = State(self, 7, _("Reopen"))
         s1.add_transition(s2, _("Verify task"), handler, condition)
         s1.add_transition(s4, _("Resolve task"), handler, condition)
         s2.add_transition(s3, _("Assign task"), handler, condition)
         s2.add_transition(s4, _("Resolve task"), handler, condition)
         s7.add_transition(s4, _("Resolve task"), handler, condition)
         s3.add_transition(s4, _("Resolve task"), handler, condition)
-        s4.add_transition(s5, _("Verify solution"), handler, condition)
+        s4.add_transition(s5, _("Verify solution"), verify_solution_handler,
+                          condition)
         s4.add_transition(s7, _("Reopen task"), reopen_handler, condition)
         s5.add_transition(s7, _("Reopen task"), reopen_handler, condition)
         s5.add_transition(s6, _("Close task"), close_handler, condition)
@@ -152,6 +165,9 @@ class Task(BaseItem, Tagged, Commented, TaskStateMixin, Owned, Base):
     nosy = sa.orm.relationship("User", secondary="nm_task_users")
     """List of users who are involved in some way into this task. All
     users in the nosylist will be notified on updated in the task."""
+    sprints = sa.orm.relationship("Sprint", secondary="nm_task_sprints",
+                                  backref="tasks")
+    """List of sprints where the task is planned to be worked on"""
 
     @property
     def weight(self):

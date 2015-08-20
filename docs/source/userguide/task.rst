@@ -64,10 +64,12 @@ States
         The resolution has been accepted by the QA. Last steps can be made to
         finally close the task.
 
+        Verifying the solution of a task will set the remaining estimate to 0.
+
 **Closed**
         The final state of a task. The task has be resolved the QA has
         approved the resolution. The resolution has been communicated to all
-        relevand parties.
+        relevant parties.
 
         Closing a task will set the remaining estimate to 0.
 
