@@ -48,6 +48,7 @@ mapping={'app_title': h.get_app_title()}
             <td>${sprint.velocity}</td>
           </tr>
         </table>
+      </div>
     </div>
     <div class="row">
       <div class="col-md-12">
