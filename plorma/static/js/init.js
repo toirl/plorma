@@ -13,6 +13,6 @@ $( document ).ready(function() {
     };
 
     function stopSortListener(e, ui) {
-        var data = $('table.sortable tbody').sortable('toArray', {attribute: "id"});
+        var data = $('table.sortable tbody').sortable('toArray', {attribute: "item-id"});
     }
 });
