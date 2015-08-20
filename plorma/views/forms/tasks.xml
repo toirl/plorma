@@ -117,18 +117,14 @@
         <col width="2"><field ref="severity"/></col>
       </row>
     <row>
-      <col width="2">
-        <text> </text>
-      </col>
-      <col width="2"><field ref="tags"/></col>
-      <col width="2"><field ref="estimate"/></col>
-      <col width="2"><field ref="state"/></col>
-      <col width="2">
+      <col><field ref="estimate"/></col>
+      <col><field ref="state"/></col>
+      <col>
         <if expr="$task_state_id == 3" type="readonly">
           <field ref="assignee"/>
         </if>
       </col>
-      <col width="2">
+      <col>
         <if expr="$task_state_id == 4" type="readonly">
           <field ref="resolution"/>
         </if>
@@ -139,6 +135,9 @@
       </row>
     </page>
     <page id="p2" label="Organisation">
+      <row>
+        <col><field ref="tags"/></col>
+      </row>
       <row>
         <col><field ref="sprints"/></col>
       </row>
