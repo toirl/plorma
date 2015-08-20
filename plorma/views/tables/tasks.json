@@ -11,7 +11,8 @@
         "settings": {
             "default-sort-field": "weight",
             "default-sort-order": "desc",
-            "pagination": true
+            "pagination": true,
+            "sortable": true
         }
     },
     "sprintlog": {
