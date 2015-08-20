@@ -40,7 +40,7 @@ class Sprint(BaseItem, Owned, Base):
 
     @property
     def velocity(self):
-        return float(self.size - self.estimate) / self.strength
+        return self.size - self.estimate
 
     def get_length(self):
         """Returns the number of days of the sprint"""

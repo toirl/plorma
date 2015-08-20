@@ -45,7 +45,7 @@ mapping={'app_title': h.get_app_title()}
         <table class="table">
           <tr>
             <td>${_('Velocity')}</td>
-            <td>${sprint.velocity} (${sprint.size-sprint.estimate}/${sprint.strength})</td>
+            <td>${sprint.velocity}</td>
           </tr>
         </table>
     </div>
