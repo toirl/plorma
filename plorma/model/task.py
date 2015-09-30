@@ -26,6 +26,13 @@ nm_task_sprints = sa.Table(
     sa.Column('sprint_id', sa.Integer, sa.ForeignKey('sprints.id'))
 )
 
+def resolve_handler(task, transition):
+    # When the task is resolved then set the remaining estimation to 1
+    # because there is some testing work to be done which is assumend to
+    # be 1 in the most cases.
+    task.estimate = 1
+    return task
+
 def close_handler(task, transition):
     # When the task is finally closed than set remaining estimate to 0
     task.estimate = 0
@@ -58,11 +65,11 @@ class TaskStatemachine(Statemachine):
         s6 = State(self, 6, _("Closed"))
         s7 = State(self, 7, _("Reopen"))
         s1.add_transition(s2, _("Verify task"), handler, condition)
-        s1.add_transition(s4, _("Resolve task"), handler, condition)
+        s1.add_transition(s4, _("Resolve task"), resolve_handler, condition)
         s2.add_transition(s3, _("Assign task"), handler, condition)
-        s2.add_transition(s4, _("Resolve task"), handler, condition)
-        s7.add_transition(s4, _("Resolve task"), handler, condition)
-        s3.add_transition(s4, _("Resolve task"), handler, condition)
+        s2.add_transition(s4, _("Resolve task"), resolve_handler, condition)
+        s7.add_transition(s4, _("Resolve task"), resolve_handler, condition)
+        s3.add_transition(s4, _("Resolve task"), resolve_handler, condition)
         s4.add_transition(s5, _("Verify solution"), verify_solution_handler,
                           condition)
         s4.add_transition(s7, _("Reopen task"), reopen_handler, condition)
