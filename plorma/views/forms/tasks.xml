@@ -125,7 +125,11 @@
     </page>
     <page id="p2" label="Sprint Planning">
       <row>
-      <col><field ref="estimate"/></col>
+        <col><field ref="priority"/></col>
+        <col><field ref="severity"/></col>
+      </row>
+      <row>
+        <col><field ref="estimate"/></col>
       </row>
       <row>
         <col><field ref="sprints"/></col>
