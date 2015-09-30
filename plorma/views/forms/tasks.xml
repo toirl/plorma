@@ -47,7 +47,7 @@
     <entity id="state" name="task_state_id" label="State" type="integer">
       <renderer type="state" layout="simple"/>
     </entity>
-    <entity id="assignee" name="assignee" label="Assignee" required="true">
+    <entity id="assignee" name="assignee" label="Assignee">
       <renderer type="dropdown"/>
     </entity>
     <entity id="estimate" name="estimate" label="Estimate" type="integer" required="true">
