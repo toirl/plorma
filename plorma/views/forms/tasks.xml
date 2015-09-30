@@ -117,7 +117,6 @@
         <col width="2"><field ref="severity"/></col>
       </row>
     <row>
-      <col><field ref="tags"/></col>
       <col><field ref="state"/></col>
       <col>
         <if expr="$task_state_id == 3" type="readonly">
