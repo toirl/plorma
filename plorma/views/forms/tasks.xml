@@ -134,7 +134,7 @@
         <col><field ref="comments"/></col>
       </row>
     </page>
-    <page id="p2" label="Organisation">
+    <page id="p2" label="Sprint Planning">
       <row>
         <col><field ref="tags"/></col>
       </row>
