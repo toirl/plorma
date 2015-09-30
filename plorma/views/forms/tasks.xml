@@ -117,7 +117,7 @@
         <col width="2"><field ref="severity"/></col>
       </row>
     <row>
-      <col><field ref="estimate"/></col>
+      <col><field ref="tags"/></col>
       <col><field ref="state"/></col>
       <col>
         <if expr="$task_state_id == 3" type="readonly">
@@ -136,7 +136,7 @@
     </page>
     <page id="p2" label="Sprint Planning">
       <row>
-        <col><field ref="tags"/></col>
+      <col><field ref="estimate"/></col>
       </row>
       <row>
         <col><field ref="sprints"/></col>
