@@ -37,10 +37,12 @@ def verify_solution_handler(task, transition):
     return task
 
 def reopen_handler(task, transition):
-    # The QA fails. There will be some work to be done. Enforce the
-    # developer to set a new estimate by setting the current estimation
-    # to unknown.
+    # The QA fails. There will be some work to be done. Reset the
+    # current solution and enforce the developer to set a new estimate
+    # by setting the current estimation to unknown.
     task.estimate = None
+    task.resolution = None
+    task.assignee = None
     return task
 
 class TaskStatemachine(Statemachine):
