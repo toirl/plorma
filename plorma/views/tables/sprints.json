@@ -1,9 +1,12 @@
 {
     "overview": {
         "columns": [
+            {"name": "title", "label": "Title", "width": 350},
+            {"name": "strength", "label": "Strength"},
+            {"name": "size", "label": "Story Points"},
+            {"name": "estimate", "label": "Estimate"},
             {"name": "start", "label": "Startdate"},
-            {"name": "end", "label": "Enddate"},
-            {"name": "velocity", "label": "Velocity"}
+            {"name": "end", "label": "Enddate"}
         ]
     }
 }

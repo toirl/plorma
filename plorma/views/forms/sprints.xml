@@ -18,6 +18,10 @@
     <entity id="estimate" name="_estimate" value="$estimate" label="Remaining Story Points">
       <renderer type="info"/>
     </entity>
+    <entity id="title" name="title" label="Title" required="true"/>
+    <entity id="description" name="description" label="Description">
+      <renderer type="textarea" rows="5"/>
+    </entity>
 
   </source>
   <form id="create" autocomplete="off" method="POST" action="" enctype="multipart/form-data">
@@ -34,15 +38,28 @@
     <snippet ref="base"/>
   </snippet>
   <snippet id="update_snippet">
-    <snippet ref="base"/>
-    <snippet ref="tasks"/>
+    <page id="p1" label="Sprint">
+      <snippet ref="base"/>
+    </page>
+    <page id="p2" label="Planning">
+      <snippet ref="extended"/>
+      <snippet ref="tasks"/>
+    </page>
   </snippet>
 
   <snippet id="base">
     <row>
+      <col><field ref="title"/></col>
+    </row>
+    <row>
       <col><field ref="start"/></col>
       <col><field ref="end"/></col>
     </row>
+    <row>
+      <col><field ref="description"/></col>
+    </row>
+  </snippet>
+  <snippet id="extended">
     <row>
       <col><field ref="strength"/></col>
       <col><field ref="size"/></col>
