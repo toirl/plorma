@@ -5,7 +5,8 @@
             {"name": "tags", "label": "Tags", "width": "100"},
             {"name": "assignee", "label": "Assignee", "width": "70", "expand": true},
             {"name": "weight", "label": "Priority", "width": "70"},
-            {"name": "task_state", "label": "State", "width": "70", "expand": true}
+            {"name": "task_state", "label": "State", "width": "150", "expand": true},
+            {"name": "resolution", "label": "Resolution", "width": "150", "expand": true}
         ],
         "settings": {
             "default-sort-field": "weight",
