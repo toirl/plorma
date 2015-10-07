@@ -1,0 +1,44 @@
+table.sprintboard {
+  display: fixed;
+}
+
+table.sprintboard th {
+  text-align: center;
+}
+
+div.taskcard {
+  margin-bottom: 5px;
+}
+
+div.taskcard a {
+  text-decoration: none;
+  color: black;
+}
+
+div.taskcard-label {
+  border-radius: 5px 5px 0 0;
+  padding: 4px;
+  background: #d6d6d6;
+}
+
+div.taskcard-content {
+  padding: 4px;
+  background: #f0f0f0;
+  text-align: center;
+}
+
+div.taskcard-footer {
+  border-radius: 0 0 5px 5px;
+  padding: 4px;
+  background: #f0f0f0;
+  font-size: 0.8em;
+}
+
+div.taskcard-issueno {
+  display: inline;
+  width: 50px;
+}
+
+div.taskcard-status {
+  display: block;
+}

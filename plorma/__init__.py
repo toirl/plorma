@@ -6,6 +6,7 @@ from ringo.model import Base
 from ringo.resources import get_resource_factory 
 from ringo.config import setup_modules
 from ringo.lib.i18n import translators
+from ringo.lib.helpers import get_action_routename
 from plorma.model import extensions
 from plorma.model.sprint import Sprint
 
@@ -33,4 +34,7 @@ def includeme(config):
 
     config.add_route('renderburndown',
                      'sprints/burndown/{id}',
+                     factory=get_resource_factory(Sprint))
+    config.add_route(get_action_routename(Sprint, 'board'),
+                     'sprintboard/{id}',
                      factory=get_resource_factory(Sprint))

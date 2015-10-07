@@ -62,9 +62,7 @@ mapping={'app_title': h.get_app_title()}
           </tr>
           <tr>
             <td colspan="2">
-              <a class="btn btn-default btn-block"
-                href="${request.route_path(h.get_action_routename(sprint,
-                'update'), id=sprint.id)}"><i class="fa fa-table"></i> ${_('Open Sprintboard')}</a>
+              <a class="btn btn-default btn-block" href="${request.route_path(h.get_action_routename(sprint, 'board'), id=sprint.id)}"><i class="fa fa-table"></i> ${_('Open Sprintboard')}</a>
             </td>
           </tr>
         </table>
