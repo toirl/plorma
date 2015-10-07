@@ -1,6 +1,6 @@
 import pygal                                                       # First import pygal
 import datetime
-from pygal.style import BlueStyle
+from pygal.style import CleanStyle
 from pyramid.view import view_config
 from pyramid.response import Response
 from ringo.views.request import handle_history, get_item_from_request
@@ -38,7 +38,11 @@ def burndown_view(request):
     sprint = get_item_from_request(request)
     chart = pygal.Line(height=200,
                        x_label_rotation=20,
-                       show_legend=False)
+                       show_legend=False,
+                       style=CleanStyle,
+                       margin=0,
+                       margin_bottom=20
+                       )
     chart.x_labels = map(str, get_x_labels(sprint))
     history = get_estimate_history(sprint)
     chart.add(_('Progress'), history)
