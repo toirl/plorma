@@ -13,7 +13,8 @@ requires = [
     'psycopg2',
     'ringo',
     'ringo_comment',
-    'ringo_tag'
+    'ringo_tag',
+    'pygal'
 ]
 
 setup(name='plorma',

@@ -17,10 +17,6 @@ Getting Started
 
 - $venv/bin/plorma-admin db init
 
-- $venv/bin/plorma-admin fixtures load
-
-- $venv/bin/plorma-admin db fixsequence
-
 - $venv/bin/plorma-admin fixtures load --path plorma/fixtures/demo
 
 - $venv/bin/plorma-admin db fixsequence
