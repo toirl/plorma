@@ -22,7 +22,9 @@
     <entity id="description" name="description" label="Description">
       <renderer type="textarea" rows="5"/>
     </entity>
-
+    <entity id="state" name="sprint_state_id" label="State" type="integer">
+      <renderer type="state" layout="simple"/>
+    </entity>
   </source>
   <form id="create" autocomplete="off" method="POST" action="" enctype="multipart/form-data">
     <snippet ref="create_snippet"/>
@@ -65,6 +67,9 @@
       <col><field ref="size"/></col>
       <col><field ref="estimate"/></col>
       <col><field ref="velocity"/></col>
+    </row>
+    <row>
+      <col><field ref="state"/></col>
     </row>
   </snippet>
   <snippet id="tasks">
