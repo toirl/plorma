@@ -198,6 +198,7 @@ def upgrade():
     sa.Column('size', sa.Integer(), nullable=True),
     sa.Column('uid', sa.Integer(), nullable=True),
     sa.Column('gid', sa.Integer(), nullable=True),
+    sa.Column('sprint_state_id', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['gid'], ['usergroups.id'], name='fk_sprints_gid_usergroups', use_alter=True),
     sa.ForeignKeyConstraint(['uid'], ['users.id'], name='fk_sprints_uid_users', use_alter=True),
     sa.PrimaryKeyConstraint('id'),
@@ -393,6 +394,25 @@ def upgrade():
     )
     ### end Alembic commands ###
     iter_statements(INSERTS)
+
+    op.create_foreign_key('fk_comments_gid_usergroups', 'comments', 'usergroups', ['gid'], ['id'], use_alter=True)
+    op.create_foreign_key('fk_comments_uid_users', 'comments', 'users', ['uid'], ['id'], use_alter=True)
+    op.create_foreign_key('fk_forms_gid_usergroups', 'forms', 'usergroups', ['gid'], ['id'], use_alter=True)
+    op.create_foreign_key('fk_forms_uid_users', 'forms', 'users', ['uid'], ['id'], use_alter=True)
+    op.create_foreign_key('fk_profiles_gid_usergroups', 'profiles', 'usergroups', ['gid'], ['id'], use_alter=True)
+    op.create_foreign_key('fk_profiles_uid_users', 'profiles', 'users', ['uid'], ['id'], use_alter=True)
+    op.create_foreign_key('fk_roles_gid_usergroups', 'roles', 'usergroups', ['gid'], ['id'], use_alter=True)
+    op.create_foreign_key('fk_roles_uid_users', 'roles', 'users', ['uid'], ['id'], use_alter=True)
+    op.create_foreign_key('fk_sprints_gid_usergroups', 'sprints', 'usergroups', ['gid'], ['id'], use_alter=True)
+    op.create_foreign_key('fk_sprints_uid_users', 'sprints', 'users', ['uid'], ['id'], use_alter=True)
+    op.create_foreign_key('fk_tags_gid_usergroups', 'tags', 'usergroups', ['gid'], ['id'], use_alter=True)
+    op.create_foreign_key('fk_tags_uid_users', 'tags', 'users', ['uid'], ['id'], use_alter=True)
+    op.create_foreign_key('fk_tasks_gid_usergroups', 'tasks', 'usergroups', ['gid'], ['id'], use_alter=True)
+    op.create_foreign_key('fk_tasks_uid_users', 'tasks', 'users', ['uid'], ['id'], use_alter=True)
+    op.create_foreign_key('fk_usergroups_uid_users', 'usergroups', 'users', ['uid'], ['id'], use_alter=True)
+    op.create_foreign_key('fk_usergroups_gid_usergroups', 'usergroups', 'usergroups', ['gid'], ['id'], use_alter=True)
+    op.create_foreign_key('fk_users_uid_users', 'users', 'users', ['uid'], ['id'], use_alter=True)
+    op.create_foreign_key('fk_users_gid_usergroups', 'users', 'usergroups', ['gid'], ['id'], use_alter=True)
 
 
 def downgrade():
