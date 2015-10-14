@@ -26,6 +26,14 @@ nm_task_sprints = sa.Table(
     sa.Column('sprint_id', sa.Integer, sa.ForeignKey('sprints.id'))
 )
 
+def assign_handler(task, transition):
+    # When assigning the task make sure the task is assigned to the
+    # current user in case the assignee is not set.
+    request = transition._end_state._statemachine._request
+    if request.params.get("assignee") == "":
+        task.assignee_id = request.user.id
+    return task
+
 def resolve_handler(task, transition):
     # When the task is resolved then set the remaining estimation to 1
     # because there is some testing work to be done which is assumend to
@@ -66,7 +74,7 @@ class TaskStatemachine(Statemachine):
         s7 = State(self, 7, _("Reopen"))
         s1.add_transition(s2, _("Verify task"), handler, condition)
         s1.add_transition(s4, _("Resolve task"), resolve_handler, condition)
-        s2.add_transition(s3, _("Assign task"), handler, condition)
+        s2.add_transition(s3, _("Assign task"), assign_handler, condition)
         s2.add_transition(s4, _("Resolve task"), resolve_handler, condition)
         s7.add_transition(s4, _("Resolve task"), resolve_handler, condition)
         s3.add_transition(s4, _("Resolve task"), resolve_handler, condition)
@@ -76,6 +84,7 @@ class TaskStatemachine(Statemachine):
         s5.add_transition(s7, _("Reopen task"), reopen_handler, condition)
         s5.add_transition(s6, _("Close task"), close_handler, condition)
         s6.add_transition(s7, _("Reopen task"), reopen_handler, condition)
+        s7.add_transition(s3, _("Assign task"), assign_handler, condition)
         return s1
 
 
