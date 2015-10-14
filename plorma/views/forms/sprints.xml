@@ -3,13 +3,13 @@
   <source>
     <entity id="start" name="start" label="Startdate" type="date" value="% date('today')" required="true"/>
     <entity id="end" name="end" label="Enddate" type="date" value="% date('today')" required="true"/>
-    <entity id="strength" name="strength" label="Strength" type="integer" required="true">
+    <entity id="strength" name="strength" label="Strength" type="integer" desired="true">
       <help>The strength of the sprint team. How many time will the team spent
       on this sprint?</help>
     </entity>
     <entity id="size" name="size" label="Initial Story Points" type="integer" readonly="true">
     </entity>
-    <entity id="tasks" name="tasks" label="Sprint Backlog">
+    <entity id="tasks" name="tasks" label="Sprint Backlog" desired="true">
       <renderer type="listing" showsearch="true" table="sprintlog"/>
     </entity>
     <entity id="velocity" name="_velocity" value="$velocity" label="Velocity">
@@ -65,6 +65,8 @@
     <row>
       <col><field ref="strength"/></col>
       <col><field ref="size"/></col>
+    </row>
+    <row>
       <col><field ref="estimate"/></col>
       <col><field ref="velocity"/></col>
     </row>
