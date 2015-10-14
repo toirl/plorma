@@ -6,8 +6,13 @@
             {"name": "size", "label": "Story Points"},
             {"name": "estimate", "label": "Estimate"},
             {"name": "start", "label": "Startdate"},
-            {"name": "end", "label": "Enddate"}
-        ]
+            {"name": "end", "label": "Enddate"},
+            {"name": "sprint_state", "label": "State", "width": "70", "expand": true}
+        ],
+        "settings": {
+            "default-sort-field": "start",
+            "default-sort-order": "desc"
+        }
     },
     "plannedprints": {
         "columns": [
