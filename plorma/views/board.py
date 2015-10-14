@@ -9,7 +9,7 @@ from plorma.model.sprint import Sprint
 
 @view_config(route_name=get_action_routename(Sprint, 'board'),
              renderer='/sprint/board.mako',
-             permission='update')
+             permission='read')
 def board(request):
     handle_history(request)
     rvalues = get_return_value(request)

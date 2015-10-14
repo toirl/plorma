@@ -55,9 +55,9 @@ class SprintStatemachine(Statemachine):
         # translateable for gettext.
         _ = lambda x : x
         s1 = State(self, 1, _("Planning"))
-        s2 = State(self, 2, _("Running"))
-        s3 = State(self, 3, _("Aborted"))
-        s4 = State(self, 4, _("Finished"))
+        s2 = State(self, 2, _("Running"), disabled_actions={"productowner": ["update"]})
+        s3 = State(self, 3, _("Aborted"), disabled_actions={"productowner": ["update"]})
+        s4 = State(self, 4, _("Finished"), disabled_actions={"productowner": ["update"]})
         s1.add_transition(s2, _("Start sprint"),
                           start_handler, start_condition)
         s2.add_transition(s3, _("Abort sprint"), handler, condition)
