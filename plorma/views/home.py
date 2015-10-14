@@ -10,5 +10,5 @@ def index_view(request):
     handle_history(request)
     values = {}
     sprints = get_item_list(request, Sprint, request.user)
-    values['sprints'] = sprints.items
+    values['sprints'] = [item for item in sprints.items if item.sprint_state_id == 2]
     return values
