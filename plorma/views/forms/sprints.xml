@@ -7,7 +7,7 @@
       <help>The strength of the sprint team. How many time will the team spent
       on this sprint?</help>
     </entity>
-    <entity id="size" name="size" label="Initial Story Points" type="integer" required="true">
+    <entity id="size" name="size" label="Initial Story Points" type="integer" readonly="true">
     </entity>
     <entity id="tasks" name="tasks" label="Sprint Backlog">
       <renderer type="listing" showsearch="true" table="sprintlog"/>
