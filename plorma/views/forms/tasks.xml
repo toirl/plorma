@@ -75,7 +75,7 @@
     </entity>
     <entity id="tags" name="tags" label="Tags"/>
     <entity id="sprints" name="sprints" label="Sprints">
-      <renderer type="listing" hideadd="true"/>
+      <renderer type="listing" table="plannedprints" hideadd="true"/>
     </entity>
   </source>
   <form id="create" autocomplete="off" method="POST" action="" enctype="multipart/form-data">

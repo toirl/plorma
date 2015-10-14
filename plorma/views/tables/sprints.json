@@ -8,5 +8,18 @@
             {"name": "start", "label": "Startdate"},
             {"name": "end", "label": "Enddate"}
         ]
+    },
+    "plannedprints": {
+        "columns": [
+            {"name": "title", "label": "Title", "width": 350},
+            {"name": "start", "label": "Startdate"},
+            {"name": "end", "label": "Enddate"},
+            {"name": "sprint_state", "label": "State", "width": "70", "expand": true}
+        ],
+        "settings": {
+            "default-sort-field": "start",
+            "default-sort-order": "asc",
+            "default-search": [["== Planning", "sprint_state", false]]
+        }
     }
 }
