@@ -90,6 +90,29 @@
     <field ref="roles"/>
     <snippet ref="read_snippet"/>
   </form>
+  <form id="taskcard">
+    <field ref="roles"/>
+    <snippet ref="taskcard_snippet"/>
+  </form>
+
+  <snippet id="taskcard_snippet">
+    <row>
+      <col><field ref="name"/></col>
+    </row>
+    <row>
+      <col><field ref="estimate"/></col>
+      <col><field ref="assignee"/></col>
+      <col><field ref="state"/></col>
+      <col>
+        <if expr="$task_state_id == 4" type="readonly">
+          <field ref="resolution"/>
+        </if>
+      </col>
+    </row>
+    <row>
+      <col><field ref="comments"/></col>
+    </row>
+  </snippet>
 
   <snippet id="create_snippet">
     <row>

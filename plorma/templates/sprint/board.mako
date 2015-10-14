@@ -20,9 +20,7 @@
 <%def name="render_task(task)">
   <div class="taskcard">
     <div class="taskcard-label">
-      <div class="taskcard-issueno"><a
-          href="${request.route_path(h.get_action_routename(task, 'update'),
-          id=item.id, _query={'backurl': request.current_route_path()})}"><i class="glyphicon glyphicon-edit"></i></a></div>
+      <div class="taskcard-issueno"><a href="${request.route_path(h.get_action_routename(task, 'update'), id=task.id, _query={'backurl': request.current_route_path()})}"><i class="glyphicon glyphicon-edit"></i></a></div>
       <div class="taskcard-estimate pull-right"><i class="fa fa-clock-o"></i> 
         % if task.estimate != None:
           ${_(task.get_value('estimate', expand=True))}
@@ -32,8 +30,10 @@
       </div>
     </div>
     <div class="taskcard-content">
-      <strong>#${task.id}:</strong>
-      ${task.name}
+      <a href="${request.route_path(h.get_action_routename(task, 'update'), id=task.id, _query={'backurl': request.current_route_path(), 'form': 'taskcard'})}">
+        <strong>#${task.id}:</strong>
+        ${task.name}
+      </a>
     </div>
     <div class="taskcard-footer">
       <div class="taskcard-status">
