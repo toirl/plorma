@@ -17,6 +17,7 @@
         "resolution": null,
         "severity": 6,
         "task_state_id": 3,
+        "estimate": 3,
         "uid": 3,
         "uuid": "6da4553a4b4f40cd87716b5ee95564d5"
     },
@@ -35,6 +36,7 @@
         "resolution": null,
         "severity": 4,
         "task_state_id": 3,
+        "estimate": 4,
         "uid": 3,
         "uuid": "6dedee48cd334dd3ba54bde8ae74b737"
     },
@@ -51,6 +53,7 @@
         "owner": 3,
         "priority": 5,
         "resolution": null,
+        "estimate": 1,
         "severity": 2,
         "task_state_id": 3,
         "uid": 3,
