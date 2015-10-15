@@ -1,5 +1,5 @@
 table.sprintboard {
-  display: fixed;
+  table-layout: fixed;
 }
 
 table.sprintboard th {
