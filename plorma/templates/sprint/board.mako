@@ -51,7 +51,7 @@
   </div>
 </%def>
 
-<div class="container">
+<div class="container-fluid">
 <h1>${item.title} (${h.prettify(request, item.start)} – ${h.prettify(request, item.end)})</h1>
   <div class="row">
     <div class="col-md-12">
