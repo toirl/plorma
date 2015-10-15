@@ -1,3 +1,5 @@
+
+
 ****
 Task
 ****
@@ -5,20 +7,27 @@ Task
    :width: 800 px
    :alt: Plorma task editing
 
-Every task must have a short title (1) which ideally sums up the task in a few
+Editing the task is devided into to parts (1). The basic fields for the tasks
+and fields related for the sprint planing.
+
+
+Every task must have a short title (2) which ideally sums up the task in a few
 words. The title is used in the Taskoverview to identify the task.
 
-The :ref:`task_priority` can be done in (2). Note that the priority is grayed
-out. This is because the priority can only be set by the product owner.
-
 The :ref:`task_states`, :ref:`task_resolution` and the *Assigne* can be set in
-(3). Some of the fields will become a required field based on the current
-state and selections. So the *Assignee* field will become a required field
-when switching into the assigned state.  The *Resolution* field and will
-become a required field if the task will be resolved.
+. Some of the fields will become a required field based on the current
+state and selections. So the *Resolution* field will become a required field
+when switching into the resolved state.
 
-Finally users can add comments (4) to give further information, or document
+Finally users can add comments (3) to give further information, or document
 their proceed. Comments are readable by all users.
+
+.. image:: ../images/screenshots/task_planning.png
+   :width: 800 px
+   :alt: Plorma task sprint planing
+
+The :ref:`task_priority` can be set in (1). The priority will influence the
+order of the task in the task overview or product backlog. 
 
 .. rubric:: Estimate
 
@@ -31,6 +40,10 @@ The estimate does not have any time unit like hours. It is a abstract
 estimate and needs to be interpreted individual. The estimate can be
 used as Story Points in a Scrum development process.
 
+.. rubric:: Sprints
+
+The sprint listing will show a list of Sprints which are currently in the
+planning state. You can assign tasks to more than on sprint.
 
 Lifecycle
 =========
