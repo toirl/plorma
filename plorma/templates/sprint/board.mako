@@ -16,6 +16,13 @@
       verified_tasks.append(task)
     elif task.task_state_id in [6]:
       finished_tasks.append(task)
+  open_estimate = sum([int(t.get_value('estimate', expand=True) or 0) for t in open_tasks])
+  assigend_estimate = sum([int(t.get_value('estimate', expand=True) or 0) for t in assigned_tasks])
+  testable_estimate = sum([int(t.get_value('estimate', expand=True) or 0) for t in testable_tasks])
+  verified_estimate = sum([int(t.get_value('estimate', expand=True) or 0) for t in verified_tasks])
+  finished_estimate = sum([int(t.get_value('estimate', expand=True) or 0) for t in finished_tasks])
+
+
 %>
 <%def name="render_task(task)">
   <div class="taskcard">
@@ -52,17 +59,18 @@
 </%def>
 
 <div class="container-fluid">
-<h1>${item.title} (${h.prettify(request, item.start)} – ${h.prettify(request, item.end)})</h1>
+<h1>${item.title} (${h.prettify(request, item.start)} – ${h.prettify(request,
+  item.end)}) <span class="pull-right">${item.estimate}/${item.size}</span></h1>
   <div class="row">
     <div class="col-md-12">
       <table class="table sprintboard">
         <thead>
           <tr>
-            <th>${_('Open')}</th>
-            <th>${_('In Progress')}</th>
-            <th>${_('Done')}</th>
-            <th>${_('Verified')}</th>
-            <th>${_('Closed')}</th>
+            <th>${_('Open')} (${open_estimate})</th>
+            <th>${_('In Progress')} (${assigend_estimate})</th>
+            <th>${_('Done')} (${testable_estimate})</th>
+            <th>${_('Verified')} (${verified_estimate})</th>
+            <th>${_('Closed')} (${finished_estimate})</th>
           </tr>
         </thead>
         <tbody>
@@ -96,11 +104,11 @@
         </tbody>
         <tfoot>
           <tr>
-            <th>${_('Open')}</th>
-            <th>${_('In Progress')}</th>
-            <th>${_('Done')}</th>
-            <th>${_('Verified')}</th>
-            <th>${_('Closed')}</th>
+            <th>${_('Open')} (${open_estimate})</th>
+            <th>${_('In Progress')} (${assigend_estimate})</th>
+            <th>${_('Done')} (${testable_estimate})</th>
+            <th>${_('Verified')} (${verified_estimate})</th>
+            <th>${_('Closed')} (${finished_estimate})</th>
           </tr>
         </tfoot>
       </table>
