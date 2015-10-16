@@ -73,7 +73,9 @@
     <entity id="comments" name="comments" label="Comments">
       <renderer type="comment"/>
     </entity>
-    <entity id="tags" name="tags" label="Tags"/>
+    <entity id="tags" name="tags" label="Tags">
+      <renderer type="textoption"/>
+    </entity>
     <entity id="sprints" name="sprints" label="Sprints">
       <renderer type="listing" table="plannedprints" hideadd="true"/>
     </entity>
@@ -131,7 +133,8 @@
     <page id="p1" label="Task">
       <row>
         <field ref="roles"/>
-        <col width="12"><field ref="name"/></col>
+        <col width="9"><field ref="name"/></col>
+        <col width="3"><field ref="tags"/></col>
       </row>
     <row>
       <col><field ref="assignee"/></col>

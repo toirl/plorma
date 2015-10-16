@@ -2,7 +2,7 @@
     "overview": {
         "columns": [
             {"name": "name", "label": "Title"},
-            {"name": "tags", "label": "Tags", "width": "100"},
+            {"name": "tags", "label": "Tags"},
             {"name": "assignee", "label": "Assignee", "width": "70", "expand": true},
             {"name": "weight", "label": "Priority", "width": "70"},
             {"name": "task_state", "label": "State", "width": "150", "expand": true},
