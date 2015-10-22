@@ -73,6 +73,7 @@ class TaskStatemachine(Statemachine):
         s6 = State(self, 6, _("Closed"))
         s7 = State(self, 7, _("Reopen"))
         s1.add_transition(s2, _("Verify task"), handler, condition)
+        s1.add_transition(s3, _("Assign task"), assign_handler, condition)
         s1.add_transition(s4, _("Resolve task"), resolve_handler, condition)
         s2.add_transition(s3, _("Assign task"), assign_handler, condition)
         s2.add_transition(s4, _("Resolve task"), resolve_handler, condition)
