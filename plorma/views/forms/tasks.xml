@@ -121,6 +121,7 @@
       <col><field ref="name"/></col>
     </row>
     <row>
+      <col><field ref="priority"/></col>
       <col><field ref="severity"/></col>
       <col><field ref="estimate"/></col>
     </row>
