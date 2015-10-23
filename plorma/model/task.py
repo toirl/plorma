@@ -193,10 +193,13 @@ class Task(BaseItem, Tagged, Commented, TaskStateMixin, Owned, Base):
     def weight(self):
         """Calculated weight of the task based on the priority and
         severity of the task. This value is used to priorize the tasks
-        in the overview. The priority of the task is weighted with a
-        factor 2.77.
+        in the overview and the sprint planing.
         :returns: Integer value
         """
         if not self.priority or not self.severity:
             return None
-        return int(round((self.priority) * self.severity * 2.77))
+
+        calc = {"6": 100, "5": 85, "4": 70, "3": 50, "2": 35, "1": 20}
+        p = float(calc[str(self.priority)])
+        s = calc[str(self.severity)]/100.0
+        return int(p*s)

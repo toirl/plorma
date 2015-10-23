@@ -122,11 +122,15 @@ basically calculated.
 
 .. math::
 
-        priority * (severity * 2.77)
+        priority * severity
 
-In Plorma the calculated value is called the *Taskweight*. The severity is
-weighted and has more influence in the Taskweight than the priority. The
-Taskweight is used in the Taskoverview are prioritization criteria.
+In Plorma the calculated value is called the *Taskweight*. The range to
+the priority is (100,85,70,50,35,20). The range to the priority is
+(1,0.85,0.7,0.5,0.35,0.2). The Taskweight is used in the Taskoverview
+are prioritization criteria.
+
+If either the priority or the severity is not set, than the weight can
+not be calculated and is unknown.
 
 
 .. note:: 
