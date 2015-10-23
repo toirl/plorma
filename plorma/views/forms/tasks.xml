@@ -96,6 +96,14 @@
     <field ref="roles"/>
     <snippet ref="taskcard_snippet"/>
   </form>
+  <form id="newsprintitem">
+    <row>
+      <col><field ref="name"/></col>
+    </row>
+    <row>
+      <col><field ref="comments"/></col>
+    </row>
+  </form>
 
   <snippet id="taskcard_snippet">
     <row>
