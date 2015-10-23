@@ -25,6 +25,43 @@ mapping={'app_title': h.get_app_title()}
   <h1>${_('Home')}</h1>
   <div class="page-header"></div>
   <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>${_("Workbench")}
+          <%
+            open_tasks = [t for t in request.user.tasks if t.task_state_id != 6]
+            open_tasks.sort(key=lambda x: x.weight or -1, reverse=True)
+            top_tasks = open_tasks[0:5]
+            num_tasks = len(open_tasks)
+          %>
+          % if num_tasks < 5:
+            <span class="label label-success">${num_tasks}</span>
+          % elif num_tasks <= 10:
+            <span class="label label-warning">${num_tasks}</span>
+          % else:
+            <span class="label label-danger">${num_tasks}</span>
+          % endif
+        </h2>
+        <table class="table">
+          <tr>
+            <th>${_('Task')}</th>
+            <th>${_('Priority')}</th>
+            <th><span class="sr-only">${_('Action')}</span></th>
+          </tr>
+          % for task in top_tasks:
+            <tr>
+              <td><a href="${request.route_path(h.get_action_routename(task, "update"), id=task.id)}">${task}</td>
+              <td>${task.weight}</td>
+              <td></td>
+            </tr>
+          % endfor
+        </table>
+      </div>
+      ##<div class="col-md-6">
+      ##  <h2>${_("Stats")}
+      ##</div>
+    </div>
+    <h2>${_("Sprints")}</h2>
     % if len(sprints) == 0:
       ${_('No sprints available.')}
     % endif
