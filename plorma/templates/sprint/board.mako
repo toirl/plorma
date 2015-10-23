@@ -1,3 +1,5 @@
+## encoding: utf-8
+
 <%inherit file="/base.mako" />
 <%
   open_tasks = []
@@ -21,8 +23,6 @@
   testable_estimate = sum([int(t.get_value('estimate', expand=True) or 0) for t in testable_tasks])
   verified_estimate = sum([int(t.get_value('estimate', expand=True) or 0) for t in verified_tasks])
   finished_estimate = sum([int(t.get_value('estimate', expand=True) or 0) for t in finished_tasks])
-
-
 %>
 <%def name="render_task(task)">
   <div class="taskcard">
