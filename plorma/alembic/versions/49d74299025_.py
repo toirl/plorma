@@ -115,6 +115,7 @@ INSERT INTO nm_action_roles (aid, rid) VALUES (118, 3);
 INSERT INTO nm_action_roles (aid, rid) VALUES (120, 3);
 INSERT INTO nm_action_roles (aid, rid) VALUES (123, 3);
 INSERT INTO nm_action_roles (aid, rid) VALUES (125, 3);
+INSERT INTO nm_action_roles (aid, rid) VALUES (2, 4);
 INSERT INTO nm_action_roles (aid, rid) VALUES (119, 4);
 INSERT INTO nm_action_roles (aid, rid) VALUES (121, 4);
 INSERT INTO nm_action_roles (aid, rid) VALUES (122, 4);
