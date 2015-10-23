@@ -197,4 +197,6 @@ class Task(BaseItem, Tagged, Commented, TaskStateMixin, Owned, Base):
         factor 2.77.
         :returns: Integer value
         """
+        if not self.priority or not self.severity:
+            return None
         return int(round((self.priority) * self.severity * 2.77))
