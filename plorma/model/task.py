@@ -179,7 +179,8 @@ class Task(BaseItem, Tagged, Commented, TaskStateMixin, Owned, Base):
                             sa.Integer, sa.ForeignKey("users.id"))
     """Id of the user this task is assigned to"""
     assignee = sa.orm.relationship("User",
-                                   primaryjoin="User.id==Task.assignee_id")
+                                   primaryjoin="User.id==Task.assignee_id",
+                                   backref="tasks")
     """Id of the user this task is assigned to """
     nosy = sa.orm.relationship("User", secondary="nm_task_users")
     """List of users who are involved in some way into this task. All
