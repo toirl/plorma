@@ -25,19 +25,11 @@ mapping={'app_title': h.get_app_title()}
   <h1>${_('Home')}</h1>
   <div class="page-header"></div>
   <div class="container-fluid">
-  <h2>${_('Sprints')}</h2>
     % if len(sprints) == 0:
       ${_('No sprints available.')}
     % endif
     % for sprint in sprints:
-      <h3>${sprint.title} (${h.prettify(request, sprint.start)} - ${h.prettify(request, sprint.end)})
-        % if s.has_permission("update", sprint, request):
-          <a class="btn btn-default" href="${request.route_path(h.get_action_routename(sprint, 'update'), id=sprint.id)}"><i class="glyphicon glyphicon-edit"></i></a>
-        % else:
-          <a class="btn btn-default"
-            href="${request.route_path(h.get_action_routename(sprint, 'read'), id=sprint.id)}"><i class="glyphicon glyphicon-eye-open"></i></a>
-        % endif
-    </h3>
+      <h3>${sprint.title} (${h.prettify(request, sprint.start)} - ${h.prettify(request, sprint.end)})</h3>
     <div class="row">
       <div class="col-md-9">
         <embed src="${request.route_path('renderburndown', id=sprint.id)}"  type="image/svg+xml"/>
@@ -68,55 +60,6 @@ mapping={'app_title': h.get_app_title()}
         </table>
       </div>
     </div>
-    ##<div class="row">
-    ##  <div class="col-md-12">
-    ##    <table class="table table-striped table-bordered">
-    ##      <tr>
-    ##         <th>${_('Open')}</th>
-    ##         <th>${_('Assigned')}</th>
-    ##         <th>${_('Testable')}</th>
-    ##         <th>${_('Finished')}</th>
-    ##      </tr>
-    ##      <%
-    ##        open_tasks = []
-    ##        assigned_tasks = []
-    ##        testable_tasks = []
-    ##        finished_tasks = []
-    ##        for task in sprint.tasks:
-    ##          if task.task_state_id in [1,2,7]:
-    ##            open_tasks.append(task)
-    ##          elif task.task_state_id in [3]:
-    ##            assigned_tasks.append(task)
-    ##          elif task.task_state_id in [4]:
-    ##            testable_tasks.append(task)
-    ##          elif task.task_state_id in [5,6]:
-    ##            finished_tasks.append(task)
-    ##      %>
-    ##      <tr>
-    ##         <td>
-    ##           % for task in open_tasks:
-    ##             ${render_task(task)}
-    ##           % endfor
-    ##         </td>
-    ##         <td>
-    ##           % for task in assigned_tasks:
-    ##             ${render_task(task)}
-    ##           % endfor
-    ##         </td>
-    ##         <td>
-    ##           % for task in testable_tasks:
-    ##             ${render_task(task)}
-    ##           % endfor
-    ##         </td>
-    ##         <td>
-    ##           % for task in finished_tasks:
-    ##             ${render_task(task)}
-    ##           % endfor
-    ##         </td>
-    ##      </tr>
-    ##    </table>
-    ##  </div>
-    ##</div>
     % endfor
   </div>
 % endif
