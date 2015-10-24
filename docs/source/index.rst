@@ -9,11 +9,11 @@ Welcome to Plorma's documentation!
 .. toctree::
    :maxdepth: 2
 
-   general
-   userguide/sprint
-   userguide/scrumboard
-   userguide/productbacklog
+   intro
+   userguide/general
+   userguide/dashboard
    userguide/task
+   userguide/sprint
 
 
 
