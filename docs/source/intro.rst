@@ -4,7 +4,7 @@ Introduction
 What is Plorma
 ==============
 Plorma is a webapplication to plan, organise and manage tasks. It provides
-tools like *Burndown Diagram* or a *Kanban Board* which are often used in
+tools like *Burndown Diagrams* or *Kanban Boards* which are often used in
 agile proccess like SCRUM.
 
 While it tries to be as generic as possible it can be esspecially used as a
