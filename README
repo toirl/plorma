@@ -17,9 +17,14 @@ Getting Started
 
 - $venv/bin/plorma-admin db init
 
+The following steps are optional and only needed if you want to have some demo
+data to play around.
+
 - $venv/bin/plorma-admin fixtures load --path plorma/fixtures/demo
 
 - $venv/bin/plorma-admin db fixsequence
+
+Finally start the sperver
 
 - $venv/bin/pserve development.ini
 
