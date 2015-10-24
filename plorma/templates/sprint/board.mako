@@ -7,6 +7,7 @@
   testable_tasks = []
   verified_tasks = []
   finished_tasks = []
+  item.tasks.sort(key=lambda x: x.weight or -1, reverse=True)
   for task in item.tasks:
     if task.task_state_id in [1,2,7]:
       open_tasks.append(task)
@@ -61,21 +62,21 @@
 <div class="container-fluid">
 
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-7">
       <h1>${item.title} (${h.prettify(request, item.start)} – ${h.prettify(request, item.end)})</h1>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-3">
       <div style="margin-top: 20px" class="btn-toolbar" role="toolbar" aria-label="...">
         <div class="btn-group" role="group" aria-label="...">
-          <a href="${request.route_path('home')}" class="btn btn-default" title="${_('Back to dashboard')}"><i class="fa fa-tasks"></i></a>
+          <a href="${request.route_path('home')}" class="btn btn-default"
+            title="${_('Back to dashboard')}"><i class="fa fa-tasks"></i> ${_('Back to dashboard')}</a>
         </div>
         <div class="btn-group" role="group" aria-label="...">
-          % if not s.has_role(request.user, "productowners"):
-            <a href="${request.route_path('tasks-create', _query={'form': 'newsprintitem', 'backurl': request.current_route_path(), 'addrelation': 'tasks:plorma.model.sprint.Sprint:%s' % item.id})}" class="btn btn-default modalform" title="${_('Add a new task to this sprint')}"><i class="fa fa-plus"></i></a>
-          % endif
-          <a href="${request.route_path(h.get_action_routename(item, "read"), id=item.id)}" class="btn btn-default" title="${_('Open current sprint')}"><i class="fa fa-info"></i></a>
+          <a href="${request.route_path(h.get_action_routename(item, "read"),
+            id=item.id)}" class="btn btn-default" title="${_('Sprint details')}"><i class="fa fa-info"></i> ${_('Sprint details')}</a>
 
-          <a href="${request.route_path("renderburndown", id=item.id)}" target="_blank" class="btn btn-default" title="${_('Show burndown chart')}"><i class="fa fa-line-chart"></i></a>
+          <a href="${request.route_path("renderburndown", id=item.id)}"
+            target="_blank" class="btn btn-default" title="${_('Sprint statistics')}"><i class="fa fa-line-chart"></i> ${_('Sprint statistics')}</a>
         </div>
       </div>
     </div>
@@ -101,6 +102,10 @@
               %for task in open_tasks:
                 ${render_task(task)}
               %endfor
+
+              % if not s.has_role(request.user, "productowners"):
+              <a href="${request.route_path('tasks-create', _query={'form': 'newsprintitem', 'backurl': request.current_route_path(), 'addrelation': 'tasks:plorma.model.sprint.Sprint:%s' % item.id})}" class="btn btn-default btn-block modalform" title="${_('Add a new task to this sprint')}"><i class="fa fa-plus"> ${_('Add new sprint task')}</i></a>
+              % endif
             </td>
             <td>
               %for task in assigned_tasks:
