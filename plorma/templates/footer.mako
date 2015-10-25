@@ -17,7 +17,7 @@
     <div class="col-sd-6">
       <ul class="list-inline pull-right">
         <li>
-        <a href="https://plorma2.readthedocs.org/en/latest" target="_blank">${_('Documentation')}</a>
+        <a href="https://plorma.readthedocs.org/en/latest" target="_blank">${_('Documentation')}</a>
         </li>
         ##<li>
         ##  <a href="${request.route_path('about')}">${_('About')}</a>
