@@ -9,6 +9,7 @@
       <renderer type="textarea" rows="6"/>
     </entity>
     <entity id="priority" name="priority" label="Priority" type="integer">
+      <rule expr="( ( ( bool( $priority ) eq False ) or ( $priority lt 6 ) ) or ( ( $priority == 6 ) and bool ( $assignee ) ) )" msg="To set the priority to immidiate you also need to set an assignee."/>
       <options>
         <option value="6">immidiate</option>
         <option value="5">very high</option>
