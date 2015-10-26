@@ -112,7 +112,9 @@ class Sprint(BaseItem, Owned, SprintStateMixin, Base):
 
     @property
     def velocity(self):
-        return self.size - self.estimate
+        if self.size:
+            return self.size - self.estimate
+        return None
 
     def get_length(self):
         """Returns the number of days of the sprint"""
