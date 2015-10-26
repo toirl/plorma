@@ -1,0 +1,5 @@
+*.pyc
+data
+.eggs
+plorma.egg-info
+plorma.log
