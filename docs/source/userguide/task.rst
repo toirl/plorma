@@ -45,7 +45,6 @@ Task
         The priority (:ref:`task_priority`) will influence the order of the
         task in the task overview or product backlog.
 
-
         ========= =========================================================
         Priority  Description
         ========= =========================================================
@@ -53,8 +52,7 @@ Task
                   Reports must have an assignee set in the "Assigned to"
                   field.
         very high Should be fixed as next task by maintainers and certainly before the
-                  next release. Reports should have an assignee set in the "Assigned to"
-                  field.
+                  next release.
         high      Not the next task, but should be fixed soon. Depending on teams &
                   manpower this can take between one and six months.
         normal    Medium priority; would be good to get fixed somewhere in the future.
