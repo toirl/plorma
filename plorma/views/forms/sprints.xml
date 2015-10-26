@@ -39,13 +39,31 @@
   <snippet id="create_snippet">
     <snippet ref="base"/>
   </snippet>
+  <snippet id="stateinfo">
+    <row>
+      <col>
+        <if expr="$sprint_state_id == 2" static="true">
+          <text bg="info">The tasks can not be edited as it is currently running.</text>
+        </if>
+        <if expr="$sprint_state_id > 2" static="true">
+          <text bg="info">The tasks can not be edited as it is already finished.</text>
+        </if>
+      </col>
+    </row>
+  </snippet>
   <snippet id="update_snippet">
     <page id="p1" label="Sprint">
-      <snippet ref="base"/>
+      <snippet ref="stateinfo"/>
+      <if expr="$sprint_state_id == 1" type="readonly">
+        <snippet ref="base"/>
+      </if>"
     </page>
     <page id="p2" label="Planning">
-      <snippet ref="extended"/>
-      <snippet ref="tasks"/>
+      <snippet ref="state"/>
+      <if expr="$sprint_state_id == 1" type="readonly">
+        <snippet ref="extended"/>
+        <snippet ref="tasks"/>
+      </if>"
     </page>
   </snippet>
 
@@ -70,6 +88,8 @@
       <col><field ref="estimate"/></col>
       <col><field ref="velocity"/></col>
     </row>
+  </snippet>
+  <snippet id="state">
     <row>
       <col><field ref="state"/></col>
     </row>
