@@ -199,7 +199,8 @@ class Task(BaseItem, Tagged, Commented, TaskStateMixin, Owned, Base):
         if not self.priority or not self.severity:
             return None
 
-        calc = {"6": 100, "5": 85, "4": 70, "3": 50, "2": 35, "1": 20}
-        p = float(calc[str(self.priority)])
-        s = calc[str(self.severity)]/100.0
+        calc_p = {"6": 1000, "5": 100, "4": 75, "3": 50, "2": 25, "1": 1}
+        calc_s = {"6": 100, "5": 85, "4": 70, "3": 50, "2": 35, "1": 20}
+        p = float(calc_p[str(self.priority)])
+        s = calc_s[str(self.severity)]/100.0
         return int(p*s)
