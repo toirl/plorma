@@ -63,6 +63,13 @@ Task
                   very welcome and required for progress.
         ========= =========================================================
 
+        Usually only the priorities from *very low* to *very high* should be
+        used for task planning.
+
+        The *immediate* priority is a special one. It should only be used in very
+        rare cases as it really means that any other work should be dropped
+        which may affect running sprints.
+
 .. index:: Severity
 
 **Severity**
