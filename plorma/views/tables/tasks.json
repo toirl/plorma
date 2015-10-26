@@ -2,8 +2,8 @@
     "overview": {
         "columns": [
             {"name": "name", "label": "Title"},
-            {"name": "weight", "label": "Priority", "width": "50", "expand": true},
-            {"name": "task_state", "label": "State", "width": "120", "expand": true},
+            {"name": "weight", "label": "Priority", "width": "50"},
+            {"name": "task_state", "label": "State", "width": "120"},
             {"name": "resolution", "label": "Resolution", "width": "120", "expand": true},
             {"name": "tags", "label": "Tags"}
         ],
