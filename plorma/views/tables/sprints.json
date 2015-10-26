@@ -7,7 +7,7 @@
             {"name": "estimate", "label": "Estimate"},
             {"name": "start", "label": "Startdate"},
             {"name": "end", "label": "Enddate"},
-            {"name": "sprint_state", "label": "State", "width": "70", "expand": true}
+            {"name": "sprint_state", "label": "State", "width": "70"}
         ],
         "settings": {
             "default-sort-field": "start",
@@ -19,7 +19,7 @@
             {"name": "title", "label": "Title", "width": 350},
             {"name": "start", "label": "Startdate"},
             {"name": "end", "label": "Enddate"},
-            {"name": "sprint_state", "label": "State", "width": "70", "expand": true}
+            {"name": "sprint_state", "label": "State", "width": "70"}
         ],
         "settings": {
             "default-sort-field": "start",
