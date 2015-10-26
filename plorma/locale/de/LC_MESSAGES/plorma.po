@@ -351,7 +351,9 @@ msgstr ""
 
 #: plorma/views/forms/tasks.xml:15
 msgid "To set the priority to immidiate you also need to set an assignee."
-msgstr "Um die Priorität auf \"unverzüglich\" zu setzen, muss auch ein Beauftragter gesetzt werden."
+msgstr ""
+"Um die Priorität auf \"unverzüglich\" zu setzen, muss auch ein "
+"Beauftragter gesetzt werden."
 
 #: plorma/views/forms/tasks.xml:17
 msgid "Sprint Planning"
