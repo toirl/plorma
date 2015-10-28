@@ -1,0 +1,67 @@
+[
+    {
+        "description": "",
+        "gid": 2,
+        "group": 2,
+        "id": 1,
+        "mid": 1000,
+        "modul": 1000,
+        "name": "Feature",
+        "owner": 3,
+        "tagtype": 0,
+        "uid": 3,
+        "uuid": "24f95b1bbd5146a8aba304cc24bc8340"
+    },
+    {
+        "description": "",
+        "gid": 2,
+        "group": 2,
+        "id": 2,
+        "mid": 1000,
+        "modul": 1000,
+        "name": "Defect",
+        "owner": 3,
+        "tagtype": 5,
+        "uid": 3,
+        "uuid": "4807a71d540349d890f82188d7f28504"
+    },
+    {
+        "description": "",
+        "gid": 2,
+        "group": 2,
+        "id": 3,
+        "mid": 1000,
+        "modul": 1000,
+        "name": "Question",
+        "owner": 3,
+        "tagtype": 4,
+        "uid": 3,
+        "uuid": "159a81ad8de54887b08c6e55162d20d0"
+    },
+    {
+        "description": "",
+        "gid": 2,
+        "group": 2,
+        "id": 4,
+        "mid": 1000,
+        "modul": 1000,
+        "name": "UI/UX",
+        "owner": 3,
+        "tagtype": 0,
+        "uid": 3,
+        "uuid": "9186b64974054233b8401da129337185"
+    },
+    {
+        "description": "Change Request",
+        "gid": 2,
+        "group": 2,
+        "id": 5,
+        "mid": null,
+        "modul": null,
+        "name": "Change",
+        "owner": 3,
+        "tagtype": 1,
+        "uid": 3,
+        "uuid": "3697f774fe534c5b88daf3645700fd84"
+    }
+]

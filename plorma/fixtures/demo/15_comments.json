@@ -1,0 +1,30 @@
+[
+    {
+        "children": [],
+        "created": "2015-10-24 08:51:06",
+        "gid": 2,
+        "group": 2,
+        "id": 1,
+        "owner": 2,
+        "parent": null,
+        "parent_id": null,
+        "text": "When user is not regestered the datasubmission in forms does not work correct. Some data is missing in the submitted data and the new dataset can not be assigned correct.\r\n\r\nTested with FF38.",
+        "uid": 2,
+        "updated": "2015-10-24 08:51:06",
+        "uuid": "df81d1cc9df84f2c86a317f64ec81cb5"
+    },
+    {
+        "children": [],
+        "created": "2015-10-24 08:52:12",
+        "gid": 2,
+        "group": 2,
+        "id": 2,
+        "owner": 3,
+        "parent": null,
+        "parent_id": null,
+        "text": "Just tested this issue here and can not reproduce it.",
+        "uid": 3,
+        "updated": "2015-10-24 08:52:12",
+        "uuid": "8b222fbbaa574086acc0e818010fd59a"
+    }
+]

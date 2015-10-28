@@ -1,0 +1,28 @@
+[
+    {
+        "description": "",
+        "end": "2015-11-23",
+        "gid": 5,
+        "id": 3,
+        "size": 56,
+        "sprint_state_id": 2,
+        "start": "2015-10-24",
+        "strength": 100,
+        "title": "Autumn shipment",
+        "uid": 3,
+        "uuid": "d47f5b07a1c34954be45b9d957980777"
+    },
+    {
+        "description": "Describe the goals of this sprint...",
+        "end": "2015-12-31",
+        "gid": 5,
+        "id": 4,
+        "size": null,
+        "sprint_state_id": 1,
+        "start": "2015-11-24",
+        "strength": null,
+        "title": "Winter Sprint",
+        "uid": 3,
+        "uuid": "6c9bcb9fdf2d41a6b78072023eb30e20"
+    }
+]
