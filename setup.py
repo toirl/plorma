@@ -36,7 +36,6 @@ setup(name='plorma',
       include_package_data=True,
       zip_safe=False,
       test_suite='plorma',
-      setup_requires=["hgtools"],
       install_requires=requires,
       entry_points="""\
       [paste.app_factory]
