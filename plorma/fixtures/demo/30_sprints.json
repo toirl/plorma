@@ -2,7 +2,7 @@
     {
         "description": "",
         "end": "2015-11-23",
-        "gid": 5,
+        "gid": 2,
         "id": 3,
         "size": 56,
         "sprint_state_id": 2,
@@ -15,7 +15,7 @@
     {
         "description": "Describe the goals of this sprint...",
         "end": "2015-12-31",
-        "gid": 5,
+        "gid": 2,
         "id": 4,
         "size": null,
         "sprint_state_id": 1,
