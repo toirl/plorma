@@ -3,12 +3,13 @@ Introduction
 ************
 What is Plorma
 ==============
-Plorma is a webapplication to plan, organise and manage tasks. It provides
-tools like *Burndown Diagrams* or *Kanban Boards* which are often used in
-agile proccess like SCRUM.
+Plorma is a webapplication to plan, organise and manage tasks in the software
+development. Plorma is influenced by agile development methods like Scrum.
+Tasks can be organised on Kanban boards and the progress of a sprint can be
+visualized in a Burndown chart. 
 
-While it tries to be as generic as possible it can be esspecially used as a
-simple issue or bug tracker in software development.
+Although Plorma is especially suited to support an agile software development
+it tries to be as general as possible to be used in other fields of activity.
 
 Licence
 =======
@@ -16,12 +17,28 @@ Plorma is licensed under the GPL version 2 or later
 
 Installation
 ============
-Please read the README comming with the source of Plorma.
+Pip
+---
+        pip install plorma
+        plorma-admin app init myplorma
+        cd myplorma
+        # Adapt database connection etc in the created development.ini file.
+        pserve --reload develoment.ini
+
+Docker
+------
+A `Docker image <http://https://hub.docker.com/r/toirl/docker-plorma/>`_ including demo data can be started with::
+
+        docker run -it -p 6543:6543 -d toirl/docker-plorma
+
+From source
+-----------
+Please read the `REAME
+<http://https://raw.githubusercontent.com/toirl/plorma/master/README.rst>`_
+coming with the source of Plorma.
 
 Get the source
---------------
-Plorma is hosted on `Bitbucket <https://bitbucket.org/ti/plorma2>`_::
+==============
+Plorma is hosted on `Github <https://github.com/toirl/plorma>`_::
 
-        hg clone https://bitbucket/ti/plorma
-
-If you have a Bitbucket accout the you can `Fork Plorma <https://bitbucket.org/ti/plorma2/fork>`_
+        git clone https://github.com/toirl/plorma.git
