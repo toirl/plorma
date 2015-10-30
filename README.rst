@@ -1,4 +1,4 @@
-plorma README
+Plorma README
 =============
 Plorma is a web application to plan, organise and manage tasks in the software
 development. Plorma is influenced by agile development methods like Scrum.
@@ -31,26 +31,26 @@ accessible before invoking the following commands.
 
 Getting Started
 ---------------
-The following steps can be used to install Plorma from source. In alternative
-way to setup Plorma when installing it per pip is described in the User
-documentation.:
+The following steps will show how to get a running Plorma application when
+starting with the source of Plorma.
+An alternative way to setup Plorma when installing it per pip is described in
+the User documentation.
 
-- cd <directory containing this file>
+The get Plorma up and running do::
 
-- python setup.py develop
-
-- plorma-admin db init
+        cd <directory containing this file>
+        python setup.py develop
+        plorma-admin db init
 
 The following steps are optional and only needed if you want to have some demo
-data to play around.
+data to play around::
 
-- plorma-admin fixtures load --path plorma/fixtures/demo
+        plorma-admin fixtures load --path plorma/fixtures/demo
+        plorma-admin db fixsequence
 
-- plorma-admin db fixsequence
+Finally start the server::
 
-Finally start the server
-
-- pserve development.ini
+        pserve development.ini
 
 Testuser
 --------
