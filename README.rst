@@ -29,6 +29,14 @@ Plorma requires a PostgreSQL database. The default database (configured in the
 ini file) is named Plorma. Please make sure this database is created and
 accessible before invoking the following commands.
 
+The following packages are needed::
+
+        apt-get install postgresql python-psycopg2 python-lxml gcc python-dev
+        webtest mock
+
+The compiler and development packages are currently needed to be able to
+compile some of the packages which are automatically installed as dependency.
+
 Getting Started
 ---------------
 The following steps will show how to get a running Plorma application when
