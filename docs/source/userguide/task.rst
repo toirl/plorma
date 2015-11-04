@@ -164,7 +164,7 @@ Invalid        Task is invalid and will not be done for any other reason the
                formed named resolutions.
 ============== =============================================================
 
-..index:: Testing
+.. index:: Testing
 
 Tasks currently under "Test"
 ----------------------------
