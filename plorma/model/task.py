@@ -39,6 +39,9 @@ def resolve_handler(task, transition):
     # because there is some testing work to be done which is assumend to
     # be 1 in the most cases.
     task.estimate = 1
+    # The task is currently resolved and the origin assignee is not
+    # responsible anymore. So set the assignee to None.
+    task.assignee_id = None
     return task
 
 def close_handler(task, transition):

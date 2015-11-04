@@ -23,6 +23,9 @@ Task
         A task can be assigned to other users. Assigning a task to a user
         means that this user is responsible to work on the task.
 
+        If a task has no assignee than it can be be taken by
+        others.
+
 .. index:: Resolution
 .. index:: State
 
@@ -126,7 +129,8 @@ Open     The tasks has been checked to be valid. However the task has not been
          queued to be worked on.
 Assigned The tasks has been assigned to a developer.  He will start to work on
          the task based on its priority.
-Resolved Work on the task has been finished with on of the possible
+Resolved Work on the task has been finished with on of the possible. Resolved
+         tasks may need some QA are acceptance tests.
          :ref:`task_resolution`.
 Verified The resolution has been accepted by the QA. Last steps can be made to
          finally close the task.  Verifying the solution of a task will set
@@ -159,6 +163,29 @@ Duplicate      Task is duplicate of another task.
 Invalid        Task is invalid and will not be done for any other reason the
                formed named resolutions.
 ============== =============================================================
+
+..index:: Testing
+
+Tasks currently under "Test"
+----------------------------
+You may think that the lifecycle of a task is missing the explicit state that
+the task is currently under test by someone. Well, of course Plorma provides a way
+to indicate that a task is currently under test.
+
+Plorma differs between two "states" of the state *done*. If a task is marked
+as *done* the assignee will be removed automatically. This is because the
+origin assignee has decided that the task is either finished or the work can
+not proceed for any other reason. However in this situation the origin
+assignee is considered not to be responsible for the task anymore. (This is
+probably what the assignee actually thinks when marking the task as resolved)
+This is the first state: A task which is done and has no assignee. The task is
+waiting for someone who will pickup the task e.g for QA.
+
+The way Plorma marks a task to be currently under test is to set a new
+assignee to the task. A resolved task which is assigned to someone means that
+his person will do whatever is needed to make the task proceed into the next
+state (verfied, closed). This can be doing the QA but might also be something
+different.
 
 .. index:: Weight of a task
 .. _task_priority:
