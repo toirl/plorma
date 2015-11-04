@@ -49,6 +49,12 @@ def close_handler(task, transition):
     task.estimate = 0
     return task
 
+def direct_close_condition(task, transition):
+    """Return True if the resolution is does not necesserily need a
+    confimation. This means the resolution is either invalid, duplicate,
+    wont't fix or needinfo. """
+    return task.resolution in [1,2,3,4]
+
 def verify_solution_handler(task, transition):
     # When the task is finally closed than set remaining estimate to 0
     task.estimate = 0
@@ -84,6 +90,7 @@ class TaskStatemachine(Statemachine):
         s3.add_transition(s4, _("Resolve task"), resolve_handler, condition)
         s4.add_transition(s5, _("Verify solution"), verify_solution_handler,
                           condition)
+        s4.add_transition(s6, _("Close task"), close_handler, direct_close_condition)
         s4.add_transition(s7, _("Reopen task"), reopen_handler, condition)
         s5.add_transition(s7, _("Reopen task"), reopen_handler, condition)
         s5.add_transition(s6, _("Close task"), close_handler, condition)
