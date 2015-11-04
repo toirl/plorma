@@ -62,25 +62,22 @@
 <div class="container-fluid">
 
   <div class="row">
-    <div class="col-md-7">
+    <div class="col-md-9">
       <h1>${item.title} (${h.prettify(request, item.start)} – ${h.prettify(request, item.end)})</h1>
     </div>
-    <div class="col-md-3">
-      <div style="margin-top: 20px" class="btn-toolbar" role="toolbar" aria-label="...">
-        <div class="btn-group" role="group" aria-label="...">
+    <div class="col-md-2">
+      <div style="margin-top: 20px" class="btn-toolbar pull-right" role="toolbar">
+        <div class="btn-group" role="group">
           <a href="${request.route_path('home')}" class="btn btn-default"
-            title="${_('Back to dashboard')}"><i class="fa fa-tasks"></i> ${_('Back to dashboard')}</a>
-        </div>
-        <div class="btn-group" role="group" aria-label="...">
+            title="${_('Back to dashboard')}"><i class="fa fa-tasks"></i> <span class="hidden-md">${_('Back to dashboard')}</span></a>
           <a href="${request.route_path(h.get_action_routename(item, "read"),
-            id=item.id)}" class="btn btn-default" title="${_('Sprint details')}"><i class="fa fa-info"></i> ${_('Sprint details')}</a>
-
-          <a href="${request.route_path("renderburndown", id=item.id)}"
-            target="_blank" class="btn btn-default" title="${_('Sprint statistics')}"><i class="fa fa-line-chart"></i> ${_('Sprint statistics')}</a>
+            id=item.id)}" class="btn btn-default" title="${_('Sprint details')}"><i class="fa fa-info"></i> <span class="hidden-md">${_('Sprint details')}</span></a>
+          <a href="${request.route_path("renderburndown", id=item.id)}" target="_blank" class="btn btn-default" 
+            title="${_('Sprint statistics')}"><i class="fa fa-line-chart"></i> <span class="hidden-md">${_('Sprint statistics')}</span></a>
         </div>
       </div>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-1">
       <span class="pull-right h1">${item.estimate}/${item.size}</span>
     </div>
   </div>
