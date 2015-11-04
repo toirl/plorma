@@ -193,12 +193,8 @@ different.
 Weight of a task
 ================
 The prioritization of the task is calculated based on its Priority (think of
-importance) and its severity. The following formula shows how the value is
-basically calculated.
-
-In Plorma the calculated value is called the *Taskweight*. The range to the
-priority is (1,0.85,0.7,0.5,0.35,0.2). The Taskweight is used in the task
-overview are prioritization criteria.
+importance) and its severity. The calculated value is called the *Taskweight*. 
+The Taskweight is used in the task overview are prioritization criteria.
 
 If either the priority or the severity is not set, than the weight can
 not be calculated and is unknown.
