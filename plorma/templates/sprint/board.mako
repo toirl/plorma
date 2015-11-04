@@ -101,7 +101,7 @@
               %endfor
 
               % if not s.has_role(request.user, "productowners"):
-              <a href="${request.route_path('tasks-create', _query={'form': 'newsprintitem', 'backurl': request.current_route_path(), 'addrelation': 'tasks:plorma.model.sprint.Sprint:%s' % item.id})}" class="btn btn-default btn-block modalform" title="${_('Add a new task to this sprint')}"><i class="fa fa-plus"> ${_('Add new sprint task')}</i></a>
+              <a href="${request.route_path('tasks-create', _query={'form': 'newsprintitem', 'backurl': request.current_route_path(), 'addrelation': 'tasks:plorma.model.sprint.Sprint:%s' % item.id})}" class="btn btn-default btn-block" title="${_('Add a new task to this sprint')}"><i class="fa fa-plus"> ${_('Add new sprint task')}</i></a>
               % endif
             </td>
             <td>
