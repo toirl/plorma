@@ -62,8 +62,8 @@
 <div class="container-fluid">
 
   <div class="row">
-    <div class="col-md-9">
-      <h1>${item.title} (${h.prettify(request, item.start)} – ${h.prettify(request, item.end)})</h1>
+    <div class="col-md-8">
+      <h1>${item.title} <small>(${h.prettify(request, item.start)} – ${h.prettify(request, item.end)})</small></h1>
     </div>
     <div class="col-md-2">
       <div style="margin-top: 20px" class="btn-toolbar pull-right" role="toolbar">
