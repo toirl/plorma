@@ -77,7 +77,7 @@
         </div>
       </div>
     </div>
-    <div class="col-md-1">
+    <div class="col-md-2">
       <span class="pull-right h1">${item.estimate}/${item.size}</span>
     </div>
   </div>
