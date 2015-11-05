@@ -24,8 +24,12 @@ Plorma is available from `Pypi <https://pypi.python.org/pypi/plorma>`_::
         pip install plorma
         plorma-admin app init myplorma
         cd myplorma
-        # Adapt database connection etc in the created development.ini file.
-        pserve --reload develoment.ini
+        # Adapt database connection etc in the created production.ini file.
+        plorma-admin db init --config production.ini
+        # Optionally install the demodata
+        plorma-admin fixtures load --path /path/to/plorma/fixtures/demo --config production.ini
+        # Finally start the server
+        pserve --reload production.ini
 
 Docker
 ------
