@@ -3,3 +3,6 @@ data
 .eggs
 plorma.egg-info
 plorma.log
+build
+dist
+*.mo
