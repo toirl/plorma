@@ -9,12 +9,16 @@ here = os.path.abspath(os.path.dirname(__file__))
 README = open(os.path.join(here, 'README.rst')).read()
 CHANGES = open(os.path.join(here, 'CHANGES')).read()
 
+#  FIXME: Remove webtest and mock. These packages are needed bcause of
+#  broken testing in Ringo. (torsten) <2015-11-05 20:46> 
 requires = [
     'psycopg2',
     'ringo',
     'ringo_comment',
     'ringo_tag',
-    'pygal'
+    'pygal',
+    'webtest',
+    'mock'
 ]
 
 setup(name='plorma',
