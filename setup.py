@@ -22,7 +22,7 @@ requires = [
 ]
 
 setup(name='plorma',
-      version='0.3.1',
+      version='0.4.0',
       description=('Plorma is a task management application to plan '
                    'organise and manage your tasks.'),
       long_description=README + '\n\n' + CHANGES,
