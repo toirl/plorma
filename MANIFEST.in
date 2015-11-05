@@ -1,4 +1,5 @@
 include CHANGES
 include README.rst 
+include plorma/scaffolds/basic/development.ini_tmpl
 include *.txt *.ini *.cfg *.rst
 recursive-include plorma *.ico *.png *.css *.gif *.jpg *.pt *.txt *.mak *.mako *.js *.html *.xml
