@@ -28,6 +28,7 @@ Plorma is available from `Pypi <https://pypi.python.org/pypi/plorma>`_::
         plorma-admin db init --config production.ini
         # Optionally install the demodata
         plorma-admin fixtures load --path /path/to/plorma/fixtures/demo --config production.ini
+        plorma-admin db fixsequence --config production.ini
         # Finally start the server
         pserve --reload production.ini
 
