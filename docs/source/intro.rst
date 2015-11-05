@@ -19,6 +19,8 @@ Installation
 ============
 Pip
 ---
+Plorma is available from `Pypi <https://pypi.python.org/pypi/plorma>`_::
+
         pip install plorma
         plorma-admin app init myplorma
         cd myplorma
