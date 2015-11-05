@@ -3,16 +3,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plorma 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-10-26 22:03+0100\n"
+"POT-Creation-Date: 2015-11-05 20:50+0100\n"
 "PO-Revision-Date: 2015-04-29 21:36+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: de\n"
 "Language-Team: de <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.1.1\n"
+"Generated-By: Babel 2.0\n"
 
 #: plorma/model/sprint.py:57 plorma/views/forms/sprints.xml:13
 msgid "Planning"
@@ -42,61 +41,61 @@ msgstr "Sprint abbrechen"
 msgid "Finish sprint"
 msgstr "Sprint beenden"
 
-#: plorma/model/task.py:68
+#: plorma/model/task.py:77
 msgid "New"
 msgstr "Neu"
 
-#: plorma/model/task.py:69 plorma/templates/sprint/board.mako:92
-#: plorma/templates/sprint/board.mako:134
+#: plorma/model/task.py:78 plorma/templates/sprint/board.mako:89
+#: plorma/templates/sprint/board.mako:131
 msgid "Open"
 msgstr "Offen"
 
-#: plorma/model/task.py:70 plorma/templates/sprint/board.mako:48
+#: plorma/model/task.py:79 plorma/templates/sprint/board.mako:48
 msgid "Assigned"
 msgstr "Zugewiesen"
 
-#: plorma/model/task.py:71
+#: plorma/model/task.py:80
 msgid "Resolved"
 msgstr "Erledigt"
 
-#: plorma/model/task.py:72 plorma/templates/sprint/board.mako:95
-#: plorma/templates/sprint/board.mako:137
+#: plorma/model/task.py:81 plorma/templates/sprint/board.mako:92
+#: plorma/templates/sprint/board.mako:134
 msgid "Verified"
 msgstr "Überprüft"
 
-#: plorma/model/task.py:73 plorma/templates/sprint/board.mako:96
-#: plorma/templates/sprint/board.mako:138
+#: plorma/model/task.py:82 plorma/templates/sprint/board.mako:93
+#: plorma/templates/sprint/board.mako:135
 msgid "Closed"
 msgstr "Geschlossen"
 
-#: plorma/model/task.py:74
+#: plorma/model/task.py:83
 msgid "Reopen"
 msgstr "Neueröffnet"
 
-#: plorma/model/task.py:75
+#: plorma/model/task.py:84
 msgid "Verify task"
 msgstr "Bestätige Aufgabe"
 
-#: plorma/model/task.py:76 plorma/model/task.py:78 plorma/model/task.py:88
+#: plorma/model/task.py:85 plorma/model/task.py:87 plorma/model/task.py:98
 msgid "Assign task"
 msgstr "Weise Aufgabe zu"
 
-#: plorma/model/task.py:77 plorma/model/task.py:79 plorma/model/task.py:80
-#: plorma/model/task.py:81
+#: plorma/model/task.py:86 plorma/model/task.py:88 plorma/model/task.py:89
+#: plorma/model/task.py:90
 msgid "Resolve task"
 msgstr "Erledige Aufgabe"
 
-#: plorma/model/task.py:82
+#: plorma/model/task.py:91
 msgid "Verify solution"
 msgstr "Überprüfe Lösung"
 
-#: plorma/model/task.py:84 plorma/model/task.py:85 plorma/model/task.py:87
-msgid "Reopen task"
-msgstr "Neueröffnung der Aufgabe"
-
-#: plorma/model/task.py:86
+#: plorma/model/task.py:93 plorma/model/task.py:96
 msgid "Close task"
 msgstr "Schließe Aufgabe"
+
+#: plorma/model/task.py:94 plorma/model/task.py:95 plorma/model/task.py:97
+msgid "Reopen task"
+msgstr "Neueröffnung der Aufgabe"
 
 #: plorma/templates/footer.mako:7
 msgid "Administration"
@@ -167,12 +166,12 @@ msgstr "Stärke"
 msgid "Initial Story Points"
 msgstr "Initiale Story Points"
 
-#. Label for _estimate field in form config
+#. Label for estimate field in form config
 #: plorma/templates/index.mako:85 plorma/views/forms/sprints.xml:7
 msgid "Remaining Story Points"
 msgstr "Verbleibende Story Points"
 
-#. Label for _velocity field in form config
+#. Label for velocity field in form config
 #: plorma/templates/index.mako:89 plorma/views/forms/sprints.xml:6
 msgid "Velocity"
 msgstr "Geschwindigkeit"
@@ -200,27 +199,27 @@ msgstr "Lösung"
 msgid "Back to dashboard"
 msgstr "Zurück zum Dashboard"
 
-#: plorma/templates/sprint/board.mako:76
+#: plorma/templates/sprint/board.mako:74
 msgid "Sprint details"
 msgstr "Sprint Details"
 
-#: plorma/templates/sprint/board.mako:79
+#: plorma/templates/sprint/board.mako:76
 msgid "Sprint statistics"
 msgstr "Sprint Statistik"
 
-#: plorma/templates/sprint/board.mako:93 plorma/templates/sprint/board.mako:135
+#: plorma/templates/sprint/board.mako:90 plorma/templates/sprint/board.mako:132
 msgid "In Progress"
 msgstr "In Bearbeitung"
 
-#: plorma/templates/sprint/board.mako:94 plorma/templates/sprint/board.mako:136
+#: plorma/templates/sprint/board.mako:91 plorma/templates/sprint/board.mako:133
 msgid "Done"
 msgstr "Erledigt"
 
-#: plorma/templates/sprint/board.mako:107
+#: plorma/templates/sprint/board.mako:104
 msgid "Add a new task to this sprint"
 msgstr "Neue Aufgabe zu diesem Sprint hinzufügen"
 
-#: plorma/templates/sprint/board.mako:107
+#: plorma/templates/sprint/board.mako:104
 msgid "Add new sprint task"
 msgstr "Neue Sprint Aufgabe"
 
