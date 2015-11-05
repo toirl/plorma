@@ -1,6 +1,8 @@
 include CHANGES
 include README.rst 
 include plorma/scaffolds/basic/development.ini_tmpl
+recursive-include plorma/views/forms *.xml
+recursive-include plorma/views/tables *.json
 recursive-include plorma/fixtures *.json
 recursive-include plorma/alembic *.py alembic.ini
 recursive-include plorma/locale *.pot *.po *.mo
