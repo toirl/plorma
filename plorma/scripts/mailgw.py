@@ -66,7 +66,6 @@ def handle_message(message, db):
         if task:
             print "Modifying task"
     else:
-
         # Create Task
         task = Task()
         task.uid = user.id
