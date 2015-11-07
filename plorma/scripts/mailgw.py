@@ -69,7 +69,9 @@ def handle_message(message, db):
         task.uid = user.id
         task.name = subject
         db.add(task)
-    db.flush()
+        db.flush()
+        print "Creating new task %s" % task
+    db.commit()
 
 
 def get_messages(server, user, password):
@@ -96,7 +98,7 @@ if __name__ == '__main__':
                         metavar="INI",
                         help="Configuration file for the application")
     args = parser.parse_args()
-    db = get_session(args.config)
+    db = get_session(args.config, transactional=False)
     settings = get_appsettings(args.config)
     server = settings.get("mail.host")
     username = settings.get("mail.username")
