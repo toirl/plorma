@@ -8,6 +8,7 @@ from ringo.model.user import Profile
 from ringo.scripts.admin import get_config_path
 from ringo.scripts.db import get_session, get_appsettings
 from plorma.model.task import Task
+from ringo_comment.model import Comment
 
 def parse_message(message):
     subject = message["Subject"]
@@ -65,10 +66,20 @@ def handle_message(message, db):
         if task:
             print "Modifying task"
     else:
+
+        # Create Task
         task = Task()
         task.uid = user.id
         task.gid = user.default_gid
         task.name = subject
+
+        # Add Comment
+        comment = Comment()
+        comment.text = body
+        comment.uid = user.id
+        comment.gid = user.id
+
+        task.comments.append(comment)
         db.add(task)
         db.flush()
         print "Creating new task %s" % task
