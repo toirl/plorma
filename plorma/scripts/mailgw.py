@@ -29,6 +29,16 @@ def parse_message(message):
 
 def parse_subject(subject):
     id, title = None, None
+    # Try to find [ & ]
+    p1 = subject.find("[")
+    p2 = subject.find("]")
+    if p1 > -1 and p2 > -1:
+        tmpid = subject[p1+1:p2]
+        id = re.findall("\D*(\d*)\D*",  tmpid)[0]
+        title = subject[p2+1::].strip()
+    else:
+        title = subject
+    print id, title
     return id, title
 
 def get_user(email, db):
