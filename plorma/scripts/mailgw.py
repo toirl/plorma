@@ -67,6 +67,7 @@ def handle_message(message, db):
     else:
         task = Task()
         task.uid = user.id
+        task.gid = user.default_gid
         task.name = subject
         db.add(task)
         db.flush()
