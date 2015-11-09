@@ -45,8 +45,8 @@ def get_user(email, db):
     try:
         profil = db.query(Profile).filter(Profile.email == email).one()
         return profil.user
-    except:
-        print "User can not be found"
+    except Exception as e:
+        print "User with email %s can not be identified: %s" % (email, e)
         return None
 
 def get_task(id, db):
