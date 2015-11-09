@@ -2,6 +2,7 @@ import datetime
 from pyramid.view import view_config
 from ringo.views.base import create, update, delete
 from ringo.lib.helpers import get_action_routename
+from ringo.lib.message import Mail, Mailer
 
 from plorma.model.task import Task
 from plorma.model.sprint import Estimatelog
@@ -18,6 +19,25 @@ def _add_user_to_nosy(task, user):
         task.nosy.append(user)
     return task
 
+def _send_notification_mail(task, request):
+    comment = request.params.get("comment")
+    if not comment:
+        return task
+
+    # Build recipients
+    recipients = []
+    for user in task.nosy:
+        email = user.profile[0].email
+        if email:
+            recipients.append(email)
+
+    # Build Mail
+    subject = "[tasks%s] %s" % (task.id, task.name)
+    mail = Mail(recipients, subject, msg=comment)
+
+    mailer = Mailer(request)
+    mailer.send(mail)
+
 def _add_estimatelog(task):
     for sprint in task.sprints:
         nlog = Estimatelog()
@@ -33,6 +53,10 @@ def update_callback(request, task):
     #    _add_estimatelog(task)
     _add_estimatelog(task)
     _add_user_to_nosy(task, request.user)
+    try:
+        _send_notification_mail(task, request)
+    except Exception as e:
+        print e
     return task
 
 
