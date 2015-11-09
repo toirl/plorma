@@ -39,7 +39,6 @@ def parse_subject(subject):
         title = subject[p2+1::].strip()
     else:
         title = subject
-    print id, title
     return id, title
 
 def get_user(email, db):
@@ -73,7 +72,17 @@ def handle_message(message, db):
     if task_id:
         task = get_task(task_id, db)
         if task:
-            print "Modifying task"
+            # Add Comment
+            comment = Comment()
+            comment.text = body
+            comment.uid = user.id
+            comment.gid = user.id
+            task.comments.append(comment)
+            db.flush()
+            db.commit()
+            return True
+        else:
+            return False
     else:
         # Create Task
         task = Task()
@@ -90,8 +99,8 @@ def handle_message(message, db):
         task.comments.append(comment)
         db.add(task)
         db.flush()
-        print "Creating new task %s" % task
-    db.commit()
+        db.commit()
+        return True
 
 
 def get_messages(server, user, password):
