@@ -4,6 +4,7 @@
 import poplib, email
 import re
 import argparse
+import sqlalchemy as sa
 from ringo.model.user import Profile
 from ringo.scripts.admin import get_config_path
 from ringo.scripts.db import get_session, get_appsettings
@@ -50,13 +51,11 @@ def get_user(email, db):
         return None
 
 def get_task(id, db):
-    try:
-        #task = db.query(Task).filter(Task.id == id).one()
-        task = None
-        return task
-    except:
-        print "Task can not be found"
-        return None
+        try:
+            task = db.query(Task).filter(Task.id == int(id)).one()
+            return task
+        except sa.orm.exc.NoResultFound:
+            return None
 
 def handle_message(message, db):
     """Will handle the email message and add new or modifiy existings tasks.
