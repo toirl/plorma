@@ -102,14 +102,6 @@ def handle_message(message, db):
         db.commit()
         return True
 
-
-def get_messages(server, user, password):
-    mailbox = poplib.POP3_SSL(server)
-    mailbox.user(username)
-    mailbox.pass_(password)
-    return retr_messages(mailbox)
-    mailbox.close()
-
 def retr_messages(mailbox):
     messages = []
     nummailboxessages = len(mailbox.list()[1])
@@ -133,5 +125,10 @@ if __name__ == '__main__':
     username = settings.get("mail.username")
     password = settings.get("mail.password")
 
-    for message in get_messages(server, username, password):
+    mailbox = poplib.POP3_SSL(server)
+    mailbox.user(username)
+    mailbox.pass_(password)
+    for num, message in enumerate(retr_messages(mailbox)):
         handle_message(message, db)
+        mailbox.dele(num+1)
+    mailbox.quit()
