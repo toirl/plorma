@@ -13,6 +13,11 @@ def create_callback(request, task):
 def delete_callback(request, task):
     return update_callback(request, task)
 
+def _add_user_to_nosy(task, user):
+    if user.id not in [u.id for u in task.nosy]:
+        task.nosy.append(user)
+    return task
+
 def _add_estimatelog(task):
     for sprint in task.sprints:
         nlog = Estimatelog()
@@ -27,6 +32,7 @@ def update_callback(request, task):
     #else:
     #    _add_estimatelog(task)
     _add_estimatelog(task)
+    _add_user_to_nosy(task, request.user)
     return task
 
 
