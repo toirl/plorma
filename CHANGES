@@ -1,5 +1,24 @@
 0.4
 ---
+- Added E-Mail basic support.
+  The support includes the notification and creation or modifying (adding
+  comments) of tasks. Further modification of other attributes are currently
+  not supported.
+
+  1. Creation:
+  You can now create new tasks by sending an email to a specific email
+  address. The subject of the mail will be used as name of the new task. The
+  body of the email will be used as the initial comment of the task.
+  2. Modifying:
+  You can reply to a message from plorma. The body of the message will be used
+  as new comment in the task.
+  3. Notification
+  Every time a new comment is added to a task a notfication email is sent to
+  all users in the nosy list. The current user will be added to the nosy list
+  if he isn't already in it.
+ 
+  See documentation for more details.
+
 
 0.3.1
 -----
