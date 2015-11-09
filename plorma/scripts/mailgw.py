@@ -76,7 +76,7 @@ def handle_message(message, db):
             comment = Comment()
             comment.text = body
             comment.uid = user.id
-            comment.gid = user.id
+            comment.gid = user.default_gid
             task.comments.append(comment)
             db.flush()
             db.commit()
