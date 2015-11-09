@@ -35,7 +35,7 @@ def parse_subject(subject):
     p2 = subject.find("]")
     if p1 > -1 and p2 > -1:
         tmpid = subject[p1+1:p2]
-        id = re.findall("\D*(\d*)\D*",  tmpid)[0]
+        id = re.findall("\D*(\d+)\D*",  tmpid)[0]
         title = subject[p2+1::].strip()
     else:
         title = subject
