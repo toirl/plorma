@@ -82,9 +82,9 @@ def handle_message(message, db, settings):
             db.flush()
             db.commit()
             recipients = []
-            for user in task.nosy:
-                email = user.profile[0].email
-                if email:
+            for nuser in task.nosy:
+                email = nuser.profile[0].email
+                if email and user.id != nuser.id :
                     recipients.append(email)
             _send_notification_mail(task, recipients, settings)
             return True
