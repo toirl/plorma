@@ -109,6 +109,7 @@ def handle_message(message, db, settings):
         db.add(task)
         db.flush()
         db.commit()
+        recipients = []
         for user in db.query(User).all():
             email = user.profile[0].email
             if email:
