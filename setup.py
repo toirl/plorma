@@ -16,6 +16,7 @@ requires = [
     'ringo',
     'ringo_comment',
     'ringo_tag',
+    'envelopes',
     'pygal',
     'webtest',
     'mock'
