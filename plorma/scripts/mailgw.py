@@ -5,9 +5,10 @@ import poplib, email
 import re
 import argparse
 import sqlalchemy as sa
-from ringo.model.user import Profile
+from ringo.model.user import Profile, User
 from ringo.scripts.admin import get_config_path
 from ringo.scripts.db import get_session, get_appsettings
+from plorma.views.tasks import _send_notification_mail
 from plorma.model.task import Task
 from ringo_comment.model import Comment
 
@@ -56,7 +57,7 @@ def get_task(id, db):
         except sa.orm.exc.NoResultFound:
             return None
 
-def handle_message(message, db):
+def handle_message(message, db, settings):
     """Will handle the email message and add new or modifiy existings tasks.
     If the handling was successfull the function returns True other wise False.
 
@@ -80,6 +81,12 @@ def handle_message(message, db):
             task.comments.append(comment)
             db.flush()
             db.commit()
+            recipients = []
+            for user in task.nosy:
+                email = user.profile[0].email
+                if email:
+                    recipients.append(email)
+            _send_notification_mail(task, recipients, settings)
             return True
         else:
             return False
@@ -100,6 +107,11 @@ def handle_message(message, db):
         db.add(task)
         db.flush()
         db.commit()
+        for user in db.query(User).all():
+            email = user.profile[0].email
+            if email:
+                recipients.append(email)
+        _send_notification_mail(task, recipients, settings)
         return True
 
 def retr_messages(mailbox):
@@ -129,6 +141,6 @@ if __name__ == '__main__':
     mailbox.user(username)
     mailbox.pass_(password)
     for num, message in enumerate(retr_messages(mailbox)):
-        handle_message(message, db)
+        handle_message(message, db, settings)
         mailbox.dele(num+1)
     mailbox.quit()
