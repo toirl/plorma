@@ -8,7 +8,7 @@ import sqlalchemy as sa
 from ringo.model.user import Profile, User
 from ringo.scripts.admin import get_config_path
 from ringo.scripts.db import get_session, get_appsettings
-from plorma.views.tasks import _send_notification_mail
+from plorma.views.tasks import _send_notification_mail, _add_user_to_nosy
 from plorma.model.task import Task
 from ringo_comment.model import Comment
 
@@ -80,13 +80,14 @@ def handle_message(message, db, settings):
             comment.gid = user.default_gid
             task.comments.append(comment)
             db.flush()
-            db.commit()
             recipients = []
             for nuser in task.nosy:
                 email = nuser.profile[0].email
                 if email and user.id != nuser.id :
                     recipients.append(email)
             _send_notification_mail(task, recipients, settings)
+            _add_user_to_nosy(task, user)
+            db.commit()
             return True
         else:
             return False
@@ -104,6 +105,7 @@ def handle_message(message, db, settings):
         comment.gid = user.id
 
         task.comments.append(comment)
+        _add_user_to_nosy(task, user)
         db.add(task)
         db.flush()
         db.commit()
