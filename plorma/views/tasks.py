@@ -1,42 +1,51 @@
 import datetime
 from pyramid.view import view_config
+from envelopes import Envelope
+
 from ringo.views.base import create, update, delete
 from ringo.lib.helpers import get_action_routename
-from ringo.lib.message import Mail, Mailer
+from ringo.model.user import User
 
 from plorma.model.task import Task
 from plorma.model.sprint import Estimatelog
 
 
 def create_callback(request, task):
-    return update_callback(request, task)
-
-def delete_callback(request, task):
-    return update_callback(request, task)
+    _add_estimatelog(task)
+    recipients = []
+    for user in request.db.query(User).all():
+        email = user.profile[0].email
+        if email:
+            recipients.append(email)
+    if recipients:
+        settings = request.registry.settings
+        _send_notification_mail(task, recipients, settings)
+    _add_user_to_nosy(task, request.user)
+    return task
 
 def _add_user_to_nosy(task, user):
     if user.id not in [u.id for u in task.nosy]:
         task.nosy.append(user)
     return task
 
-def _send_notification_mail(task, request):
-    comment = request.params.get("comment")
-    if not comment:
-        return task
-
-    # Build recipients
-    recipients = []
-    for user in task.nosy:
-        email = user.profile[0].email
-        if email:
-            recipients.append(email)
+def _send_notification_mail(task, recipients, settings):
+    sender = settings.get("mail.default_sender") 
+    username = settings.get("mail.username") 
+    password = settings.get("mail.password") 
+    host = settings.get("mail.host") 
 
     # Build Mail
+    if len(task.comments) > 0:
+        comment = task.comments[-1].text
+    else:
+        comment = ""
     subject = "[tasks%s] %s" % (task.id, task.name)
-    mail = Mail(recipients, subject, msg=comment)
 
-    mailer = Mailer(request)
-    mailer.send(mail)
+    mail =  Envelope(from_addr=sender,
+                     to_addr=recipients,
+                     subject=subject,
+                     text_body=comment)
+    mail.send(host, login=username, password=password, tls=True)
 
 def _add_estimatelog(task):
     for sprint in task.sprints:
@@ -47,16 +56,18 @@ def _add_estimatelog(task):
     return task
 
 def update_callback(request, task):
-    #for ptask in task.get_parents():
-    #    _add_estimatelog(ptask)
-    #else:
-    #    _add_estimatelog(task)
     _add_estimatelog(task)
+    if request.params.get("comment"):
+        msg = request.params.get("comment")
+        recipients = []
+        for user in task.nosy:
+            email = user.profile[0].email
+            if email and (user.id != request.user.id):
+                recipients.append(email)
+        if recipients:
+            settings = request.registry.settings
+            _send_notification_mail(task, recipients, settings)
     _add_user_to_nosy(task, request.user)
-    try:
-        _send_notification_mail(task, request)
-    except Exception as e:
-        print e
     return task
 
 
@@ -71,9 +82,3 @@ def create_(request):
              permission='update')
 def update_(request):
     return update(request, update_callback)
-
-@view_config(route_name=get_action_routename(Task, 'delete'),
-             renderer='/default/confirm.mako',
-             permission='delete')
-def delete_(request):
-    return delete(request, delete_callback)
