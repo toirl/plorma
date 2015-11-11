@@ -1,4 +1,5 @@
 import datetime
+import logging
 from pyramid.view import view_config
 from envelopes import Envelope
 
@@ -8,6 +9,8 @@ from ringo.model.user import User
 
 from plorma.model.task import Task
 from plorma.model.sprint import Estimatelog
+
+log = logging.getLogger(__name__)
 
 
 def create_callback(request, task):
@@ -19,7 +22,10 @@ def create_callback(request, task):
             recipients.append(email)
     if recipients:
         settings = request.registry.settings
-        _send_notification_mail(task, recipients, settings)
+        try:
+            _send_notification_mail(task, user, recipients, settings)
+        except Exception as e:
+            log.error("Can not send email: %s" % e)
     _add_user_to_nosy(task, request.user)
     return task
 
@@ -66,7 +72,10 @@ def update_callback(request, task):
                 recipients.append(email)
         if recipients:
             settings = request.registry.settings
-            _send_notification_mail(task, recipients, settings)
+            try:
+                _send_notification_mail(task, user, recipients, settings)
+            except Exception as e:
+                log.error("Can not send email: %s" % e)
     _add_user_to_nosy(task, request.user)
     return task
 
