@@ -19,7 +19,7 @@ def create_callback(request, task):
     for user in request.db.query(User).all():
         email = user.profile[0].email
         if email:
-            recipients.append(email)
+            recipients.append("%s <%s>" % (user.profile[0], email))
     if recipients:
         settings = request.registry.settings
         try:
@@ -34,8 +34,8 @@ def _add_user_to_nosy(task, user):
         task.nosy.append(user)
     return task
 
-def _send_notification_mail(task, recipients, settings):
-    sender = settings.get("mail.default_sender") 
+def _send_notification_mail(task, sender, recipients, settings):
+    sender = "%s <%s>" % (sender.profile[0], settings.get("mail.default_sender"))
     username = settings.get("mail.username") 
     password = settings.get("mail.password") 
     host = settings.get("mail.host") 
@@ -69,7 +69,7 @@ def update_callback(request, task):
         for user in task.nosy:
             email = user.profile[0].email
             if email and (user.id != request.user.id):
-                recipients.append(email)
+                recipients.append("%s <%s>" % (user.profile[0], email))
         if recipients:
             settings = request.registry.settings
             try:

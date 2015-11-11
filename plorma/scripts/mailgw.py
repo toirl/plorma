@@ -84,9 +84,9 @@ def handle_message(message, db, settings):
             for nuser in task.nosy:
                 email = nuser.profile[0].email
                 if email and user.id != nuser.id :
-                    recipients.append(email)
+                    recipients.append("%s <%s>" % (user.profile[0], email))
             print "Sending message to %s" % recipients
-            _send_notification_mail(task, recipients, settings)
+            _send_notification_mail(task, user, recipients, settings)
             _add_user_to_nosy(task, user)
             db.commit()
             return True
@@ -114,9 +114,9 @@ def handle_message(message, db, settings):
         for user in db.query(User).all():
             email = user.profile[0].email
             if email:
-                recipients.append(email)
+                recipients.append("%s <%s>" % (user.profile[0], email))
         print "Sending message to %s" % recipients
-        _send_notification_mail(task, recipients, settings)
+        _send_notification_mail(task, user, recipients, settings)
         return True
 
 def retr_messages(mailbox):
