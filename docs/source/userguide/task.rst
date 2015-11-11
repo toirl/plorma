@@ -184,7 +184,7 @@ waiting for someone who will pickup the task e.g for QA.
 The way Plorma marks a task to be currently under test is to set a new
 assignee to the task. A resolved task which is assigned to someone means that
 his person will do whatever is needed to make the task proceed into the next
-state (verfied, closed). This can be doing the QA but might also be something
+state (verified, closed). This can be doing the QA but might also be something
 different.
 
 .. index:: Weight of a task
@@ -198,3 +198,59 @@ The Taskweight is used in the task overview are prioritization criteria.
 
 If either the priority or the severity is not set, than the weight can
 not be calculated and is unknown.
+
+.. index:: Mail Gateway
+
+Email Gateway
+=============
+Plorma ships with an Email Gateway which supports creating and modifying Tasks
+per Email.
+
+.. note::
+        Currently only creating new tasks and adding new comments to existing
+        tasks is supported. If you want to change any other attribute of the
+        task you need to open it in the web interface.
+
+To create a new Task you can send an email to the configured email address.
+The subject of the email will be used a title of the new task. The text of the
+email is used as first comment of the new task.
+
+When a new task is created a notification mail will be sent to all users
+in the tracker.
+
+Users can reply to messages which are sent from Plorma. The mails will get parsed
+and the text of the mail will be appended as new comment to the task.
+
+
+Configuration
+-------------
+To be able to use the Email Gateway you need to
+
+* Create a Mailbox where users can send emails to. This mailbox should be
+  exclusive for Plorma issues and must allow fetching email using POP(S).
+* `configure the Email subsystem <http://ringo.readthedocs.org/en/latest/administration/config.html#mail>`_ so send mails out of Plorma and
+* configure a cron job for the `mailgw.py` script which polls emails and creates and modifies tasks.
+
+The `host` in the configuration is the mail server where the mailbox is. Please
+note that the mail server is used to fetch and send mails.
+The `default_sender` is the email address of this tracker. Mail from the
+tracker will get email address as Return-Path and other users can send Mails
+to this address.
+Finally the `username` and `password` are used to login to the server to send
+and fetch mails.
+
+.. rubric:: Calling the mailgw script
+
+The mail gateway script is used to fetch mails from the configured mail
+server. It will  The script can be invoked with the following command::
+
+        plorma-mailgw --config path/to/config.ini
+
+The script will use the mail configuration defined in the ini file.
+
+.. warning::
+        The configuration must consist of a <app:main> section. Composite
+        configurations using a <composite:main>  section is currently not
+        supported. If you use this then a possible workaround is to copy this
+        ini file, fix the config it and use the copied ini file for the
+        mailconfig only.
