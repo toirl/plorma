@@ -129,7 +129,7 @@ def retr_messages(mailbox):
             print e
     return messages
 
-if __name__ == '__main__':
+def main():
     parser = argparse.ArgumentParser(description="Mail gateway command")
     parser.add_argument('--config',
                         default=get_config_path(),
@@ -149,3 +149,7 @@ if __name__ == '__main__':
         handle_message(message, db, settings)
         mailbox.dele(num+1)
     mailbox.quit()
+
+
+if __name__ == '__main__':
+    main()

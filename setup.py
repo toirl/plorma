@@ -47,6 +47,7 @@ setup(name='plorma',
       main = plorma:main
       [console_scripts]
       plorma-admin = ringo.scripts.admin:main
+      plorma-mailgw = plorma.scripts.mailgw:main
       [babel.extractors]
       tableconfig = ringo.lib.i18n:extract_i18n_tableconfig
       formconfig = formbar.i18n:extract_i18n_formconfig
