@@ -19,6 +19,9 @@
  
   See documentation for more details.
 
+- Added search filter to hide closed tasks (Requires current Ringo version >=
+  1.10.0)
+
 
 0.3.1
 -----
