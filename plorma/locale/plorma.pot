@@ -6,16 +6,16 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: plorma 0.3.1\n"
+"Project-Id-Version: plorma 0.4.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-11-05 20:50+0100\n"
+"POT-Creation-Date: 2015-12-01 21:46+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.0\n"
+"Generated-By: Babel 2.1.1\n"
 
 #: plorma/model/sprint.py:57 plorma/views/forms/sprints.xml:13
 msgid "Planning"
@@ -141,7 +141,7 @@ msgstr ""
 #. Label for weight column in overview table config
 #. Label for weight column in sprintlog table config
 #: plorma/templates/index.mako:48 plorma/views/forms/tasks.xml:4
-#: plorma/views/tables/tasks.json:3 plorma/views/tables/tasks.json:10
+#: plorma/views/tables/tasks.json:3 plorma/views/tables/tasks.json:12
 msgid "Priority"
 msgstr ""
 
@@ -263,7 +263,7 @@ msgstr ""
 #. Label for name column in sprintlog table config
 #: plorma/views/forms/sprints.xml:8 plorma/views/tables/sprints.json:2
 #: plorma/views/tables/sprints.json:10 plorma/views/tables/tasks.json:2
-#: plorma/views/tables/tasks.json:8
+#: plorma/views/tables/tasks.json:10
 msgid "Title"
 msgstr ""
 
@@ -320,7 +320,7 @@ msgstr ""
 #. Label for estimate column in overview table config
 #. Label for estimate column in sprintlog table config
 #: plorma/views/forms/tasks.xml:9 plorma/views/tables/sprints.json:5
-#: plorma/views/tables/tasks.json:11
+#: plorma/views/tables/tasks.json:13
 msgid "Estimate"
 msgstr ""
 
@@ -338,7 +338,7 @@ msgstr ""
 #. Label for tags column in overview table config
 #. Label for tags column in sprintlog table config
 #: plorma/views/forms/tasks.xml:12 plorma/views/tables/tasks.json:6
-#: plorma/views/tables/tasks.json:9
+#: plorma/views/tables/tasks.json:11
 msgid "Tags"
 msgstr ""
 
@@ -476,5 +476,15 @@ msgstr ""
 #. Label for size column in overview table config
 #: plorma/views/tables/sprints.json:4
 msgid "Story Points"
+msgstr ""
+
+#. Label for task_state filter in overview table config
+#: plorma/views/tables/tasks.json:7
+msgid "Hide closed"
+msgstr ""
+
+#. Expr for task_state filter in overview table config
+#: plorma/views/tables/tasks.json:8
+msgid "^(?:(?!Closed).)*$"
 msgstr ""
 
