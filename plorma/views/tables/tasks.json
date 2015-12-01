@@ -11,7 +11,14 @@
             "default-sort-field": "weight",
             "default-sort-order": "desc",
             "pagination": true
-        }
+        },
+        "filters": [
+            {"field": "task_state",
+             "expr": "^(?:(?!Closed).)*$",
+             "regex": true,
+             "label": "Hide closed",
+             "active": true}
+        ]
     },
     "sprintlog": {
         "columns": [
