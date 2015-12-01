@@ -21,6 +21,8 @@
 
 - Added search filter to hide closed tasks (Requires current Ringo version >=
   1.10.0)
+- Added Input field in the footer to allow users to enter the id of a task
+  and open it directly.
 
 
 0.3.1
