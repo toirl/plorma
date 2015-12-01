@@ -9,8 +9,7 @@
         ],
         "settings": {
             "default-sort-field": "weight",
-            "default-sort-order": "desc",
-            "pagination": true
+            "default-sort-order": "desc"
         },
         "filters": [
             {"field": "task_state",
