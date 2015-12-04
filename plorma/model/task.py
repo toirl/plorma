@@ -30,7 +30,7 @@ def assign_handler(task, transition):
     # When assigning the task make sure the task is assigned to the
     # current user in case the assignee is not set.
     request = transition._end_state._statemachine._request
-    if request.params.get("assignee") == "":
+    if not request.params.get("assignee"):
         task.assignee_id = request.user.id
     return task
 
