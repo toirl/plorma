@@ -12,6 +12,7 @@
             </ul>
           </li>
           % endif
+          % if request.user:
           <li>
             <div class="input-group" id="taskworp">
               <input type="text" title="${_('To directly open a task please enter the task ID')}" class="form-control" placeholder="#TaskID"> <span class="input-group-btn">
@@ -19,6 +20,7 @@
               </span>
             </div><!-- /input-group -->
           </li>
+          % endif
         </ul>
     </div>
     <div class="col-sd-6">
