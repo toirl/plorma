@@ -39,10 +39,10 @@ information on how to setup a development environment can be found in the
         cd plorma
         source env/bin/activate
 
+
 The get Plorma up and running do::
 
-        cd <directory containing this file>
-        python setup.py develop
+        cd src
         plorma-admin db init
 
 The following steps are optional and only needed if you want to have some demo
