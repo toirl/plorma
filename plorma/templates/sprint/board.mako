@@ -62,10 +62,13 @@
 <div class="container-fluid">
 
   <div class="row">
-    <div class="col-md-8">
-      <h1>${item.title} <small>(${h.prettify(request, item.start)} – ${h.prettify(request, item.end)})</small></h1>
+    <div class="col-md-3">
+      <h1>${item.estimate}/${item.size}</h1>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-6">
+      <center><h1>${item.title}</h1>(${h.prettify(request, item.start)} – ${h.prettify(request, item.end)})</center>
+    </div>
+    <div class="col-md-3">
       <div style="margin-top: 20px" class="btn-toolbar pull-right" role="toolbar">
         <div class="btn-group" role="group">
           <a href="${request.route_path('home')}" class="btn btn-default"
@@ -76,9 +79,6 @@
             title="${_('Sprint statistics')}"><i class="fa fa-line-chart"></i> <span class="hidden-md">${_('Sprint statistics')}</span></a>
         </div>
       </div>
-    </div>
-    <div class="col-md-2">
-      <span class="pull-right h1">${item.estimate}/${item.size}</span>
     </div>
   </div>
   <div class="row">
