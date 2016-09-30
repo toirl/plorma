@@ -35,7 +35,7 @@ information on how to setup a development environment can be found in the
 `Ringo documentation <http://ringo.readthedocs.io/en/latest/start.html#installation>`_::
 
         curl -O https://raw.githubusercontent.com/ringo-framework/ringo/master/bootstrap-dev-env.sh
-        sh bootstrap-dev-env.sh -c https://github.com/toirl/plorman.git plorma
+        sh bootstrap-dev-env.sh -c https://github.com/toirl/plorma.git plorma
         cd plorma
         source env/bin/activate
 
