@@ -23,26 +23,21 @@ Documentation
 Documentation is available here: `Plorma documentation
 <http://plorma.readthedocs.org>`_
 
-Prerequisites
--------------
-Plorma requires a PostgreSQL database. The default database (configured in the
-ini file) is named Plorma. Please make sure this database is created and
-accessible before invoking the following commands.
-
-The following packages are needed::
-
-        apt-get install postgresql python-psycopg2 python-lxml gcc python-dev
-        webtest mock
-
-The compiler and development packages are currently needed to be able to
-compile some of the packages which are automatically installed as dependency.
-
 Getting Started
 ---------------
 The following steps will show how to get a running Plorma application when
 starting with the source of Plorma.
 An alternative way to setup Plorma when installing it per pip is described in
 the User documentation.
+
+Install a development environment and activate the devopment environment. More
+information on how to setup a development environment can be found in the
+`Ringo documentation <http://ringo.readthedocs.io/en/latest/start.html#installation>`_::
+
+        curl -O https://raw.githubusercontent.com/ringo-framework/ringo/master/bootstrap-dev-env.sh
+        sh bootstrap-dev-env.sh -c https://github.com/toirl/plorman.git plorma
+        cd plorma
+        source env/bin/activate
 
 The get Plorma up and running do::
 
