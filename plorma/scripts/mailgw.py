@@ -27,7 +27,7 @@ def parse_message(message):
         # fingers crossed
         else:
             body = message.get_payload(decode=True)
-    return subject, email, body
+    return subject, email, body.decode("utf-8", errors="ignore")
 
 def parse_subject(subject):
     id, title = None, None

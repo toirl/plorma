@@ -23,7 +23,7 @@ def create_callback(request, task):
     if recipients:
         settings = request.registry.settings
         try:
-            _send_notification_mail(task, user, recipients, settings)
+            _send_notification_mail(task, request.user, recipients, settings)
         except Exception as e:
             log.error("Can not send email: %s" % e)
     _add_user_to_nosy(task, request.user)
@@ -73,7 +73,7 @@ def update_callback(request, task):
         if recipients:
             settings = request.registry.settings
             try:
-                _send_notification_mail(task, user, recipients, settings)
+                _send_notification_mail(task, request.user, recipients, settings)
             except Exception as e:
                 log.error("Can not send email: %s" % e)
     _add_user_to_nosy(task, request.user)
