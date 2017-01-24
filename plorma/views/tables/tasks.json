@@ -3,8 +3,9 @@
         "columns": [
             {"name": "id", "label": "Id"},
             {"name": "name", "label": "Title"},
-            {"name": "weight", "label": "Priority", "width": "50"},
-            {"name": "task_state", "label": "State", "width": "120"},
+            {"name": "weight", "label": "WoT", "width": "50"},
+            {"name": "assignee", "label": "Assignee", "width": "80"},
+            {"name": "task_state", "label": "State", "width": "80"},
             {"name": "resolution", "label": "Resolution", "width": "120", "expand": true},
             {"name": "tags", "label": "Tags"}
         ],
@@ -25,8 +26,9 @@
             {"name": "id", "label": "Id"},
             {"name": "name", "label": "Title"},
             {"name": "tags", "label": "Tags", "width": "100"},
-            {"name": "weight", "label": "Priority", "width": "70"},
-            {"name": "estimate", "label": "Estimate", "width": "70"}
+            {"name": "weight", "label": "P",  "title": "Priority", "width": "30"},
+            {"name": "estimate", "label": "E", "title": "Estimate", "width": "30"},
+            {"name": "assignee", "label": "A", "title": "Assignee", "width": "80"}
         ],
         "settings": {
             "default-sort-field": "weight",
