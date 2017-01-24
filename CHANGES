@@ -1,3 +1,8 @@
+0.5
+---
+- Added created and updated fields to Tasks
+- Added assignee to the overview
+
 0.4
 ---
 - Added E-Mail basic support.

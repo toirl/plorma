@@ -7,7 +7,7 @@ from ringo.model.statemachine import (
         null_condition as condition
 )
 from ringo.model.mixins import (
-    Owned, StateMixin, Nested
+    Owned, StateMixin, Nested, Meta
 )
 from ringo_comment.model import Commented
 from ringo_tag.model import Tagged
@@ -119,7 +119,7 @@ class TaskStateMixin(StateMixin):
          return state.get_state()
 
 
-class Task(BaseItem, Tagged, Commented, TaskStateMixin, Owned, Base):
+class Task(BaseItem, Tagged, Commented, TaskStateMixin, Owned, Meta, Base):
     """A task is a general container for all kind of tasks, defects,
     feature requests or any other issue in your product.
     """
