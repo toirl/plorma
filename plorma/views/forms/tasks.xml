@@ -51,7 +51,7 @@
     <entity id="assignee" name="assignee" label="Assignee">
       <renderer type="dropdown"/>
     </entity>
-    <entity id="estimate" name="estimate" label="Estimate" type="integer" required="true">
+    <entity id="estimate" name="estimate" label="Estimate" type="integer" desired="true">
       <options>
         <option value="0">0</option>
         <option value="1">1</option>
